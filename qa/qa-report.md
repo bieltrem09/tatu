@@ -1,10 +1,10 @@
 # Relatório de QA automatizado
 
-Gerado em 2026-10-04T20:48:22.216Z
+Gerado em 2026-10-04T21:01:20.165Z
 
 | Verificação | Resultado | Detalhe |
 |---|---|---|
-| Nenhuma imagem quebrada (naturalWidth > 0) | OK | 54 imagens |
+| Nenhuma imagem quebrada (naturalWidth > 0) | OK | 55 imagens |
 | Console limpo (1440, scroll completo) | OK |  |
 | Âncoras internas existem | OK | 35 âncoras |
 | Links wa.me presentes e com número do JSON | OK | 4 links |
@@ -12,7 +12,7 @@ Gerado em 2026-10-04T20:48:22.216Z
 | tel: só aparece quando o JSON tem telefone | OK | 0 links tel: |
 | Formulário valida inline | OK | 4 erros exibidos |
 | Envio abre WhatsApp com a mensagem montada | OK | https://wa.me/5519998098949?text=Ol%C3%A1%2C%20Tatu%20PreMoldados!%20Gostaria%20de%20solic |
-| Todo número/data visível existe no tatu-content.json | OK | 9 números conferidos |
+| Todo número/data visível existe no tatu-content.json | OK | 10 números conferidos |
 | Drawer abre com Enter, fecha com Esc e devolve o foco | OK | 1/0/true |
 | Sem overflow horizontal em 360px | OK | 0px |
 | Console limpo (360) | OK |  |
