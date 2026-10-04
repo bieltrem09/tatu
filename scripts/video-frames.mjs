@@ -30,7 +30,7 @@ if (!existsSync(SRC)) {
   process.exit(0)
 }
 
-const key = `${statSync(SRC).mtimeMs}|${cfg.inicio}|${cfg.fim}|${N}`
+const key = `${statSync(SRC).mtimeMs}|${JSON.stringify(cfg.trechos)}|${N}`
 const prev = existsSync(MANIFEST) ? JSON.parse(readFileSync(MANIFEST, 'utf8')) : {}
 const done = (d) => existsSync(path.join(OUT, d)) && readdirSync(path.join(OUT, d)).length === N
 if (prev.key === key && Object.keys(SIZES).every(done)) process.exit(0)
@@ -38,15 +38,22 @@ if (prev.key === key && Object.keys(SIZES).every(done)) process.exit(0)
 const probe = JSON.parse(execFileSync('ffprobe', ['-v', 'error', '-print_format', 'json', '-show_streams', '-show_format', SRC]).toString())
 const v = probe.streams.find((s) => s.codec_type === 'video')
 const dur = Number(probe.format.duration)
-const start = Math.max(0, cfg.inicio ?? 0)
-const end = Math.min(dur, cfg.fim ?? dur)
-const fps = N / (end - start)
+// trechos [[inicio, fim], ...] em segundos; sem trechos = vídeo inteiro
+const segs = (cfg.trechos?.length ? cfg.trechos : [[0, dur]]).map(([a, b]) => [Math.max(0, a), Math.min(dur, b)]).filter(([a, b]) => b > a)
+const total = segs.reduce((t, [a, b]) => t + b - a, 0)
+// distribui os N quadros proporcionalmente à duração de cada trecho
+const counts = segs.map(([a, b]) => Math.round((N * (b - a)) / total))
+counts[counts.length - 1] += N - counts.reduce((x, y) => x + y, 0)
 for (const [dir, w] of Object.entries(SIZES)) {
   rmSync(path.join(OUT, dir), { recursive: true, force: true })
   mkdirSync(path.join(OUT, dir), { recursive: true })
-  execFileSync('ffmpeg', ['-v', 'error', '-ss', String(start), '-to', String(end), '-i', SRC, '-vf', `fps=${fps},scale=${w}:-2`, '-frames:v', String(N), '-c:v', 'libwebp', '-quality', dir === 'd' ? '62' : '58', path.join(OUT, dir, 'f%03d.webp')])
+  let offset = 1
+  segs.forEach(([a, b], k) => {
+    const n = counts[k]
+    execFileSync('ffmpeg', ['-v', 'error', '-ss', String(a), '-to', String(b), '-i', SRC, '-vf', `fps=${n / (b - a)},scale=${w}:-2`, '-frames:v', String(n), '-start_number', String(offset), '-c:v', 'libwebp', '-quality', dir === 'd' ? '62' : '58', path.join(OUT, dir, 'f%03d.webp')])
+    offset += n
+  })
 }
 const count = readdirSync(path.join(OUT, 'd')).length
-const ratio = v.width / v.height
-write({ key, count, start, end, ratio })
-console.log(`video: ${count} quadros (${start.toFixed(1)}s–${end.toFixed(1)}s)`)
+write({ key, count, segments: segs, counts, ratio: v.width / v.height })
+console.log(`video: ${count} quadros de ${segs.map(([a, b]) => `${a}s–${b}s`).join(' + ')}`)

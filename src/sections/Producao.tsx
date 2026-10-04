@@ -5,10 +5,24 @@ import { empresa } from '../content/tatu'
 import { gsap, MQ, pinRegistry, prime, ScrollTrigger, useGSAP } from '../motion/setup'
 import './producao.css'
 
-type Frames = { count: number; start?: number; end?: number; ratio?: number }
-const frames = framesManifest as Frames
+type Frames = { count: number; segments?: [number, number][]; counts?: number[]; ratio?: number }
+const frames = framesManifest as unknown as Frames
 const pad = (n: number) => String(n).padStart(3, '0')
 const url = (dir: 'd' | 'm', i: number) => `${import.meta.env.BASE_URL}img/frames/${dir}/f${pad(i + 1)}.webp`
+/** minutagem real do vídeo para um progresso 0..1, atravessando os trechos escolhidos */
+const timeAt = (p: number) => {
+  const segs = frames.segments ?? [[0, 0]]
+  const counts = frames.counts ?? [frames.count]
+  let f = p * (frames.count - 1)
+  for (let k = 0; k < segs.length; k++) {
+    if (f <= counts[k] - 1 || k === segs.length - 1) {
+      const [a, b] = segs[k]
+      return a + (Math.min(f, counts[k] - 1) / Math.max(1, counts[k] - 1)) * (b - a)
+    }
+    f -= counts[k]
+  }
+  return 0
+}
 const tc = (s: number) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(Math.floor(s % 60)).padStart(2, '0')}`
 
 /**
@@ -99,11 +113,10 @@ export function Producao() {
       const mm = gsap.matchMedia()
       const time = q('.prod2__tc')[0] as HTMLElement
       const fill = q('.prod2__fill')[0] as HTMLElement
-      const span = (frames.end ?? 0) - (frames.start ?? 0)
       const show = (p: number) => {
         const i = Math.round(p * (N - 1))
         if (i !== current.current) draw(i)
-        if (time) time.textContent = tc((frames.start ?? 0) + p * span)
+        if (time) time.textContent = tc(timeAt(p))
         if (fill) fill.style.transform = `scaleX(${p})`
       }
 
@@ -184,7 +197,7 @@ export function Producao() {
             <span className="prod2__fill" />
           </span>
           <span className="prod2__tc mono" aria-hidden="true">
-            {tc(frames.start ?? 0)}
+            {tc(timeAt(0))}
           </span>
           <button
             type="button"

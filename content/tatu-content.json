@@ -103,15 +103,16 @@
     { "id": "IV", "nome": "Consolidação" }
   ],
 
+  "_fotos_linha_do_tempo": "PROVISÓRIO: ano de cada foto do acervo atribuído por ordem cronológica aparente; confirmar com a Tatu (1977 Fusca, 1980 prensa, 1993 vigotas, 2007 paletização; outdoor sem ano).",
   "linha_do_tempo": [
-    { "ano": 1977, "capitulo": "I", "titulo": "Início", "texto": "Início da Tatu PreMoldados, com pré-moldados de concreto.", "foto": null, "tem_foto_oficial": true },
-    { "ano": 1980, "capitulo": "II", "titulo": null, "texto": null, "foto": null, "tem_foto_oficial": true },
-    { "ano": 1993, "capitulo": "III", "titulo": "Vigotas", "texto": "Capacidade de produção de vigotas ampliada em 500%.", "foto": null, "tem_foto_oficial": true },
+    { "ano": 1977, "capitulo": "I", "titulo": "Início", "texto": "Início da Tatu PreMoldados, com pré-moldados de concreto.", "foto": "historia-1977-lajes-tatu", "tem_foto_oficial": true },
+    { "ano": 1980, "capitulo": "II", "titulo": null, "texto": null, "foto": "historia-1980-prensa-blocos", "tem_foto_oficial": true },
+    { "ano": 1993, "capitulo": "III", "titulo": "Vigotas", "texto": "Capacidade de produção de vigotas ampliada em 500%.", "foto": "historia-1993-vigotas", "tem_foto_oficial": true },
     { "ano": 1998, "capitulo": "III", "titulo": "Blocos", "texto": "Capacidade de produção de blocos ampliada em 40%.", "foto": null, "tem_foto_oficial": false },
     { "ano": 2000, "capitulo": "III", "titulo": "Blocos", "texto": "Nova ampliação de 40% na capacidade de blocos.", "foto": null, "tem_foto_oficial": false },
     { "ano": 2001, "capitulo": "III", "titulo": null, "texto": null, "foto": null, "tem_foto_oficial": true },
     { "ano": 2002, "capitulo": "III", "titulo": "ISO 9001", "texto": "Certificação ISO 9001 obtida.", "foto": null, "tem_foto_oficial": false },
-    { "ano": 2007, "capitulo": "IV", "titulo": null, "texto": null, "foto": null, "tem_foto_oficial": true },
+    { "ano": 2007, "capitulo": "IV", "titulo": null, "texto": null, "foto": "historia-2007-paletizacao", "tem_foto_oficial": true },
     { "ano": 2009, "capitulo": "IV", "titulo": "2.000 m²/dia", "texto": "Capacidade de 2.000 m²/dia.", "foto": null, "tem_foto_oficial": false },
     { "ano": 2011, "capitulo": "IV", "titulo": "150.000 blocos/dia", "texto": "Capacidade de 150.000 blocos/dia ou 9.000 m² de pisos/dia.", "foto": null, "tem_foto_oficial": false },
     { "ano": 2020, "capitulo": "IV", "titulo": "Energia solar", "texto": "Investimento em energia solar: mais de 8.000 m² de placas solares.", "foto": "historia-2020-energia-solar", "tem_foto_oficial": true },
@@ -133,10 +134,9 @@
   },
 
   "producao": {
-    "_sobre": "Trecho do vídeo institucional usado na animação de scroll (quadros extraídos por scripts/video-frames.mjs). inicio/fim em segundos; null = vídeo inteiro.",
+    "_sobre": "Trechos do vídeo institucional (segundos) usados na animação de scroll — escolhidos pela Tatu: 0:03–0:06 e 0:20–0:30. Quadros extraídos por scripts/video-frames.mjs.",
     "youtube_id": "PPyvJa9HZ2M",
-    "inicio": null,
-    "fim": null,
+    "trechos": [[3, 6], [20, 30]],
     "quadros": 144
   },
 
@@ -168,6 +168,11 @@
     "obra-telhado-cinza": "Telhado com telhas de concreto cinza",
     "obra-conjunto-casas": "Conjunto de casas cobertas com telhas de concreto",
     "fabrica-aerea": "Vista aérea da fábrica da Tatu PreMoldados",
-    "historia-2020-energia-solar": "Instalação das placas solares sobre o galpão da fábrica"
+    "historia-2020-energia-solar": "Instalação das placas solares sobre o galpão da fábrica",
+    "historia-1977-lajes-tatu": "Pátio antigo com vigotas empilhadas e um Fusca com a inscrição Lajes Tatu",
+    "historia-1980-prensa-blocos": "Prensa antiga de blocos de concreto em operação",
+    "historia-1993-vigotas": "Máquina moldando vigotas protendidas na pista de produção",
+    "historia-2007-paletizacao": "Paletes de blocos embalados com a marca Tatu na linha de paletização",
+    "acervo-outdoor-tatu": "Vista aérea do pátio de caminhões e do outdoor Tatu"
   }
 }
