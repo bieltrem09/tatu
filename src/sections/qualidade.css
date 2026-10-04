@@ -1,0 +1,51 @@
+.qualidade { position: relative; z-index: 3; padding: 120px 0 140px; overflow: hidden; }
+.q__wrap { display: grid; gap: 28px; }
+.q__head { display: grid; gap: 14px; max-width: 520px; }
+.q__iso {
+  font-size: clamp(80px, 23vw, 360px);
+  line-height: 0.82;
+  white-space: nowrap;
+  color: var(--ink);
+}
+.q__fan {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0 0;
+  margin-top: -2vw;
+}
+.q__doc {
+  flex: none;
+  width: clamp(110px, 14vw, 190px);
+  margin-left: clamp(-56px, -4vw, -24px);
+  transform: rotate(var(--r));
+  transform-origin: 50% 110%;
+}
+.q__doc:first-child { margin-left: 0; }
+.q__doc-btn {
+  display: block; width: 100%;
+  padding: 0; border: 0; background: none;
+  transition: transform 200ms var(--ease-out);
+}
+.q__doc-btn:hover, .q__doc-btn:focus-visible { transform: translateY(-14px); }
+.q__sheet, .q__doc-btn picture {
+  display: block;
+  aspect-ratio: 210 / 297;
+  background: #fff;
+  box-shadow: 0 22px 38px rgb(40 34 26 / 0.18), 0 1px 2px rgb(40 34 26 / 0.12);
+  padding: 12%;
+  position: relative;
+}
+.q__sheet-lines {
+  position: absolute; left: 12%; right: 12%; top: 10%; height: 22%;
+  background: repeating-linear-gradient(to bottom, var(--cement-2) 0 2px, transparent 2px 9px);
+}
+.q__sheet-pending { position: absolute; left: 12%; right: 12%; bottom: 10%; height: 52%; }
+.q__sheet-pending .pending-photo__label { padding: 4px; }
+.q__sheet-pending .mono { font-size: 9px; }
+.q__hint { text-align: center; }
+
+@media (max-width: 767px) {
+  .q__fan { flex-wrap: wrap; justify-content: center; row-gap: 20px; }
+  .q__doc { width: 30%; margin-left: -4%; }
+  .q__doc:nth-child(4n + 1) { margin-left: 0; }
+}

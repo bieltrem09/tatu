@@ -1,0 +1,158 @@
+/* ============ História — fluxo (mobile, tablet, reduced) ============ */
+.hist-wrap { position: relative; z-index: 4; }
+.hist__stage { position: relative; padding: 96px var(--margin) 80px; }
+.hist__head { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 40px; }
+.hist__year, .hist__chapboxes, .hist__ruler, .hist__final, .hist__next, .hist__runway { display: none; }
+
+.hist__chapters { display: grid; gap: 72px; }
+.hist__chapter-head {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  display: flex; justify-content: space-between; align-items: flex-end; gap: 12px;
+  padding: calc(var(--nav-h) + 8px) 0 12px;
+  margin: 0 calc(var(--margin) * -1);
+  padding-inline: var(--margin);
+  background: var(--cement-1);
+}
+.hist__chapter-head::after {
+  content: '';
+  position: absolute; left: 0; right: 0; top: 100%; height: 28px;
+  background: linear-gradient(var(--cement-1), rgb(240 237 231 / 0));
+  pointer-events: none;
+}
+.hist__sticky-odo { color: var(--accent); font-size: clamp(72px, 22vw, 160px); line-height: 1; }
+.hist__list { display: grid; gap: 56px; padding-top: 24px; }
+.hist__item { display: grid; gap: 20px; }
+.hist__text { display: grid; gap: 10px; max-width: 46ch; }
+.hist__title { font-size: clamp(40px, 9vw, 64px); }
+.hist__body { color: var(--steel); }
+.hist__body.is-pending { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.04em; }
+
+.hist__photo {
+  --shadow: 1;
+  position: relative;
+  width: min(320px, 78vw);
+  padding: 11px 11px 34px;
+  background: #fff;
+  transform: rotate(var(--r));
+  box-shadow:
+    0 calc(2px + 26px * var(--shadow)) calc(4px + 44px * var(--shadow)) rgb(40 34 26 / calc(0.1 + 0.18 * var(--shadow))),
+    0 1px 2px rgb(40 34 26 / 0.15);
+}
+.hist__photo img, .hist__photo-pending { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.hist__shade { position: absolute; inset: 0; background: #141413; opacity: 0; pointer-events: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hist__sticky-odo { display: none; }
+  .hist__chapter-head { position: static; padding-top: 0; background: none; }
+}
+
+/* ============ Desktop: palco fixado ============ */
+@media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+  /* pin de +550% sem pin-spacer (ver .hist__runway) */
+  .hist__runway { display: block; height: 450svh; }
+  .hist__stage {
+    height: 100svh;
+    min-height: 640px;
+    padding: 0;
+    overflow: hidden;
+  }
+  .hist__head {
+    position: absolute; left: var(--margin); right: var(--margin); top: calc(var(--nav-h) + 28px);
+    margin: 0;
+  }
+  .hist__year {
+    display: block;
+    position: absolute;
+    left: 0; right: 0;
+    top: calc(var(--nav-h) + 6vh);
+    text-align: center;
+    font-size: var(--fs-year);
+    line-height: 1;
+    color: var(--accent);
+    z-index: 1;
+  }
+  .hist__chapters, .hist__chapter, .hist__list, .hist__item { display: contents; }
+  .hist__chapter-head { display: none; }
+
+  .hist__text {
+    position: absolute;
+    left: var(--margin);
+    bottom: 128px;
+    width: min(460px, 34vw);
+    z-index: 4;
+    visibility: hidden;
+  }
+  .hist__title { font-size: clamp(44px, 4.6vw, 72px); }
+
+  .hist__photo {
+    position: absolute;
+    left: calc(50% - 150px);
+    top: calc(var(--nav-h) + 6vh + var(--fs-year) * 0.2);
+    width: 300px;
+    z-index: 3;
+    opacity: 0;
+  }
+
+  .hist__chapboxes { display: block; }
+  .hist__chapbox {
+    position: absolute;
+    right: var(--margin);
+    bottom: 128px;
+    width: clamp(220px, 20vw, 300px);
+    z-index: 4;
+    visibility: hidden;
+  }
+  .hist__chapbox .specbox__value { font-size: clamp(32px, 3vw, 44px); }
+  @media (max-width: 1279px) {
+    .hist__chap-name { display: none; }
+    .hist__text, .hist__chapbox { bottom: 104px; }
+  }
+
+  .hist__ruler {
+    display: block;
+    position: absolute;
+    left: var(--margin); right: var(--margin);
+    bottom: 36px;
+    z-index: 4;
+  }
+  .hist__track { position: relative; height: 18px; border-bottom: 1px solid var(--cement-4); }
+  .hist__fill {
+    position: absolute; left: 0; right: 0; bottom: -1px; height: 3px;
+    background: var(--accent);
+    transform-origin: left center;
+    transform: scaleX(0);
+  }
+  .hist__tick {
+    position: absolute; bottom: 0; width: 1px; height: 10px;
+    background: var(--cement-4);
+    transition: height 300ms var(--ease-out), background-color 300ms;
+  }
+  .hist__tick.is-past { background: var(--ink); height: 16px; }
+  .hist__chap-labels { position: relative; height: 22px; margin-top: 8px; }
+  .hist__chap-labels span { position: absolute; top: 0; white-space: nowrap; }
+  .hist__chap-name { margin-left: 0.6em; }
+  .hist__ends { display: none; }
+
+  .hist__final {
+    display: flex;
+    position: absolute; inset: 0;
+    align-items: center; justify-content: center; gap: 2vw;
+    z-index: 5;
+    pointer-events: none;
+  }
+  .hist__final-num { font-size: clamp(220px, 34vw, 500px); color: var(--accent); line-height: 0.8; opacity: 0; }
+  .hist__final-label { display: grid; gap: 14px; }
+  .hist__final-label .display { font-size: clamp(48px, 5vw, 84px); }
+
+  .hist__next {
+    display: block;
+    position: absolute;
+    width: var(--prod-w);
+    left: calc(50% - var(--prod-w) / 2);
+    top: calc(52% - var(--prod-w) * 0.375);
+    z-index: 6;
+    opacity: 0;
+  }
+}

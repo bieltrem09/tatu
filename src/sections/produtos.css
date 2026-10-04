@@ -1,0 +1,204 @@
+/* ============ Produtos — fluxo (reduced) ============ */
+.produtos { position: relative; z-index: 3; }
+.prod__stage { position: relative; padding: 96px var(--margin) 80px; }
+.prod__eyebrow { margin-bottom: 32px; }
+.prod__slides { display: grid; gap: 96px; }
+.prod__slide { position: relative; display: grid; gap: 28px; }
+.prod__word {
+  font-size: clamp(88px, 22vw, 240px);
+  color: var(--accent);
+  line-height: 0.86;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-bottom: -18%;
+}
+.prod__piece { position: relative; z-index: 2; display: grid; place-items: center; }
+.piece-box {
+  position: relative;
+  width: var(--prod-w);
+  aspect-ratio: 4 / 3;
+}
+.piece-box > .cutout { position: absolute; inset: 0; margin: auto; height: 100%; width: auto; max-width: 100%; }
+.piece-box > .cutout--pending { width: 100%; height: auto; display: grid; align-items: center; }
+.prod__info { display: grid; gap: 14px; justify-items: start; }
+.prod__name { font-size: clamp(48px, 7vw, 76px); }
+.prod__desc { color: var(--steel); max-width: 38ch; }
+.prod__desc.is-pending { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.04em; }
+.prod__specs { display: grid; gap: 18px; max-width: 420px; }
+.prod__progress { display: none; }
+
+.prod__cores ul { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
+.prod__cores li { display: grid; justify-items: center; gap: 4px; }
+.prod__cor {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--cement-4);
+  background: radial-gradient(circle at 50% 50%, var(--c) 0 13px, transparent 14px);
+  padding: 0;
+  transition: transform 200ms var(--ease-out), border-color 200ms;
+}
+button.prod__cor:hover { transform: scale(1.06); }
+.prod__cor.is-active { border-color: var(--ink); border-width: 2px; }
+.prod__cor--static { display: block; }
+.prod__cor-name { font-size: 10px; color: var(--steel); }
+.prod__aviso { font-size: 12px; color: var(--steel); margin-top: 10px; max-width: 34ch; }
+
+/* Linha completa */
+.prod__line { position: relative; padding-top: 96px; }
+.prod__line-title { font-size: clamp(56px, 9vw, 120px); margin-bottom: 40px; }
+.prod__line-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px var(--gutter);
+}
+.prod__line-btn {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  background: none;
+  border: 0;
+  text-align: left;
+  min-height: 44px;
+}
+.prod__line-piece { position: relative; display: block; aspect-ratio: 1; transition: transform 200ms var(--ease-out); }
+.prod__line-piece > .cutout { position: absolute; left: 0; right: 0; bottom: 6%; margin: 0 auto; height: 78%; width: auto; max-width: 100%; }
+.prod__line-piece > .cutout--pending { width: 100%; height: auto; bottom: 10%; }
+.prod__line-piece .pending-product { width: 100%; }
+.prod__line-piece .pending-product__tag { font-size: 9px; padding: 4px 8px; }
+.prod__line-btn:hover .prod__line-piece { transform: translateY(-6px); }
+.prod__line-label { display: grid; gap: 4px; border-top: 1px solid var(--ink); padding-top: 10px; }
+.prod__line-name { font-weight: 500; line-height: 1.25; }
+.prod__line-floor { display: none; }
+@media (min-width: 768px) {
+  .prod__line-row { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+/* ============ Compacto (< 1024, com movimento): pin curto ============ */
+@media (max-width: 1023px) and (prefers-reduced-motion: no-preference) {
+  .produtos { --prod-w: min(360px, 72vw); }
+  .prod__stage { padding: 0; }
+  .prod__pinbox {
+    position: relative;
+    height: 100svh;
+    overflow: hidden;
+  }
+  .prod__eyebrow { position: absolute; left: var(--margin); top: calc(var(--nav-h) + 12px); margin: 0; }
+  .prod__slides, .prod__slide { display: contents; }
+  .prod__word {
+    position: absolute; left: 0; right: 0; top: 47%;
+    margin: 0; overflow: visible;
+    font-size: clamp(72px, 21vw, 200px);
+    z-index: 1;
+  }
+  .prod__piece {
+    position: absolute;
+    left: calc(50% - var(--prod-w) / 2);
+    top: calc(45% - var(--prod-w) * 0.375);
+  }
+  .prod__info {
+    position: absolute; left: var(--margin); right: var(--margin);
+    top: calc(var(--nav-h) + 40px);
+    gap: 8px;
+    z-index: 3;
+  }
+  .prod__name { font-size: clamp(40px, 11vw, 64px); }
+  .prod__desc { font-size: 14px; }
+  .prod__info .btn-row { display: none; }
+  .prod__specs {
+    position: absolute; left: var(--margin); right: var(--margin);
+    bottom: calc(64px + env(safe-area-inset-bottom) + 40px);
+    max-width: none;
+    z-index: 3;
+  }
+  .prod__specs .specbox dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .prod__specs .specbox__row { padding: 10px 12px; }
+  .prod__specs .specbox__row + .specbox__row { border-top: 0; border-left: 1px solid var(--ink); }
+  .prod__specs .specbox__value { font-size: 30px; }
+  .prod__specs .specbox__note { font-size: 11px; }
+  .prod__cores { display: none; }
+  .prod__progress {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px;
+    position: absolute; left: var(--margin); right: var(--margin);
+    bottom: calc(64px + env(safe-area-inset-bottom) + 14px);
+  }
+  .prod__progress .mono { display: none; }
+  .prod__seg { display: block; height: 3px; background: var(--cement-3); overflow: hidden; }
+  .prod__seg-fill { display: block; height: 100%; background: var(--accent); transform-origin: left; transform: scaleX(0); }
+  .prod__line { padding: 72px var(--margin) 96px; }
+}
+
+/* ============ Desktop: palco fixado ============ */
+@media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+  .prod__stage { height: 100svh; min-height: 680px; padding: 0; overflow: hidden; }
+  .prod__pinbox { position: absolute; inset: 0; }
+  .prod__eyebrow { position: absolute; left: var(--margin); top: calc(var(--nav-h) + 28px); margin: 0; }
+  .prod__slides, .prod__slide { display: contents; }
+  .prod__word {
+    position: absolute; left: 0; right: 0; top: 52%;
+    margin: 0;
+    font-size: var(--fs-giant);
+    z-index: 1;
+    overflow: visible;
+  }
+  .prod__piece {
+    position: absolute;
+    left: calc(50% - var(--prod-w) / 2);
+    top: calc(52% - var(--prod-w) * 0.375);
+    z-index: 2;
+  }
+  .prod__info {
+    position: absolute;
+    left: var(--margin);
+    top: calc(var(--nav-h) + 80px);
+    width: min(400px, 27vw);
+    z-index: 3;
+  }
+  .prod__name { font-size: clamp(54px, 5.3vw, 76px); }
+  .prod__specs {
+    position: absolute;
+    right: var(--margin);
+    top: calc(var(--nav-h) + 80px);
+    width: clamp(220px, 20vw, 300px);
+    z-index: 3;
+  }
+  .prod__specs .specbox__value { font-size: 47px; }
+  .prod__progress {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    position: absolute; left: var(--margin); right: var(--margin); bottom: 32px;
+    z-index: 3;
+  }
+  .prod__progress li { display: grid; gap: 8px; }
+  .prod__seg { display: block; height: 3px; background: var(--cement-3); overflow: hidden; }
+  .prod__seg-fill { display: block; height: 100%; background: var(--accent); transform-origin: left; transform: scaleX(0); }
+
+  .prod__line {
+    position: absolute;
+    left: var(--margin); right: var(--margin);
+    top: calc(var(--nav-h) + 6vh);
+    bottom: 40px;
+    padding: 0;
+    display: flex; flex-direction: column; justify-content: center; gap: 7vh;
+    visibility: hidden;
+    z-index: 4;
+  }
+  .prod__line-title { margin: 0; font-size: var(--fs-h2); }
+  .prod__line-row { grid-template-columns: repeat(8, minmax(0, 1fr)); gap: var(--gutter); position: relative; z-index: 1; }
+  .prod__line-piece { aspect-ratio: 1 / 1.25; }
+  .prod__line-piece > .cutout { height: 86%; }
+  .prod__line-floor { display: none; }
+  .prod__line-name { font-size: 14px; }
+}
+
+/* ============ Reduced motion em telas largas: duas colunas, estado final ============ */
+@media (min-width: 1024px) and (prefers-reduced-motion: reduce) {
+  .prod__slide { grid-template-columns: 1.15fr 1fr; column-gap: 64px; align-items: center; }
+  .prod__word { grid-column: 1; grid-row: 1 / span 2; align-self: center; margin: 0; font-size: clamp(96px, 11vw, 180px); }
+  .prod__piece { grid-column: 1; grid-row: 1 / span 2; }
+  .prod__info { grid-column: 2; grid-row: 1; align-self: end; }
+  .prod__specs { grid-column: 2; grid-row: 2; align-self: start; }
+  .prod__line-row { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+}

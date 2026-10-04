@@ -1,0 +1,48 @@
+/* ---------------------------------------------------------------
+   Design tokens — Tatu PreMoldados
+   Para trocar a cor de destaque, altere SÓ --accent-rgb abaixo.
+   Alternativas aprovadas:
+     vermelho telha  180 50 30   (#B4321E)
+     ocre            192 128 47  (#C0802F)
+   --------------------------------------------------------------- */
+:root {
+  --accent-rgb: 46 79 224; /* #2E4FE0 — azul técnico */
+
+  --paper: #fbfaf7;
+  --cement-1: #f0ede7;
+  --cement-2: #e2ded6;
+  --cement-3: #cfcac1;
+  --cement-4: #bdb7ac;
+  --steel: #57534d;
+  --ink: #141413;
+  --accent: rgb(var(--accent-rgb));
+  --accent-tint: rgb(var(--accent-rgb) / 0.12);
+  --accent-line: rgb(var(--accent-rgb) / 0.7);
+  --on-accent: #ffffff;
+
+  --studio: radial-gradient(70% 65% at 50% 48%, var(--paper) 0%, var(--cement-1) 55%, var(--cement-2) 100%);
+  --piece-shadow: drop-shadow(0 34px 34px rgb(40 34 26 / 0.25));
+
+  --f-display: 'Archivo', 'Arial Narrow', system-ui, sans-serif;
+  --f-sans: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --f-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --fs-wordmark: clamp(96px, 21vw, 320px);
+  --fs-giant: clamp(120px, 23vw, 340px);
+  --fs-h2: clamp(56px, 10vw, 150px);
+  --fs-year: min(clamp(200px, 30vw, 430px), 46svh);
+
+  --margin: 80px;
+  --gutter: 24px;
+  --nav-h: 64px;
+  --prod-w: min(520px, 36vw);
+  --radius-pill: 999px;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: 1023px) {
+  :root { --margin: 40px; }
+}
+@media (max-width: 767px) {
+  :root { --margin: 20px; --fs-wordmark: clamp(96px, 28vw, 140px); }
+}

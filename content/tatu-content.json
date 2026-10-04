@@ -1,0 +1,164 @@
+{
+  "_sobre": "ARQUIVO PROVISÓRIO. O tatu-content.json original do kit não estava disponível nesta sessão. Este arquivo contém APENAS fatos citados literalmente no briefing (docs/PROMPT.md). Todo campo null é renderizado no site como pendência visível. Ao receber o JSON oficial, substitua os valores mantendo as chaves (ou ajuste src/content/tatu.ts).",
+
+  "empresa": {
+    "nome": "Tatu PreMoldados",
+    "inicio": 1977,
+    "linha_hero": "Pré-moldados de concreto desde 1977",
+    "texto_curto": null,
+    "localizacao": { "km": "Km 134", "rodovia": "Via Anhanguera", "cidade": "Limeira/SP" },
+    "endereco_completo": null,
+    "cep": null,
+    "iso9001": { "norma": "ISO 9001", "ano": 2002 },
+    "anos_de_historia": { "valor": 45, "ano": 2022 },
+    "video": { "youtube_id": "PPyvJa9HZ2M", "titulo": "Tatu PreMoldados" },
+    "logo_topo": null,
+    "logo_rodape": null,
+    "complementos_pagina_empresa": [
+      { "ano": 1993, "valor": "+500%", "nota": "capacidade de vigotas" }
+    ]
+  },
+
+  "contato": {
+    "telefone": null,
+    "whatsapp_vendas": "5519998098949",
+    "email": null,
+    "redes": [],
+    "links": {
+      "loja_virtual": null,
+      "downloads": null,
+      "politicas_pdf": []
+    }
+  },
+
+  "vantagens_blocos": {
+    "titulo": "Vantagens da alvenaria com blocos de concreto",
+    "itens": ["Resistência ao fogo", "Bom isolamento térmico e acústico", "Baixa manutenção", "Durabilidade"]
+  },
+
+  "produtos": [
+    {
+      "id": "blocos", "nome": "Blocos de Concreto", "palavra": "BLOCOS", "recorte": "blocos", "destaque": true,
+      "descricao_curta": null,
+      "dados_para_caixa": [
+        { "rotulo": "Capacidade", "valor": "125.000", "nota": "blocos/dia · ponto 03 da fábrica" },
+        { "rotulo": "Ampliação", "valor": "+40% ×2", "nota": "capacidade de blocos · 1998 e 2000" }
+      ],
+      "fichas_pdf": []
+    },
+    {
+      "id": "blocos-decorativos", "nome": "Blocos Decorativos", "palavra": "DECORATIVOS", "recorte": "blocos-decorativos", "destaque": false,
+      "descricao_curta": null, "dados_para_caixa": [], "fichas_pdf": []
+    },
+    {
+      "id": "lajes-protendidas", "nome": "Lajes Protendidas", "palavra": "LAJES", "recorte": "vigotas-protendidas", "destaque": true,
+      "descricao_curta": null,
+      "dados_para_caixa": [
+        { "rotulo": "Ampliação", "valor": "+500%", "nota": "capacidade de vigotas · 1993" }
+      ],
+      "fichas_pdf": []
+    },
+    {
+      "id": "lajes-alveolares", "nome": "Lajes Alveolares", "palavra": "ALVEOLAR", "recorte": "lajes-alveolares", "destaque": true,
+      "descricao_curta": null, "dados_para_caixa": [], "fichas_pdf": []
+    },
+    {
+      "id": "pisos-intertravados", "nome": "Pisos Intertravados", "palavra": "PISOS", "recorte": "pisos-intertravados", "destaque": true,
+      "descricao_curta": null,
+      "dados_para_caixa": [
+        { "rotulo": "Capacidade", "valor": "9.000 m²", "nota": "pisos/dia · 2011" }
+      ],
+      "fichas_pdf": []
+    },
+    {
+      "id": "pisos-drenantes", "nome": "Pisos Drenantes", "palavra": "DRENANTES", "recorte": "pisos-drenantes", "destaque": false,
+      "descricao_curta": null, "dados_para_caixa": [], "fichas_pdf": []
+    },
+    {
+      "id": "telhas", "nome": "Telhas de Concreto", "palavra": "TELHAS", "recorte": "telha", "destaque": true,
+      "descricao_curta": null,
+      "dados_para_caixa": [
+        { "rotulo": "Cores", "valor": "5", "nota": "Natural, Amarela, Grafite, Ocre, Vermelha" }
+      ],
+      "cores": [
+        { "nome": "Natural", "recorte": "telha-natural", "amostra": "#C9C6BF" },
+        { "nome": "Amarela", "recorte": "telha-amarela", "amostra": "#D9B46A" },
+        { "nome": "Grafite", "recorte": "telha-grafite", "amostra": "#5B5A58" },
+        { "nome": "Ocre", "recorte": "telha-ocre", "amostra": "#B97A3C" },
+        { "nome": "Vermelha", "recorte": "telha-vermelha", "amostra": "#A2412B" }
+      ],
+      "aviso_cores": "A simulação de cores pode variar dependendo do tipo de monitor.",
+      "fichas_pdf": []
+    },
+    {
+      "id": "guias", "nome": "Guias", "palavra": "GUIAS", "recorte": "guias", "destaque": false,
+      "descricao_curta": null, "dados_para_caixa": [], "fichas_pdf": []
+    }
+  ],
+
+  "capitulos": [
+    { "id": "I", "nome": "Origem" },
+    { "id": "II", "nome": "Diversificação" },
+    { "id": "III", "nome": "Escala" },
+    { "id": "IV", "nome": "Consolidação" }
+  ],
+
+  "linha_do_tempo": [
+    { "ano": 1977, "capitulo": "I", "titulo": "Início", "texto": "Início da Tatu PreMoldados, com pré-moldados de concreto.", "foto": null, "tem_foto_oficial": true },
+    { "ano": 1980, "capitulo": "II", "titulo": null, "texto": null, "foto": null, "tem_foto_oficial": true },
+    { "ano": 1993, "capitulo": "III", "titulo": "Vigotas", "texto": "Capacidade de produção de vigotas ampliada em 500%.", "foto": null, "tem_foto_oficial": true },
+    { "ano": 1998, "capitulo": "III", "titulo": "Blocos", "texto": "Capacidade de produção de blocos ampliada em 40%.", "foto": null, "tem_foto_oficial": false },
+    { "ano": 2000, "capitulo": "III", "titulo": "Blocos", "texto": "Nova ampliação de 40% na capacidade de blocos.", "foto": null, "tem_foto_oficial": false },
+    { "ano": 2001, "capitulo": "III", "titulo": null, "texto": null, "foto": null, "tem_foto_oficial": true },
+    { "ano": 2002, "capitulo": "III", "titulo": "ISO 9001", "texto": "Certificação ISO 9001 obtida.", "foto": null, "tem_foto_oficial": false },
+    { "ano": 2007, "capitulo": "IV", "titulo": null, "texto": null, "foto": null, "tem_foto_oficial": true },
+    { "ano": 2009, "capitulo": "IV", "titulo": "2.000 m²/dia", "texto": "Capacidade de 2.000 m²/dia.", "foto": null, "tem_foto_oficial": false },
+    { "ano": 2011, "capitulo": "IV", "titulo": "150.000 blocos/dia", "texto": "Capacidade de 150.000 blocos/dia ou 9.000 m² de pisos/dia.", "foto": null, "tem_foto_oficial": false },
+    { "ano": 2020, "capitulo": "IV", "titulo": "Energia solar", "texto": "Investimento em energia solar: mais de 8.000 m² de placas solares.", "foto": null, "tem_foto_oficial": true },
+    { "ano": 2022, "capitulo": "IV", "titulo": "45 anos de história", "texto": "45 anos de história.", "foto": null, "tem_foto_oficial": true, "selo": true }
+  ],
+
+  "estrutura": {
+    "conflito_conhecido": "As capacidades são por ponto da fábrica e NUNCA devem ser somadas.",
+    "total_pontos": 16,
+    "mapa_oficial_numerado": null,
+    "energia_solar": { "ano": 2020, "area_m2": 8000, "rotulo": "+8.000 m²", "nota": "de placas solares" },
+    "pontos": [
+      { "n": "02", "capacidade": "2.200", "unidade": "m²/dia", "descricao": null },
+      { "n": "03", "capacidade": "125.000", "unidade": "blocos/dia", "descricao": null },
+      { "n": "14", "capacidade": "7.200", "unidade": "metros/dia", "descricao": null },
+      { "n": "15", "capacidade": "2.000", "unidade": "m²/dia", "descricao": null }
+    ],
+    "video_fabrica": { "youtube_id": "PPyvJa9HZ2M", "titulo": "TATU PRÉ-MOLDADOS – Limeira/SP", "_nota": "ID do vídeo da fábrica não informado no briefing; usando o mesmo vídeo institucional até confirmação." }
+  },
+
+  "qualidade": {
+    "texto": "Certificação ISO 9001 obtida em 2002.",
+    "documentos": [
+      { "titulo": null, "imagem": null }, { "titulo": null, "imagem": null },
+      { "titulo": null, "imagem": null }, { "titulo": null, "imagem": null },
+      { "titulo": null, "imagem": null }, { "titulo": null, "imagem": null },
+      { "titulo": null, "imagem": null }, { "titulo": null, "imagem": null }
+    ]
+  },
+
+  "obras": [
+    { "produto": "blocos", "recorte": "blocos", "foto": "obra-blocos-edificio", "miniaturas": ["obra-blocos-edificio-2", "obra-arquibancada"], "legenda": "Alvenaria em blocos" },
+    { "produto": "lajes-protendidas", "recorte": "vigotas-protendidas", "foto": "obra-laje-vigotas-eps", "miniaturas": [], "legenda": "Laje em montagem" },
+    { "produto": "telhas", "recorte": "telha", "foto": "obra-telhado-bege", "miniaturas": ["obra-telhado-cinza", "obra-conjunto-casas"], "legenda": "Cobertura" }
+  ],
+
+  "fotos_do_kit": {
+    "blocos": "Blocos de concreto Tatu, recortados sobre fundo neutro",
+    "telha": "Telha de concreto Tatu, recortada sobre fundo neutro",
+    "vigotas-protendidas": "Vigotas protendidas Tatu empilhadas",
+    "obra-blocos-edificio": "Edifício em construção com alvenaria de blocos de concreto",
+    "obra-blocos-edificio-2": "Torre em construção com alvenaria de blocos de concreto e elevador de obra",
+    "obra-arquibancada": "Arquibancada com estrutura em blocos de concreto",
+    "obra-laje-vigotas-eps": "Laje em montagem com vigotas protendidas e blocos de EPS",
+    "obra-telhado-bege": "Telhado com telhas de concreto bege",
+    "obra-telhado-cinza": "Telhado com telhas de concreto cinza",
+    "obra-conjunto-casas": "Conjunto de casas cobertas com telhas de concreto",
+    "fabrica-aerea": "Vista aérea da fábrica da Tatu PreMoldados"
+  }
+}

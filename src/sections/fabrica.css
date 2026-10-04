@@ -1,0 +1,82 @@
+.fabrica { position: relative; z-index: 3; background: var(--ink); color: #fff; }
+.fab__stage { position: relative; padding: 0 0 72px; }
+.fab__view { position: relative; overflow: hidden; aspect-ratio: 4 / 3; max-height: 80svh; width: 100%; }
+.fab__cam { position: absolute; inset: 0; transform-origin: 50% 50%; }
+.fab__box {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 100%;
+  translate: -50% -50%;
+}
+.fab__img, .fab__img img, .fab__img picture { width: 100%; height: 100%; object-fit: cover; }
+.fab__img { position: absolute; inset: 0; }
+.fab__solar { position: absolute; inset: 0; opacity: 0; pointer-events: none; }
+.fab__solar-grid {
+  position: absolute; inset: 0;
+  background-color: var(--accent-tint);
+  background-image:
+    repeating-linear-gradient(118deg, var(--accent-line) 0 1px, transparent 1px 9px),
+    repeating-linear-gradient(28deg, var(--accent-line) 0 1px, transparent 1px 9px);
+}
+.fab__shade {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, rgb(10 10 9 / 0.86) 0%, rgb(10 10 9 / 0.55) 38%, rgb(10 10 9 / 0) 70%),
+    linear-gradient(0deg, rgb(10 10 9 / 0.85) 0%, rgb(10 10 9 / 0) 34%);
+  opacity: 0.6;
+}
+
+.fab__callout { position: relative; display: flex; margin: 28px var(--margin) 0; pointer-events: auto; color: var(--ink); }
+.fab__callout .callout__dot, .fab__callout .callout__line { display: none; }
+.fab__callout-card { white-space: normal; display: grid; gap: 4px; }
+.fab__solar-num { font-size: 56px; line-height: 0.9; }
+.fab__solar-note { font-size: 13px; color: var(--steel); font-weight: 400; }
+
+.fab__text { display: grid; gap: 16px; justify-items: start; padding: 48px var(--margin) 0; }
+.fab__title { font-size: clamp(72px, 18vw, 140px); }
+.fab__addr { color: rgb(255 255 255 / 0.8); }
+.fab__text .btn { white-space: normal; text-align: left; line-height: 1.3; padding-block: 10px; }
+
+.fab__caps {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  margin: 48px var(--margin) 0;
+  border-top: 1px solid rgb(255 255 255 / 0.3);
+}
+.fab__cap { display: grid; gap: 4px; padding: 20px 16px 20px 0; border-bottom: 1px solid rgb(255 255 255 / 0.3); }
+.fab__cap:nth-child(odd) { border-right: 1px solid rgb(255 255 255 / 0.3); }
+.fab__cap:nth-child(even) { padding-left: 16px; }
+.fab__cap-num { font-size: clamp(40px, 11vw, 64px); color: #fff; }
+.fab__cap-unit { color: rgb(255 255 255 / 0.85); }
+.fab__cap-pt { color: rgb(255 255 255 / 0.6); }
+
+@media (min-width: 768px) {
+  .fab__caps { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .fab__cap { border-right: 1px solid rgb(255 255 255 / 0.3); padding-left: 16px; }
+  .fab__cap:last-child { border-right: 0; }
+}
+
+@media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+  .fab__stage { height: 100svh; min-height: 640px; padding: 0; overflow: hidden; }
+  .fab__view { position: absolute; inset: 0; aspect-ratio: auto; max-height: none; }
+  .fab__box { width: max(100%, calc(100svh * var(--ar))); }
+  .fab__shade { opacity: 0; }
+
+  .fab__callout {
+    position: absolute; margin: 0; z-index: 4;
+    transform: translate(-5px, -50%);
+  }
+  .fab__callout .callout__dot, .fab__callout .callout__line { display: block; }
+  .fab__callout-card { white-space: nowrap; }
+
+  .fab__text {
+    position: absolute; left: var(--margin); top: calc(var(--nav-h) + 9vh);
+    padding: 0; z-index: 3;
+    width: min(620px, 50vw);
+  }
+  .fab__title { font-size: clamp(96px, 9.7vw, 140px); }
+  .fab__caps {
+    position: absolute; left: var(--margin); right: var(--margin); bottom: 40px;
+    margin: 0; z-index: 3;
+  }
+}
