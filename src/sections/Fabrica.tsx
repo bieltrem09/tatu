@@ -10,10 +10,10 @@ import './fabrica.css'
  * troque pelas coordenadas do JSON (estrutura.energia_solar.poligono) quando houver.
  */
 const SOLAR_POLY: [number, number][] = [
-  [62, 62],
-  [96, 64],
-  [94, 80],
-  [70, 87],
+  [60, 76],
+  [71, 62],
+  [91, 68],
+  [75, 86],
 ]
 const AERIAL_RATIO = asset(AERIAL_SRC) ? asset(AERIAL_SRC)!.width / asset(AERIAL_SRC)!.height : 550 / 413
 const CENTROID = SOLAR_POLY.reduce((a, [x, y]) => [a[0] + x / SOLAR_POLY.length, a[1] + y / SOLAR_POLY.length], [0, 0])

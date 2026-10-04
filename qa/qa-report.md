@@ -1,10 +1,10 @@
 # Relatório de QA automatizado
 
-Gerado em 2026-10-04T04:07:24.624Z
+Gerado em 2026-10-04T15:10:30.935Z
 
 | Verificação | Resultado | Detalhe |
 |---|---|---|
-| Nenhuma imagem quebrada (naturalWidth > 0) | OK | 13 imagens |
+| Nenhuma imagem quebrada (naturalWidth > 0) | OK | 22 imagens |
 | Console limpo (1440, scroll completo) | OK |  |
 | Âncoras internas existem | OK | 35 âncoras |
 | Links wa.me presentes e com número do JSON | OK | 4 links |
