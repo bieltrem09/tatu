@@ -32,3 +32,4 @@ dist-ssr
 public/img/frames
 src/content/frames.gen.json
 assets/video/*.part
+scripts/models/EDSR_x2.pb

@@ -16,7 +16,7 @@ const OUT = path.join(ROOT, 'public/img/kit')
 const MANIFEST = path.join(ROOT, 'src/content/assets.gen.json')
 const SOURCES = [
   { dir: 'assets/recortes', kind: 'cutout', widths: [400, 640, 1000] },
-  { dir: 'assets/fotos', kind: 'photo', widths: [640, 1280, 1920] },
+  { dir: 'assets/fotos', kind: 'photo', widths: [640, 1280, 2048] },
 ]
 const EXT = /\.(png|webp|jpe?g)$/i
 
@@ -48,8 +48,8 @@ for (const src of SOURCES) {
     if (!fresh) {
       for (const w of widths) {
         const base = sharp(input).resize({ width: w, withoutEnlargement: true })
-        await base.clone().webp({ quality: src.kind === 'cutout' ? 86 : 80, alphaQuality: 90 }).toFile(path.join(OUT, `${name}-${w}.webp`))
-        if (src.kind === 'photo') await base.clone().avif({ quality: 55 }).toFile(path.join(OUT, `${name}-${w}.avif`))
+        await base.clone().webp({ quality: src.kind === 'cutout' ? 88 : 84, alphaQuality: 92, smartSubsample: true, effort: 5 }).toFile(path.join(OUT, `${name}-${w}.webp`))
+        if (src.kind === 'photo') await base.clone().avif({ quality: 62, effort: 5 }).toFile(path.join(OUT, `${name}-${w}.avif`))
       }
       console.log(`  ✓ ${name} (${widths.join(', ')})`)
     }

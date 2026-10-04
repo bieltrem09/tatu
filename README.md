@@ -152,3 +152,13 @@ Itens que aparecem no site como pendência elegante e somem sozinhos quando o da
   porque o alvo está em outra seção fixada.
 - Fontes servidas localmente em vez do CDN do Google Fonts (mesmos arquivos; melhor LCP/privacidade).
 - Wordmark no mobile limitado a 24vw para caber em 360 px; ISO 9001 começa em 80 px no mobile.
+
+## Vídeo da produção e melhoria de imagens
+
+- `assets/video/producao.mp4` → `npm run frames` (roda no dev/build): trechos definidos em
+  `producao.trechos` no JSON (hoje 0:03–0:06 e 0:20–0:30), faixas pretas recortadas automaticamente,
+  redução de ruído, super-resolução 2× (FSRCNN) e WebP em 1600/900 px.
+- Fotos: originais em `assets/originais/`. As fotos pequenas exibidas grandes foram ampliadas com
+  `scripts/superres.py` (EDSR/FSRCNN, OpenCV `dnn_superres`); as demais receberam nitidez leve.
+  Ex.: `python3 scripts/superres.py assets/originais/x.jpg assets/fotos/x.jpg --model edsr`.
+  Requer `pip install opencv-contrib-python-headless`.
