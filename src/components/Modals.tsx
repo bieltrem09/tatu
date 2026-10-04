@@ -225,7 +225,7 @@ function DocLightbox({ start, onClose }: { start: number; onClose: () => void })
       <CloseButton onClick={onClose} light />
       <figure className="lightbox__figure">
         {doc.imagem && asset(doc.imagem) ? (
-          <img src={`${import.meta.env.BASE_URL}img/kit/${doc.imagem}-1280.webp`} alt={title} />
+          <Picture key={doc.imagem} name={doc.imagem} sizes="90vw" alt={title} priority className="lightbox__pic" />
         ) : (
           <PendingPhoto className="lightbox__pending" label={title} sub="imagem oficial pendente" />
         )}

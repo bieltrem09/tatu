@@ -194,7 +194,11 @@ button.pontos__btn:focus-visible { outline: 2px solid var(--accent); outline-off
 /* Lightbox */
 .lightbox.dialog__panel { background: rgb(14 14 13 / 0.96); color: #fff; display: grid; place-items: center; padding: 72px 20px 96px; }
 .lightbox__figure { display: grid; gap: 14px; justify-items: center; }
-.lightbox__figure img, .lightbox__pending { max-height: 72svh; width: min(560px, 86vw); aspect-ratio: 210 / 297; object-fit: contain; background: #fff; }
+.lightbox__pending { max-height: 72svh; width: min(560px, 86vw); aspect-ratio: 210 / 297; background: #fff; }
+.lightbox__pic { display: block; animation: lightbox-in 450ms var(--ease-out) both; }
+.lightbox__pic img { display: block; width: auto; height: auto; max-width: min(1100px, 90vw); max-height: 72svh; object-fit: contain; box-shadow: 0 30px 60px rgb(0 0 0 / 0.5); }
+@keyframes lightbox-in { from { opacity: 0; scale: 0.96; } }
+@media (prefers-reduced-motion: reduce) { .lightbox__pic { animation: none; } }
 .lightbox__pending { width: min(420px, 80vw); }
 .lightbox__nav { position: absolute; bottom: 28px; left: 50%; translate: -50% 0; display: flex; gap: 10px; }
 

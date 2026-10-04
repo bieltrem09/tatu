@@ -49,3 +49,7 @@
   .q__doc { width: 30%; margin-left: -4%; }
   .q__doc:nth-child(4n + 1) { margin-left: 0; }
 }
+
+/* Fotos reais nos cartões: moldura branca fina, foto preenchendo */
+.q__doc-btn picture { padding: 6%; }
+.q__doc-btn img { display: block; width: 100%; height: 100%; object-fit: cover; }

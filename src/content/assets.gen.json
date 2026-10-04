@@ -174,6 +174,58 @@
     ],
     "mtime": "6bce39136ceb4888dec89bf878bd8b4d5d4a4fac"
   },
+  "doc-01-fachada-iso": {
+    "kind": "photo",
+    "width": 825,
+    "height": 1100,
+    "widths": [
+      640,
+      825
+    ],
+    "mtime": "38b26d8c62bbe0c1fc57a0d2b86e21099b772bc6"
+  },
+  "doc-02-unidade-acervo": {
+    "kind": "photo",
+    "width": 980,
+    "height": 798,
+    "widths": [
+      640,
+      980
+    ],
+    "mtime": "d9c8c212d05a52a326a85cfd095bbff7c9991784"
+  },
+  "doc-03-imovel": {
+    "kind": "photo",
+    "width": 1600,
+    "height": 1200,
+    "widths": [
+      640,
+      1280,
+      1600
+    ],
+    "mtime": "35e6655463a7bf2bc2e3c78103f73000e9f8a6b6"
+  },
+  "doc-04-placa-iso": {
+    "kind": "photo",
+    "width": 1000,
+    "height": 1000,
+    "widths": [
+      640,
+      1000
+    ],
+    "mtime": "ecbd7e8d40cd1cbbd34ca1b4b6856c9e11a05ada"
+  },
+  "doc-05-casa-blocos": {
+    "kind": "photo",
+    "width": 1300,
+    "height": 868,
+    "widths": [
+      640,
+      1280,
+      1300
+    ],
+    "mtime": "e633165fc0c7e238eb3b047765e0f1453b8b7ff2"
+  },
   "fabrica-aerea": {
     "kind": "photo",
     "width": 2200,

@@ -156,11 +156,15 @@
 
   "qualidade": {
     "texto": "Certificação ISO 9001 obtida em 2002.",
+    "_titulos_documentos": "PROVISÓRIO: títulos descritivos neutros escritos a partir das fotos enviadas pela Tatu; confirmar.",
     "documentos": [
+      { "titulo": "Unidade Tatu · placa ISO 9001", "imagem": "doc-01-fachada-iso" },
+      { "titulo": "Unidade Tatu · acervo", "imagem": "doc-02-unidade-acervo" },
+      { "titulo": "Acervo Tatu", "imagem": "doc-03-imovel" },
+      { "titulo": "Placa ISO 9001 Tatu", "imagem": "doc-04-placa-iso" },
+      { "titulo": "Construção em blocos de concreto", "imagem": "doc-05-casa-blocos" },
       { "titulo": null, "imagem": null }, { "titulo": null, "imagem": null },
-      { "titulo": null, "imagem": null }, { "titulo": null, "imagem": null },
-      { "titulo": null, "imagem": null }, { "titulo": null, "imagem": null },
-      { "titulo": null, "imagem": null }, { "titulo": null, "imagem": null }
+      { "titulo": null, "imagem": null }
     ]
   },
 
