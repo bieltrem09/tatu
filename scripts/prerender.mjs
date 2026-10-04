@@ -5,7 +5,7 @@ import { pathToFileURL } from 'node:url'
 
 const root = path.resolve(import.meta.dirname, '..')
 const { render } = await import(pathToFileURL(path.join(root, 'dist-ssr/entry-server.js')).href)
-const file = path.join(root, 'dist/index.html')
+const file = path.join(process.env.OUT_DIR ?? path.join(root, 'dist'), 'index.html')
 const html = await readFile(file, 'utf8')
 const out = html.replace('<div id="root"></div>', `<div id="root">${render()}</div>`)
 if (out === html) throw new Error('marcador <div id="root"></div> não encontrado')

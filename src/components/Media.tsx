@@ -17,7 +17,7 @@ type PictureProps = {
 export function Picture({ name, sizes, alt, priority, className, imgClassName, style, imgRef }: PictureProps) {
   const a = asset(name)
   if (!a) return null
-  const set = (ext: string) => a.widths.map((w) => `/img/kit/${name}-${w}.${ext} ${w}w`).join(', ')
+  const set = (ext: string) => a.widths.map((w) => `${import.meta.env.BASE_URL}img/kit/${name}-${w}.${ext} ${w}w`).join(', ')
   return (
     <picture className={className} style={style}>
       {/* recortes: só WebP (o alfa do AVIF com perdas deixa um halo claro no fundo) */}

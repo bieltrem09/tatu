@@ -137,7 +137,7 @@ function PontosPanel({ onClose }: { onClose: () => void }) {
       </div>
       <h2 className="display drawer__title">Os {estrutura.total_pontos} pontos</h2>
       {map && asset(map) ? (
-        <img src={`/img/kit/${map}-1280.webp`} alt="Mapa oficial numerado da fábrica" />
+        <img src={`${import.meta.env.BASE_URL}img/kit/${map}-1280.webp`} alt="Mapa oficial numerado da fábrica" />
       ) : (
         <PendingPhoto label="Mapa oficial numerado" sub="aguardando arquivo oficial" style={{ aspectRatio: '16 / 9' }} />
       )}
@@ -188,7 +188,7 @@ function DocLightbox({ start, onClose }: { start: number; onClose: () => void })
       <CloseButton onClick={onClose} light />
       <figure className="lightbox__figure">
         {doc.imagem && asset(doc.imagem) ? (
-          <img src={`/img/kit/${doc.imagem}-1280.webp`} alt={title} />
+          <img src={`${import.meta.env.BASE_URL}img/kit/${doc.imagem}-1280.webp`} alt={title} />
         ) : (
           <PendingPhoto className="lightbox__pending" label={title} sub="imagem oficial pendente" />
         )}

@@ -90,7 +90,7 @@ export const assetUrl = (name: string, prefer = 1200, ext: 'webp' | 'avif' = 'we
   const a = manifest[name]
   if (!a) return ''
   const w = a.widths.find((x) => x >= prefer) ?? a.widths[a.widths.length - 1]
-  return `/img/kit/${name}-${w}.${ext}`
+  return `${import.meta.env.BASE_URL}img/kit/${name}-${w}.${ext}`
 }
 
 /** Troque por uma versão em alta quando a Tatu enviar (ver README). */
