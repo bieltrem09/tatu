@@ -114,7 +114,7 @@
     { "ano": 2007, "capitulo": "IV", "titulo": null, "texto": null, "foto": null, "tem_foto_oficial": true },
     { "ano": 2009, "capitulo": "IV", "titulo": "2.000 m²/dia", "texto": "Capacidade de 2.000 m²/dia.", "foto": null, "tem_foto_oficial": false },
     { "ano": 2011, "capitulo": "IV", "titulo": "150.000 blocos/dia", "texto": "Capacidade de 150.000 blocos/dia ou 9.000 m² de pisos/dia.", "foto": null, "tem_foto_oficial": false },
-    { "ano": 2020, "capitulo": "IV", "titulo": "Energia solar", "texto": "Investimento em energia solar: mais de 8.000 m² de placas solares.", "foto": null, "tem_foto_oficial": true },
+    { "ano": 2020, "capitulo": "IV", "titulo": "Energia solar", "texto": "Investimento em energia solar: mais de 8.000 m² de placas solares.", "foto": "historia-2020-energia-solar", "tem_foto_oficial": true },
     { "ano": 2022, "capitulo": "IV", "titulo": "45 anos de história", "texto": "45 anos de história.", "foto": null, "tem_foto_oficial": true, "selo": true }
   ],
 
@@ -130,6 +130,14 @@
       { "n": "15", "capacidade": "2.000", "unidade": "m²/dia", "descricao": null }
     ],
     "video_fabrica": { "youtube_id": "PPyvJa9HZ2M", "titulo": "TATU PRÉ-MOLDADOS – Limeira/SP", "_nota": "ID do vídeo da fábrica não informado no briefing; usando o mesmo vídeo institucional até confirmação." }
+  },
+
+  "producao": {
+    "_sobre": "Trecho do vídeo institucional usado na animação de scroll (quadros extraídos por scripts/video-frames.mjs). inicio/fim em segundos; null = vídeo inteiro.",
+    "youtube_id": "PPyvJa9HZ2M",
+    "inicio": null,
+    "fim": null,
+    "quadros": 144
   },
 
   "qualidade": {
@@ -159,6 +167,7 @@
     "obra-telhado-bege": "Telhado com telhas de concreto bege",
     "obra-telhado-cinza": "Telhado com telhas de concreto cinza",
     "obra-conjunto-casas": "Conjunto de casas cobertas com telhas de concreto",
-    "fabrica-aerea": "Vista aérea da fábrica da Tatu PreMoldados"
+    "fabrica-aerea": "Vista aérea da fábrica da Tatu PreMoldados",
+    "historia-2020-energia-solar": "Instalação das placas solares sobre o galpão da fábrica"
   }
 }

@@ -7,6 +7,7 @@ import './sections/historia.css'
 import './sections/produtos.css'
 import './sections/obra.css'
 import './sections/fabrica.css'
+import './sections/producao.css'
 import './sections/qualidade.css'
 import './sections/contato.css'
 

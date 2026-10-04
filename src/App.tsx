@@ -7,6 +7,7 @@ import { Historia } from './sections/Historia'
 import { Produtos } from './sections/Produtos'
 import { DaPecaAObra } from './sections/DaPecaAObra'
 import { Fabrica } from './sections/Fabrica'
+import { Producao } from './sections/Producao'
 import { Qualidade } from './sections/Qualidade'
 import { Contato } from './sections/Contato'
 import { Footer } from './sections/Footer'
@@ -47,6 +48,7 @@ export default function App() {
         <Produtos />
         <DaPecaAObra />
         <Fabrica />
+        <Producao />
         <Qualidade />
         <Contato />
       </main>

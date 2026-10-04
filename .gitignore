@@ -29,3 +29,6 @@ public/og.jpg
 src/content/assets.gen.json
 qa/tmp
 dist-ssr
+public/img/frames
+src/content/frames.gen.json
+assets/video/*.part
