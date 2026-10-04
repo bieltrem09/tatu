@@ -226,6 +226,27 @@
     ],
     "mtime": "e633165fc0c7e238eb3b047765e0f1453b8b7ff2"
   },
+  "doc-06-fachada-placa": {
+    "kind": "photo",
+    "width": 720,
+    "height": 1280,
+    "widths": [
+      640,
+      720
+    ],
+    "mtime": "a57899dc66c5221d08dbf9583b788d875f9cc446"
+  },
+  "doc-07-certificado-ccb": {
+    "kind": "photo",
+    "width": 1550,
+    "height": 1452,
+    "widths": [
+      640,
+      1280,
+      1550
+    ],
+    "mtime": "7caaded06716622d857d43230d4e4bccf7f1924d"
+  },
   "fabrica-aerea": {
     "kind": "photo",
     "width": 2200,

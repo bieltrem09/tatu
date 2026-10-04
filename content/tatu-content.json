@@ -163,7 +163,8 @@
       { "titulo": "Acervo Tatu", "imagem": "doc-03-imovel" },
       { "titulo": "Placa ISO 9001 Tatu", "imagem": "doc-04-placa-iso" },
       { "titulo": "Construção em blocos de concreto", "imagem": "doc-05-casa-blocos" },
-      { "titulo": null, "imagem": null }, { "titulo": null, "imagem": null },
+      { "titulo": "Unidade Tatu · placa ISO 9001", "imagem": "doc-06-fachada-placa" },
+      { "titulo": "Certificado de Conformidade de Produto CCB · Telha de Concreto Coppo Veneto", "imagem": "doc-07-certificado-ccb" },
       { "titulo": null, "imagem": null }
     ]
   },
@@ -175,6 +176,7 @@
   ],
 
   "fotos_do_kit": {
+    "doc-07-certificado-ccb": "Certificado de Conformidade de Produto do Centro Cerâmico do Brasil para a Telha de Concreto modelo Coppo Veneto da Tatu PreMoldados",
     "blocos": "Blocos de concreto Tatu, recortados sobre fundo neutro",
     "telha": "Telha de concreto Tatu, recortada sobre fundo neutro",
     "vigotas-protendidas": "Vigotas protendidas Tatu empilhadas",
