@@ -25,7 +25,7 @@ export type Marco = {
   tem_foto_oficial: boolean
   selo?: boolean
 }
-export type Ponto = { n: string; capacidade: string; unidade: string; descricao: string | null }
+export type Ponto = { n: string; nome: string; capacidade: string | null; unidade: string | null; descricao: string | null }
 export type Obra = { produto: string; recorte: string; foto: string; miniaturas: string[]; legenda: string }
 export type Documento = { titulo: string | null; imagem: string | null }
 
@@ -59,6 +59,7 @@ type Content = {
   estrutura: {
     conflito_conhecido: string
     total_pontos: number
+    area_total_construida?: string
     mapa_oficial_numerado: string | null
     energia_solar: { ano: number; area_m2: number; rotulo: string; nota: string }
     pontos: Ponto[]

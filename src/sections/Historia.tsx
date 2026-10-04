@@ -153,7 +153,7 @@ export function Historia() {
               x: window.innerWidth * 0.06,
               y: -window.innerHeight * 0.1,
               rotate: 7,
-              scale: next === 2 ? 0.45 : 0.6,
+              scale: next === 2 ? 0.6 : 0.95,
               duration: next === 2 ? 0.45 : 0.9,
               ease: next === 2 ? 'power2.in' : 'expo.out',
               overwrite: true,

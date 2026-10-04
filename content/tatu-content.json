@@ -10,7 +10,7 @@
     "endereco_completo": null,
     "cep": null,
     "iso9001": { "norma": "ISO 9001", "ano": 2002 },
-    "anos_de_historia": { "valor": 45, "ano": 2022 },
+    "anos_de_historia": { "valor": 49, "ano": 2026, "_nota": "45 anos em 2022 (briefing) → 49 anos em 2026, informado pela Tatu." },
     "video": { "youtube_id": "PPyvJa9HZ2M", "titulo": "Tatu PreMoldados" },
     "logo_topo": null,
     "logo_rodape": null,
@@ -116,19 +116,33 @@
     { "ano": 2009, "capitulo": "IV", "titulo": "2.000 m²/dia", "texto": "Capacidade de 2.000 m²/dia.", "foto": null, "tem_foto_oficial": false },
     { "ano": 2011, "capitulo": "IV", "titulo": "150.000 blocos/dia", "texto": "Capacidade de 150.000 blocos/dia ou 9.000 m² de pisos/dia.", "foto": null, "tem_foto_oficial": false },
     { "ano": 2020, "capitulo": "IV", "titulo": "Energia solar", "texto": "Investimento em energia solar: mais de 8.000 m² de placas solares.", "foto": "historia-2020-energia-solar", "tem_foto_oficial": true },
-    { "ano": 2022, "capitulo": "IV", "titulo": "45 anos de história", "texto": "45 anos de história.", "foto": null, "tem_foto_oficial": true, "selo": true }
+    { "ano": 2022, "capitulo": "IV", "titulo": "45 anos de história", "texto": "45 anos de história.", "foto": null, "tem_foto_oficial": false },
+    { "ano": 2026, "capitulo": "IV", "titulo": "49 anos de história", "texto": "49 anos de história — uma história construída.", "foto": "aniversario-tatu", "tem_foto_oficial": true, "selo": true }
   ],
 
   "estrutura": {
     "conflito_conhecido": "As capacidades são por ponto da fábrica e NUNCA devem ser somadas.",
     "total_pontos": 16,
-    "mapa_oficial_numerado": null,
+    "area_total_construida": "130.000 m²",
+    "mapa_oficial_numerado": "demostracoes-ponto",
     "energia_solar": { "ano": 2020, "area_m2": 8000, "rotulo": "+8.000 m²", "nota": "de placas solares" },
     "pontos": [
-      { "n": "02", "capacidade": "2.200", "unidade": "m²/dia", "descricao": null },
-      { "n": "03", "capacidade": "125.000", "unidade": "blocos/dia", "descricao": null },
-      { "n": "14", "capacidade": "7.200", "unidade": "metros/dia", "descricao": null },
-      { "n": "15", "capacidade": "2.000", "unidade": "m²/dia", "descricao": null }
+      { "n": "01", "nome": "Pátio para estoque de materiais", "capacidade": null, "unidade": null, "descricao": null },
+      { "n": "02", "nome": "Telhas de concreto", "capacidade": "2.200", "unidade": "m²/dia", "descricao": "capacidade para produzir 2.200 m²/dia" },
+      { "n": "03", "nome": "Blocos de concreto e pisos intertravados", "capacidade": "125.000", "unidade": "blocos/dia", "descricao": "capacidade para produzir 125.000 unidades/dia de blocos e 5.000 m² de pisos/dia" },
+      { "n": "04", "nome": "Pátio para frota de caminhões Tatu", "capacidade": null, "unidade": null, "descricao": null },
+      { "n": "05", "nome": "Blocos de concreto e blocos decorativos", "capacidade": "20.000", "unidade": "blocos/dia", "descricao": "capacidade para produzir 20.000 unidades/dia de blocos ou 6.000 unidades/dia de blocos decorativos (Stone/Split)" },
+      { "n": "06", "nome": "Oficina mecânica e almoxarifado", "capacidade": null, "unidade": null, "descricao": null },
+      { "n": "07", "nome": "Oficina de máquinas e empilhadeiras", "capacidade": null, "unidade": null, "descricao": null },
+      { "n": "08", "nome": "Armazém de materiais", "capacidade": null, "unidade": null, "descricao": null },
+      { "n": "09", "nome": "Administração / Engenharia / Logística", "capacidade": null, "unidade": null, "descricao": null },
+      { "n": "10", "nome": "Pátio para frota de caminhões terceirizados", "capacidade": null, "unidade": null, "descricao": null },
+      { "n": "11", "nome": "Blocos de concreto", "capacidade": "35.000", "unidade": "blocos/dia", "descricao": "capacidade para produzir 35.000 unidades/dia" },
+      { "n": "12", "nome": "Área de preservação ambiental", "capacidade": null, "unidade": null, "descricao": null },
+      { "n": "13", "nome": "Blocos de concreto", "capacidade": "50.000", "unidade": "blocos/dia", "descricao": "capacidade para produzir 50.000 unidades/dia" },
+      { "n": "14", "nome": "Lajes protendidas", "capacidade": "7.200", "unidade": "metros/dia", "descricao": "capacidade para produzir 7.200 metros/dia" },
+      { "n": "15", "nome": "Lajes alveolares", "capacidade": "2.000", "unidade": "m²/dia", "descricao": "capacidade para produzir 2.000 m²/dia" },
+      { "n": "16", "nome": "Telhas de concreto", "capacidade": "2.000", "unidade": "m²/dia", "descricao": "capacidade para produzir 2.000 m²/dia" }
     ],
     "video_fabrica": { "youtube_id": "PPyvJa9HZ2M", "titulo": "TATU PRÉ-MOLDADOS – Limeira/SP", "_nota": "ID do vídeo da fábrica não informado no briefing; usando o mesmo vídeo institucional até confirmação." }
   },
@@ -173,6 +187,11 @@
     "historia-1980-prensa-blocos": "Prensa antiga de blocos de concreto em operação",
     "historia-1993-vigotas": "Máquina moldando vigotas protendidas na pista de produção",
     "historia-2007-paletizacao": "Paletes de blocos embalados com a marca Tatu na linha de paletização",
-    "acervo-outdoor-tatu": "Vista aérea do pátio de caminhões e do outdoor Tatu"
+    "acervo-outdoor-tatu": "Vista aérea do pátio de caminhões e do outdoor Tatu",
+    "aniversario-tatu": "Tatu 49 anos — uma história construída: balões azuis sobre a vista aérea da fábrica",
+    "demostracoes-ponto": "Vista aérea da fábrica com os 16 pontos numerados",
+    "blocos-decorativos": "Bloco decorativo Split Tatu, recortado sobre fundo neutro",
+    "lajes-alveolares": "Lajes alveolares Tatu empilhadas",
+    "pisos-intertravados": "Piso intertravado Tatu com face vermelha"
   }
 }

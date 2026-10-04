@@ -203,10 +203,10 @@ export function Fabrica() {
           {CAPS.map((c) => (
             <li className="fab__cap" key={c.n}>
               <span className="display fab__cap-num">
-                <span data-count={num(c.capacidade)}>{c.capacidade}</span>
+                <span data-count={num(c.capacidade ?? '0')}>{c.capacidade}</span>
               </span>
               <span className="fab__cap-unit">{c.unidade}</span>
-              <span className="mono fab__cap-pt">Ponto {c.n}</span>
+              <span className="mono fab__cap-pt">Ponto {c.n} · {c.nome}</span>
             </li>
           ))}
         </ul>

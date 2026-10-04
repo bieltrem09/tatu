@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { useUI } from './ui-store'
 import { CloseButton, Dialog } from './Dialog'
-import { asset, estrutura, produtoPorId, qualidade, waLink, vantagens, ORCAMENTO_MSG } from '../content/tatu'
+import { altDe, asset, estrutura, produtoPorId, qualidade, waLink, vantagens, ORCAMENTO_MSG } from '../content/tatu'
 import { Cutout } from './Cutout'
 import { SpecBox } from './SpecBox'
-import { PendingPhoto } from './Media'
+import { PendingPhoto, Picture } from './Media'
 
 export function Modals() {
   const { modal, close } = useUI()
@@ -123,43 +123,80 @@ function ProductDrawer({ id, onClose }: { id: string; onClose: () => void }) {
 }
 
 /* -------- 16 pontos da fábrica -------- */
+/** Posição de cada número no mapa oficial (demostracoes-ponto), em % da imagem. */
+const MAPA_XY: Record<string, [number, number]> = {
+  '01': [92.8, 65.6], '02': [91.4, 54.0], '03': [79.7, 54.0], '04': [76.7, 40.6],
+  '05': [68.8, 57.0], '06': [59.9, 44.2], '07': [57.4, 39.5], '08': [65.6, 33.7],
+  '09': [65.6, 27.4], '10': [71.0, 11.4], '11': [53.7, 54.5], '12': [56.6, 78.5],
+  '13': [42.7, 64.7], '14': [48.4, 37.2], '15': [26.2, 35.7], '16': [13.2, 54.0],
+}
+
 function PontosPanel({ onClose }: { onClose: () => void }) {
   const map = estrutura.mapa_oficial_numerado
+  const a = map ? asset(map) : undefined
+  const [sel, setSel] = useState<string | null>(null)
   const pontos = Array.from({ length: estrutura.total_pontos }, (_, i) => {
     const n = String(i + 1).padStart(2, '0')
     return { n, dado: estrutura.pontos.find((p) => p.n === n) }
   })
+  const xy = sel ? MAPA_XY[sel] : null
+  const atual = sel ? estrutura.pontos.find((p) => p.n === sel) : undefined
   return (
     <Dialog label={`Os ${estrutura.total_pontos} pontos da fábrica`} onClose={onClose} variant="drawer" className="drawer drawer--wide">
       <div className="drawer__top">
-        <span className="mono mono--steel">Estrutura</span>
+        <span className="mono mono--steel">Estrutura{estrutura.area_total_construida ? ` · área total construída de ${estrutura.area_total_construida}` : ''}</span>
         <CloseButton onClick={onClose} />
       </div>
       <h2 className="display drawer__title">Os {estrutura.total_pontos} pontos</h2>
-      {map && asset(map) ? (
-        <img src={`${import.meta.env.BASE_URL}img/kit/${map}-1280.webp`} alt="Mapa oficial numerado da fábrica" />
+      {map && a ? (
+        <figure className="mapa">
+          <div className="mapa__frame">
+            <div
+              className="mapa__zoom"
+              style={xy ? { transform: `scale(1.6)`, transformOrigin: `${xy[0]}% ${xy[1]}%` } : undefined}
+            >
+              <Picture name={map} sizes="(min-width: 768px) 720px, 100vw" alt={altDe(map)} />
+              {xy && <span key={sel} className="mapa__ring" style={{ left: `${xy[0]}%`, top: `${xy[1]}%` }} aria-hidden="true" />}
+            </div>
+            {atual && (
+              <figcaption key={sel} className="mapa__cap" aria-live="polite">
+                <span className="mono mono--accent">Ponto {atual.n}</span>
+                <strong>{atual.nome}</strong>
+                {atual.descricao && <span>{atual.descricao}</span>}
+              </figcaption>
+            )}
+          </div>
+          <p className="mapa__hint mono mono--steel">Toque num ponto da lista para vê-lo no mapa</p>
+        </figure>
       ) : (
         <PendingPhoto label="Mapa oficial numerado" sub="aguardando arquivo oficial" style={{ aspectRatio: '16 / 9' }} />
       )}
       <p className="drawer__note">{estrutura.conflito_conhecido}</p>
       <ol className="pontos">
         {pontos.map(({ n, dado }) => (
-          <li key={n} className={dado ? '' : 'is-pending'}>
-            <span className="pontos__n mono">{n}</span>
-            {dado ? (
-              <span>
-                <strong className="pontos__v">{dado.capacidade}</strong> {dado.unidade}
-                {dado.descricao && <span className="pontos__d"> · {dado.descricao}</span>}
-              </span>
-            ) : (
-              <span className="pontos__d">Descrição pendente no tatu-content.json</span>
-            )}
+          <li key={n} className={`${dado ? '' : 'is-pending'} ${sel === n ? 'is-sel' : ''}`}>
+            <button type="button" className="pontos__btn" aria-pressed={sel === n} onClick={() => setSel(sel === n ? null : n)} disabled={!MAPA_XY[n] || !a}>
+              <span className="pontos__n mono">{n}</span>
+              {dado ? (
+                <span className="pontos__body">
+                  <span className="pontos__nome">{dado.nome}</span>
+                  {dado.descricao && <span className="pontos__d">{dado.descricao}</span>}
+                </span>
+              ) : (
+                <span className="pontos__d">Descrição pendente no tatu-content.json</span>
+              )}
+            </button>
           </li>
         ))}
         <li>
-          <span className="pontos__n mono">Solar</span>
-          <span>
-            <strong className="pontos__v">{estrutura.energia_solar.rotulo}</strong> {estrutura.energia_solar.nota} · {estrutura.energia_solar.ano}
+          <span className="pontos__btn">
+            <span className="pontos__n mono">Solar</span>
+            <span className="pontos__body">
+              <span className="pontos__nome">Energia solar</span>
+              <span className="pontos__d">
+                {estrutura.energia_solar.rotulo} {estrutura.energia_solar.nota} · {estrutura.energia_solar.ano}
+              </span>
+            </span>
           </span>
         </li>
       </ol>

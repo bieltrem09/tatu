@@ -1,4 +1,15 @@
 {
+  "blocos-decorativos": {
+    "kind": "cutout",
+    "width": 1000,
+    "height": 750,
+    "widths": [
+      400,
+      640,
+      1000
+    ],
+    "mtime": "3255ebf8976281b0681fa8ab5be175a167f6ccf6"
+  },
   "blocos": {
     "kind": "cutout",
     "width": 1000,
@@ -9,6 +20,28 @@
       1000
     ],
     "mtime": "e04d432b88da0c842463055203034764a49bff01"
+  },
+  "lajes-alveolares": {
+    "kind": "cutout",
+    "width": 1600,
+    "height": 1432,
+    "widths": [
+      400,
+      640,
+      1000
+    ],
+    "mtime": "6fc51e000ed05f3c506c0a6171b9da334bffeeb1"
+  },
+  "pisos-intertravados": {
+    "kind": "cutout",
+    "width": 1000,
+    "height": 782,
+    "widths": [
+      400,
+      640,
+      1000
+    ],
+    "mtime": "73d07d15d38da92f55b659bace61ec810503fadb"
   },
   "telha": {
     "kind": "cutout",
@@ -96,6 +129,28 @@
       1280
     ],
     "mtime": "6624babb05a1050a07fc132a3c403794260567b4"
+  },
+  "aniversario-tatu": {
+    "kind": "photo",
+    "width": 1672,
+    "height": 941,
+    "widths": [
+      640,
+      1280,
+      1672
+    ],
+    "mtime": "9e43da417f4a93061792820a1b69e0bd8c5f20ca"
+  },
+  "demostracoes-ponto": {
+    "kind": "photo",
+    "width": 2048,
+    "height": 1144,
+    "widths": [
+      640,
+      1280,
+      2048
+    ],
+    "mtime": "6bce39136ceb4888dec89bf878bd8b4d5d4a4fac"
   },
   "fabrica-aerea": {
     "kind": "photo",
