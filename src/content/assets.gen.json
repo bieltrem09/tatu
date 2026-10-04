@@ -32,6 +32,61 @@
     ],
     "mtime": "5d21a89cee0bdd186378d965ff46651747b4bd20"
   },
+  "telha-amarela": {
+    "kind": "cutout",
+    "width": 750,
+    "height": 1000,
+    "widths": [
+      400,
+      640,
+      750
+    ],
+    "mtime": "c3854048ec5417820ce0e9999720f38077ffb57d"
+  },
+  "telha-grafite": {
+    "kind": "cutout",
+    "width": 750,
+    "height": 1000,
+    "widths": [
+      400,
+      640,
+      750
+    ],
+    "mtime": "ebb86bfe71a7e9224a6eac430a5426f23a892bb8"
+  },
+  "telha-natural": {
+    "kind": "cutout",
+    "width": 750,
+    "height": 1000,
+    "widths": [
+      400,
+      640,
+      750
+    ],
+    "mtime": "5ea81ebedb655031e1b0e90c28b6e17bfb1632ec"
+  },
+  "telha-ocre": {
+    "kind": "cutout",
+    "width": 750,
+    "height": 1000,
+    "widths": [
+      400,
+      640,
+      750
+    ],
+    "mtime": "aaaab853b430e75b3f5988ac83b6d0da785f244f"
+  },
+  "telha-vermelha": {
+    "kind": "cutout",
+    "width": 750,
+    "height": 1000,
+    "widths": [
+      400,
+      640,
+      750
+    ],
+    "mtime": "d553aaa3cd171c3c05cdd7d01184a4fdbb64b010"
+  },
   "acervo-outdoor-tatu": {
     "kind": "photo",
     "width": 1280,

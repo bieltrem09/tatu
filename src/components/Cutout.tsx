@@ -1,4 +1,4 @@
-import type { CSSProperties, Ref } from 'react'
+import type { CSSProperties, ReactNode, Ref } from 'react'
 import { asset } from '../content/tatu'
 import { maskStyle, maskUrl, PendingProduct, Picture } from './Media'
 import { useIdle } from './useIdle'
@@ -17,10 +17,12 @@ type Props = {
   floor?: boolean
   rootRef?: Ref<HTMLDivElement>
   pendingLabel?: string
+  /** Camadas extras sobre a imagem (ex.: variações de cor), abaixo da malha. */
+  children?: ReactNode
 }
 
 /** Peça recortada: imagem + sombra macia + elipse de chão + malha opcional. */
-export function Cutout({ name, sizes, alt, priority, className, style, mesh, scan, floor = true, rootRef, pendingLabel }: Props) {
+export function Cutout({ name, sizes, alt, priority, className, style, mesh, scan, floor = true, rootRef, pendingLabel, children }: Props) {
   const a = asset(name)
   const idle = useIdle()
   if (!a) {
@@ -38,6 +40,7 @@ export function Cutout({ name, sizes, alt, priority, className, style, mesh, sca
     >
       {floor && <div className="cutout__floor" aria-hidden="true" />}
       <Picture className="cutout__img" name={name} sizes={sizes} alt={alt} priority={priority} />
+      {children}
       {mesh && <div className="cutout__ghost" style={idle ? { backgroundImage: maskUrl(name) } : undefined} aria-hidden="true" />}
       {mesh && <div className="mesh" style={idle ? maskStyle(name) : undefined} aria-hidden="true" />}
       {scan && <div className="scanline" aria-hidden="true" />}

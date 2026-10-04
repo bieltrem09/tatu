@@ -27,3 +27,4 @@ qa/tmp
 dist-ssr
 assets/video/*.part
 scripts/models/EDSR_x2.pb
+assets/recortes-cores

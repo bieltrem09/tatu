@@ -1,5 +1,6 @@
-import { useRef, useState } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
 import { Cutout } from '../components/Cutout'
+import { Picture } from '../components/Media'
 import { SpecBox } from '../components/SpecBox'
 import { useUI } from '../components/ui-store'
 import { onAnchorClick } from '../components/Nav'
@@ -15,9 +16,12 @@ const HOLD = 0.35
 
 function TelhaCores({ p, onPick, active }: { p: Produto; onPick: (name: string) => void; active: string }) {
   if (!p.cores) return null
+  const atual = p.cores.find((c) => c.recorte === active)
   return (
-    <div className="prod__cores">
-      <p className="mono mono--steel">Cores</p>
+    <div className="prod__cores" role="group" aria-label="Escolha a cor da telha">
+      <p className="mono mono--steel">
+        Cores{atual && asset(atual.recorte) ? <span className="prod__cor-atual" aria-live="polite"> · {atual.nome}</span> : null}
+      </p>
       <ul>
         {p.cores.map((c) => {
           const has = !!asset(c.recorte)
@@ -48,10 +52,54 @@ function TelhaCores({ p, onPick, active }: { p: Produto; onPick: (name: string) 
   )
 }
 
+/** Camadas de cor da telha empilhadas sobre a peça; a ativa é revelada por uma cortina. */
+function TintLayers({ p, active }: { p: Produto; active: string }) {
+  const cores = (p.cores ?? []).filter((c) => asset(c.recorte))
+  if (!cores.length) return null
+  return (
+    <div className="cutout__tints">
+      {cores.map((c) => (
+        <span key={c.recorte} className={`cutout__tint ${active === c.recorte ? 'is-on' : ''}`} data-cor={c.recorte}>
+          <Picture name={c.recorte} sizes="(min-width: 1024px) 520px, 70vw" alt={active === c.recorte ? `${p.nome} na cor ${c.nome}` : ''} />
+          <span className="cutout__sweep" aria-hidden="true" />
+        </span>
+      ))}
+    </div>
+  )
+}
+
 export function Produtos() {
   const root = useRef<HTMLElement>(null)
   const { open } = useUI()
-  const [cor, setCor] = useState('telha')
+  const telhaCores = produtos.find((p) => p.cores)?.cores?.filter((c) => asset(c.recorte)) ?? []
+  const [cor, setCor] = useState(telhaCores[0]?.recorte ?? 'telha')
+  const prevCor = useRef(cor)
+
+  // troca de cor: a nova camada desce como uma cortina sobre a anterior, com um brilho na borda
+  useLayoutEffect(() => {
+    const prev = prevCor.current
+    prevCor.current = cor
+    if (prev === cor || !root.current) return
+    const box = root.current.querySelector<HTMLElement>('.prod__slide .cutout__tints')
+    const next = box?.querySelector<HTMLElement>(`[data-cor="${cor}"]`)
+    const old = box?.querySelector<HTMLElement>(`[data-cor="${prev}"]`)
+    if (!box || !next) return
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    gsap.killTweensOf([next, old, next.querySelector('.cutout__sweep')])
+    if (old) gsap.set(old, { visibility: 'visible', zIndex: 1, clipPath: 'inset(0% 0% 0% 0%)' })
+    gsap.set(next, { zIndex: 2 })
+    const done = () => {
+      if (old) gsap.set(old, { clearProps: 'visibility,zIndex,clipPath' })
+      gsap.set(next, { clearProps: 'zIndex,clipPath' })
+    }
+    if (reduce) return done()
+    gsap
+      .timeline({ onComplete: done })
+      .fromTo(next, { clipPath: 'inset(0% 0% 100% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 0.75, ease: 'power3.inOut' }, 0)
+      .fromTo(next.querySelector('.cutout__sweep'), { top: '0%', opacity: 1 }, { top: '100%', duration: 0.75, ease: 'power3.inOut' }, 0)
+      .to(next.querySelector('.cutout__sweep'), { opacity: 0, duration: 0.2 }, 0.6)
+      .fromTo(box.parentElement, { scale: 0.97 }, { scale: 1, duration: 0.9, ease: 'elastic.out(1, 0.6)', clearProps: 'scale' }, 0.05)
+  }, [cor])
 
   useGSAP(
     () => {
@@ -65,7 +113,7 @@ export function Produtos() {
         const slides = q('.prod__slide') as HTMLElement[]
         const parts = slides.map((s) => ({
           piece: s.querySelector<HTMLElement>('.prod__piece-in')!,
-          img: s.querySelector<HTMLElement>('.prod__piece .cutout__img, .prod__piece .pending-product'),
+          img: [...s.querySelectorAll<HTMLElement>('.prod__piece .cutout__img, .prod__piece .cutout__tints, .prod__piece .pending-product')],
           mesh: s.querySelector<HTMLElement>('.prod__piece .mesh'),
           word: s.querySelector<HTMLElement>('.prod__word')!,
           info: [...s.querySelectorAll<HTMLElement>('.prod__info .mask > *')],
@@ -87,7 +135,7 @@ export function Produtos() {
             gsap.set(p.info, { yPercent: 140 })
             gsap.set(p.rows, { opacity: 0, y: 14 })
             gsap.set([p.infoBox, p.spec], { autoAlpha: 0 })
-            if (p.mesh && p.img) {
+            if (p.mesh && p.img.length) {
               gsap.set(p.mesh, { opacity: 1 })
               gsap.set(p.img, { opacity: 0 })
             }
@@ -133,7 +181,7 @@ export function Produtos() {
           // troca, 1ª metade: a atual vira wireframe e sai
           tl.to(p.piece, { rotate: -14 * rot, scale: 0.82, y: -50, duration: half, ease: 'power2.inOut' }, t0)
           if (p.mesh) tl.to(p.mesh, { opacity: 1, duration: half * 0.5 }, t0)
-          if (p.img) tl.to(p.img, { opacity: 0, duration: half * 0.6 }, t0 + half * 0.3)
+          if (p.img.length) tl.to(p.img, { opacity: 0, duration: half * 0.6 }, t0 + half * 0.3)
           tl.to(p.piece, { opacity: 0, duration: half * 0.3 }, t0 + half * 0.7)
           // palavra atual sai pelo topo; a próxima vem de baixo
           tl.to(p.word, { y: () => -H() * 0.9, duration: sw, ease: 'power2.in' }, t0)
@@ -147,7 +195,7 @@ export function Produtos() {
             .to(n.rows, { opacity: 1, y: 0, stagger: 0.15 * half * 0.3, duration: half * 0.5 }, t0 + half * 1.1)
           // troca, 2ª metade: a próxima entra como malha e se materializa
           tl.to(n.piece, { opacity: 1, rotate: 0, scale: 1, y: 0, duration: half, ease: 'power2.out' }, t0 + half)
-          if (n.mesh && n.img) {
+          if (n.mesh && n.img.length) {
             tl.to(n.mesh, { opacity: 0, duration: half * 0.5 }, t0 + half * 1.5)
               .to(n.img, { opacity: 1, duration: half * 0.5 }, t0 + half * 1.4)
           }
@@ -218,11 +266,9 @@ export function Produtos() {
                 </span>
                 <div className="prod__piece">
                   <div className="prod__piece-in piece-box">
-                    {p.id === 'telhas' && cor !== 'telha' ? (
-                      <Cutout key={cor} name={cor} sizes="(min-width: 1024px) 520px, 70vw" alt={`${p.nome} — cor`} mesh />
-                    ) : (
-                      <Cutout name={p.recorte} sizes="(min-width: 1024px) 520px, 70vw" alt={p.nome} mesh />
-                    )}
+                    <Cutout name={p.recorte} sizes="(min-width: 1024px) 520px, 70vw" alt={p.nome} mesh>
+                      {p.cores && <TintLayers p={p} active={cor} />}
+                    </Cutout>
                   </div>
                 </div>
                 <div className="prod__info">
@@ -281,7 +327,7 @@ export function Produtos() {
               <li key={p.id} className="prod__line-item">
                 <button type="button" className="prod__line-btn" onClick={(e) => open({ type: 'produto', id: p.id }, e.currentTarget)}>
                   <span className="prod__line-piece">
-                    <Cutout name={p.recorte} sizes="200px" alt="" floor={false} pendingLabel="em produção" />
+                    <Cutout name={p.cores && asset(cor) ? cor : p.recorte} sizes="200px" alt="" floor={false} pendingLabel="em produção" />
                   </span>
                   <span className="prod__line-label">
                     <span className="mono mono--accent">{pad(i + 1)}</span>

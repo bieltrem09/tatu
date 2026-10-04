@@ -17,11 +17,54 @@ const OUT = path.join(ROOT, 'public/img/kit')
 const MANIFEST = path.join(ROOT, 'src/content/assets.gen.json')
 const SOURCES = [
   { dir: 'assets/recortes', kind: 'cutout', widths: [400, 640, 1000] },
+  { dir: 'assets/recortes-cores', kind: 'cutout', widths: [400, 640, 1000] },
   { dir: 'assets/fotos', kind: 'photo', widths: [640, 1280, 2048] },
 ]
 const EXT = /\.(png|webp|jpe?g)$/i
 
 await mkdir(OUT, { recursive: true })
+
+// Variações de cor da telha: a foto real (cinza natural) recolorida pixel a pixel, preservando a
+// textura e o sombreamento. A cor de cada variação é a amostra oficial do tatu-content.json.
+const TINT_DIR = path.join(ROOT, 'assets/recortes-cores')
+{
+  const content = JSON.parse(await readFile(path.join(ROOT, 'content/tatu-content.json'), 'utf8'))
+  const telha = content.produtos.find((p) => p.cores)
+  const srcFile = telha && ['webp', 'png'].map((e) => path.join(ROOT, `assets/recortes/${telha.recorte}.${e}`)).find(existsSync)
+  if (srcFile) {
+    await mkdir(TINT_DIR, { recursive: true })
+    const srcHash = createHash('sha1').update(await readFile(srcFile)).digest('hex').slice(0, 10)
+    const { data, info } = await sharp(srcFile).ensureAlpha().raw().toBuffer({ resolveWithObject: true })
+    // luminância média da peça (só pixels opacos)
+    let sum = 0, n = 0
+    for (let i = 0; i < data.length; i += 4) {
+      if (data[i + 3] < 200) continue
+      sum += 0.2126 * data[i] + 0.7152 * data[i + 1] + 0.0722 * data[i + 2]
+      n++
+    }
+    const mean = sum / Math.max(1, n)
+    for (const cor of telha.cores) {
+      const out = path.join(TINT_DIR, `${cor.recorte}.webp`)
+      const tag = path.join(TINT_DIR, `.${cor.recorte}.${srcHash}.${cor.amostra.slice(1)}`)
+      if (existsSync(out) && existsSync(tag)) continue
+      const hex = cor.amostra.replace('#', '')
+      const c = [0, 2, 4].map((k) => parseInt(hex.slice(k, k + 2), 16))
+      const buf = Buffer.from(data)
+      for (let i = 0; i < buf.length; i += 4) {
+        const l = (0.2126 * data[i] + 0.7152 * data[i + 1] + 0.0722 * data[i + 2]) / mean
+        for (let k = 0; k < 3; k++) {
+          // multiplica pela razão de luminância; acima de 1 clareia em direção ao branco sem estourar
+          const v = l <= 1 ? c[k] * l : c[k] + (255 - c[k]) * (1 - 1 / l) * 0.6
+          buf[i + k] = Math.max(0, Math.min(255, Math.round(v)))
+        }
+      }
+      await sharp(buf, { raw: info }).webp({ lossless: true }).toFile(out)
+      for (const f of await readdir(TINT_DIR)) if (f.startsWith(`.${cor.recorte}.`)) await import('node:fs/promises').then((m) => m.unlink(path.join(TINT_DIR, f)))
+      await writeFile(tag, '')
+      console.log(`  ✓ cor ${cor.recorte}`)
+    }
+  }
+}
 const prev = existsSync(MANIFEST) ? JSON.parse(await readFile(MANIFEST, 'utf8')) : {}
 const manifest = {}
 
