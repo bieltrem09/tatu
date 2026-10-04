@@ -120,7 +120,10 @@ export function Producao() {
         if (fill) fill.style.transform = `scaleX(${p})`
       }
 
-      mm.add({ desktop: MQ.desktop, compact: MQ.compact }, () => {
+      mm.add({ desktop: MQ.desktop, compact: MQ.compact }, (ctx) => {
+        const { desktop } = ctx.conditions as { desktop: boolean }
+        // celular em pé: o vídeo fica numa faixa e não cobre o título, que então permanece
+        const band = !desktop && window.matchMedia('(orientation: portrait)').matches
         const stage = q('.prod2__stage')[0] as HTMLElement
         gsap.set(q('.prod2__title .mask > *'), { yPercent: 0 })
         const tl = gsap.timeline({
@@ -128,7 +131,7 @@ export function Producao() {
           scrollTrigger: {
             trigger: root.current,
             start: 'top top',
-            end: '+=300%',
+            end: band ? '+=220%' : '+=300%',
             pin: stage,
             scrub: 0.6,
             anticipatePin: 1,
@@ -139,10 +142,14 @@ export function Producao() {
         })
         pinRegistry.producao = { st: tl.scrollTrigger!, anchors: { producao: 0 } }
         // o título abre a sequência e sai para a imagem tomar a tela; a legenda fica
-        tl.to(q('.prod2__title .mask > *'), { yPercent: -140, stagger: 0.01, duration: 0.08, ease: 'power2.in' }, 0.12)
-          .fromTo(q('.prod2__shade'), { opacity: 1 }, { opacity: 0.35, duration: 0.12 }, 0.12)
-          .to(q('.prod2__title .mask > *'), { yPercent: 0, stagger: 0.01, duration: 0.08, ease: 'power2.out' }, 0.88)
-          .to(q('.prod2__shade'), { opacity: 1, duration: 0.1 }, 0.88)
+        if (band) {
+          tl.fromTo(q('.prod2__canvas'), { scale: 0.92 }, { scale: 1, duration: 0.15, ease: 'power2.out' }, 0)
+        } else {
+          tl.to(q('.prod2__title .mask > *'), { yPercent: -140, stagger: 0.01, duration: 0.08, ease: 'power2.in' }, 0.12)
+            .fromTo(q('.prod2__shade'), { opacity: 1 }, { opacity: 0.35, duration: 0.12 }, 0.12)
+            .to(q('.prod2__title .mask > *'), { yPercent: 0, stagger: 0.01, duration: 0.08, ease: 'power2.out' }, 0.88)
+            .to(q('.prod2__shade'), { opacity: 1, duration: 0.1 }, 0.88)
+        }
         const unprime = prime(tl)
         return () => {
           unprime()

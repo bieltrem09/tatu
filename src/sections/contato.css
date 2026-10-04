@@ -58,3 +58,8 @@
   .ct__info { grid-column: 1 / span 5; }
   .ct__form { grid-column: 7 / span 6; align-self: start; }
 }
+
+/* Celular: a telha vai para o canto livre ao lado de "FALE / COM", sem cobrir "A TATU" */
+@media (max-width: 767px) {
+  .ct__tile { left: auto; right: -2%; top: 4%; bottom: auto; width: 34vw; transform: rotate(-14deg); }
+}

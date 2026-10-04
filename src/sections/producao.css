@@ -33,3 +33,20 @@
   .prod2__bar > .mono:first-child { grid-column: 1 / -1; }
   .prod2__track { grid-column: 1 / -1; grid-row: 2; }
 }
+
+/* Celular em pé: o vídeo (deitado) vira uma faixa 4:3 no meio da tela em vez de ser
+   cortado e ampliado até cobrir a tela inteira — imagem bem mais nítida */
+@media (max-width: 1023px) and (orientation: portrait) {
+  .prod2__canvas {
+    inset: auto 0;
+    top: 50%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    translate: 0 -46%;
+  }
+  .prod2__shade {
+    background: linear-gradient(0deg, rgb(10 10 9 / 0.6) 0%, rgb(10 10 9 / 0) 30%);
+  }
+  .prod2__title { top: calc(var(--nav-h) + 4vh); }
+  .prod2__title h2 { font-size: clamp(44px, 13vw, 72px); }
+}

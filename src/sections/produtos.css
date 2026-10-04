@@ -116,6 +116,7 @@ button.prod__cor.is-active { transform: scale(1.08); }
     max-width: none;
     z-index: 3;
   }
+  .prod__specs .specbox { background: rgb(240 237 231 / 0.94); }
   .prod__specs .specbox dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .prod__specs .specbox__row { padding: 10px 12px; }
   .prod__specs .specbox__row + .specbox__row { border-top: 0; border-left: 1px solid var(--ink); }

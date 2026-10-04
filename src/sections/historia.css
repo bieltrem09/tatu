@@ -156,3 +156,82 @@
     opacity: 0;
   }
 }
+
+.hist__mnav { display: none; }
+
+/* ============ Celular/tablet com movimento: carrossel de marcos ============ */
+@media (max-width: 1023px) and (prefers-reduced-motion: no-preference) {
+  .hist__stage { display: flex; flex-direction: column; padding: 88px 0 64px; }
+  .hist__head { order: 0; margin: 0 var(--margin) 8px; }
+  .hist__year {
+    order: 1; display: block;
+    margin: 0 var(--margin);
+    color: var(--accent);
+    font-size: clamp(104px, 33vw, 220px);
+    line-height: 0.9;
+  }
+  .hist__mnav {
+    order: 2; display: flex; align-items: center; gap: 12px;
+    margin: 10px var(--margin) 18px;
+  }
+  .hist__mchap { flex: 1; }
+  .hist__mcount { color: var(--ink); font-variant-numeric: tabular-nums; }
+  .hist__mbtns { display: flex; gap: 8px; }
+  .hist__mbtns button {
+    width: 44px; height: 44px; border-radius: 50%;
+    border: 1px solid var(--ink); background: none; color: var(--ink);
+    font-size: 18px; display: grid; place-items: center;
+    transition: background 200ms, color 200ms, opacity 200ms;
+  }
+  .hist__mbtns button:active { background: var(--ink); color: #fff; }
+  .hist__mbtns button:disabled { opacity: 0.25; }
+
+  .hist__chapters {
+    order: 3;
+    display: flex; gap: 14px;
+    overflow-x: auto; overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    padding: 12px var(--margin) 28px;
+    scroll-padding-inline: var(--margin);
+    scrollbar-width: none;
+  }
+  .hist__chapters::-webkit-scrollbar { display: none; }
+  .hist__chapter, .hist__list { display: contents; }
+  .hist__chapter-head { display: none; }
+  .hist__item {
+    flex: 0 0 min(80vw, 420px);
+    scroll-snap-align: center;
+    align-content: start;
+    gap: 18px;
+    opacity: 0.45;
+    transform: scale(0.94);
+    transform-origin: 50% 30%;
+    transition: opacity 400ms var(--ease-out), transform 500ms var(--ease-out);
+  }
+  .hist__item.is-active { opacity: 1; transform: none; }
+  .hist__photo { width: 100%; }
+  /* marco sem foto: o ano vazado ocupa o lugar da foto, mantendo a altura dos cards */
+  .hist__item:not(:has(.hist__photo))::before {
+    content: attr(data-year);
+    display: grid; place-items: center;
+    aspect-ratio: 4 / 3.3;
+    border: 1px solid var(--cement-3);
+    font-family: var(--f-display); font-weight: 900; font-stretch: 72%;
+    font-size: clamp(72px, 22vw, 140px); line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--accent);
+    background: repeating-linear-gradient(135deg, transparent 0 10px, rgb(0 0 0 / 0.025) 10px 11px);
+  }
+  .hist__title { font-size: clamp(34px, 9vw, 52px); }
+
+  .hist__ruler { order: 4; display: block; margin: 0 var(--margin); }
+  .hist__track { position: relative; height: 14px; border-bottom: 1px solid var(--cement-4); }
+  .hist__fill {
+    position: absolute; left: 0; right: 0; bottom: -1px; height: 3px;
+    background: var(--accent); transform-origin: left center; transform: scaleX(0);
+  }
+  .hist__tick { position: absolute; bottom: 0; width: 1px; height: 8px; background: var(--cement-4); transition: height 300ms, background-color 300ms; }
+  .hist__tick.is-past { background: var(--ink); height: 12px; }
+  .hist__chap-labels { display: none; }
+  .hist__ends { display: flex; justify-content: space-between; margin-top: 8px; }
+}

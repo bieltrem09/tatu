@@ -5,7 +5,7 @@ import { Cutout } from '../components/Cutout'
 import { SpecBox } from '../components/SpecBox'
 import { Units } from '../components/Units'
 import { asset, capitulos, empresa, marcos, type Marco, type Spec } from '../content/tatu'
-import { gsap, MQ, pinRegistry, prime, ScrollTrigger, useGSAP, willChangeDuring } from '../motion/setup'
+import { gsap, MQ, pinRegistry, prime, useGSAP, willChangeDuring } from '../motion/setup'
 import './historia.css'
 
 const FIRST = marcos[0].ano
@@ -203,44 +203,80 @@ export function Historia() {
       })
 
       mm.add(MQ.compact, () => {
-        // Lista vertical: o ano fica sticky no topo do capítulo e rola conforme cada marco cruza o meio
-        const groups = q('.hist__chapter') as HTMLElement[]
-        groups.forEach((g) => {
-          const odoEl = g.querySelector<HTMLElement>('.hist__sticky-odo')
-          if (!odoEl) return
-          const strips = [...odoEl.querySelectorAll<HTMLElement>('.odo__strip')]
-          const state = { v: Number(odoEl.dataset.start) }
-          const render = () => {
-            const whole = Math.floor(state.v)
-            const frac = state.v - whole
-            strips.forEach((s, i) => {
-              const k = strips.length - 1 - i
-              const d = Math.floor(whole / 10 ** k) % 10
-              let rolling = true
-              for (let j = 0; j < k; j++) if (Math.floor(whole / 10 ** j) % 10 !== 9) rolling = false
-              s.style.transform = `translate3d(0, ${(-(d + (rolling ? frac : 0)) / 11) * 100}%, 0)`
-            })
-          }
-          g.querySelectorAll<HTMLElement>('.hist__item').forEach((it) => {
-            const year = Number(it.dataset.year)
-            ScrollTrigger.create({
-              trigger: it,
-              start: 'top 55%',
-              end: 'bottom 55%',
-              onToggle: (self) => {
-                if (self.isActive) gsap.to(state, { v: year, duration: 0.9, ease: 'power2.inOut', onUpdate: render, overwrite: true })
-              },
-            })
-            gsap.from(it.querySelectorAll('.hist__photo, .hist__text'), {
-              opacity: 0,
-              y: 40,
-              duration: 1.1,
-              ease: 'expo.out',
-              stagger: 0.08,
-              scrollTrigger: { trigger: it, start: 'top 80%', once: true },
-            })
+        // Celular/tablet: carrossel horizontal de marcos; o ano gigante (odômetro) e a régua acompanham o card ativo
+        const track = q('.hist__chapters')[0] as HTMLElement
+        const items = q('.hist__item') as HTMLElement[]
+        const chapEl = q('.hist__mchap')[0] as HTMLElement
+        const countEl = q('.hist__mcount')[0] as HTMLElement
+        const fill = q('.hist__fill')[0] as HTMLElement
+        const ticks = q('.hist__tick') as HTMLElement[]
+        const prev = q('.hist__mprev')[0] as HTMLButtonElement
+        const next = q('.hist__mnext')[0] as HTMLButtonElement
+        const state = { v: FIRST }
+        let cur = -1
+        odo.current?.set(FIRST)
+        const activate = (i: number) => {
+          if (i === cur) return
+          cur = i
+          const m = marcos[Number(items[i].dataset.index)]
+          gsap.to(state, { v: m.ano, duration: 0.9, ease: 'power2.inOut', overwrite: true, onUpdate: () => odo.current?.set(state.v) })
+          const cap = capitulos.find((c) => c.id === m.capitulo)
+          chapEl.textContent = `Capítulo ${m.capitulo}${cap ? ` · ${cap.nome}` : ''}`
+          countEl.textContent = `${String(i + 1).padStart(2, '0')} / ${String(N).padStart(2, '0')}`
+          gsap.to(fill, { scaleX: (m.ano - FIRST) / (LAST - FIRST || 1), duration: 0.6, ease: 'power2.out', overwrite: true })
+          ticks.forEach((t, k) => t.classList.toggle('is-past', marcos[k].ano <= m.ano))
+          items.forEach((it, k) => it.classList.toggle('is-active', k === i))
+          prev.disabled = i === 0
+          next.disabled = i === items.length - 1
+        }
+        const nearest = () => {
+          const c = track.scrollLeft + track.clientWidth / 2
+          let best = 0
+          let d = Infinity
+          items.forEach((it, k) => {
+            const dd = Math.abs(it.offsetLeft + it.offsetWidth / 2 - c)
+            if (dd < d) {
+              d = dd
+              best = k
+            }
           })
+          return best
+        }
+        let raf = 0
+        const onScroll = () => {
+          cancelAnimationFrame(raf)
+          raf = requestAnimationFrame(() => activate(nearest()))
+        }
+        const goTo = (i: number) => {
+          const it = items[Math.max(0, Math.min(items.length - 1, i))]
+          track.scrollTo({ left: it.offsetLeft - (track.clientWidth - it.offsetWidth) / 2, behavior: 'smooth' })
+        }
+        const onPrev = () => goTo(cur - 1)
+        const onNext = () => goTo(cur + 1)
+        track.addEventListener('scroll', onScroll, { passive: true })
+        prev.addEventListener('click', onPrev)
+        next.addEventListener('click', onNext)
+        activate(0)
+
+        // entrada: ano, cards e régua sobem quando a seção chega
+        gsap.from(q('.hist__year, .hist__mnav, .hist__ruler'), {
+          immediateRender: false,
+          opacity: 0,
+          y: 30,
+          stagger: 0.08,
+          duration: 1,
+          ease: 'expo.out',
+          scrollTrigger: { trigger: root.current, start: 'top 75%', once: true },
         })
+        // (o trilho inteiro entra; os cards em si ficam livres para a transição de ativo/inativo do CSS)
+        gsap.from(track, { immediateRender: false, opacity: 0, x: 60, duration: 1.2, ease: 'expo.out', scrollTrigger: { trigger: track, start: 'top 90%', once: true } })
+        return () => {
+          cancelAnimationFrame(raf)
+          track.removeEventListener('scroll', onScroll)
+          prev.removeEventListener('click', onPrev)
+          next.removeEventListener('click', onNext)
+          items.forEach((it) => it.classList.remove('is-active'))
+        }
       })
 
       return () => mm.revert()
@@ -309,6 +345,20 @@ export function Historia() {
                 </ol>
               </div>
             ))}
+          </div>
+
+          {/* Celular: capítulo atual, contador e setas do carrossel */}
+          <div className="hist__mnav">
+            <span className="hist__mchap mono mono--steel" aria-live="polite" />
+            <span className="hist__mcount mono" />
+            <span className="hist__mbtns">
+              <button type="button" className="hist__mprev" aria-label="Marco anterior">
+                ←
+              </button>
+              <button type="button" className="hist__mnext" aria-label="Próximo marco">
+                →
+              </button>
+            </span>
           </div>
 
           {/* Caixas por capítulo (desktop) */}
