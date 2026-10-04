@@ -166,7 +166,7 @@
 
   "obras": [
     { "produto": "blocos", "recorte": "blocos", "foto": "obra-blocos-edificio", "miniaturas": ["obra-blocos-edificio-2", "obra-arquibancada"], "legenda": "Alvenaria em blocos" },
-    { "produto": "lajes-protendidas", "recorte": "vigotas-protendidas", "foto": "obra-laje-vigotas-eps", "miniaturas": [], "legenda": "Laje em montagem" },
+    { "produto": "lajes-protendidas", "recorte": "vigotas-protendidas", "foto": "obra-laje-vigotas-eps", "miniaturas": ["obra-laje-ceramica"], "legenda": "Laje em montagem" },
     { "produto": "telhas", "recorte": "telha", "foto": "obra-telhado-bege", "miniaturas": ["obra-telhado-cinza", "obra-conjunto-casas"], "legenda": "Cobertura" }
   ],
 
@@ -192,6 +192,9 @@
     "demostracoes-ponto": "Vista aérea da fábrica com os 16 pontos numerados",
     "blocos-decorativos": "Bloco decorativo Split Tatu, recortado sobre fundo neutro",
     "lajes-alveolares": "Lajes alveolares Tatu empilhadas",
-    "pisos-intertravados": "Piso intertravado Tatu com face vermelha"
+    "pisos-intertravados": "Piso intertravado Tatu com face vermelha",
+    "pisos-drenantes": "Piso drenante Tatu de concreto poroso, recortado sobre fundo neutro",
+    "guias": "Guia de concreto Tatu, recortada sobre fundo neutro",
+    "obra-laje-ceramica": "Laje com vigotas protendidas e lajotas cerâmicas vista por baixo"
   }
 }

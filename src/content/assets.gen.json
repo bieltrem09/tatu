@@ -21,6 +21,17 @@
     ],
     "mtime": "e04d432b88da0c842463055203034764a49bff01"
   },
+  "guias": {
+    "kind": "cutout",
+    "width": 1468,
+    "height": 1336,
+    "widths": [
+      400,
+      640,
+      1000
+    ],
+    "mtime": "f5a024e873591a629ec30a3ab60097a1b2fd94bf"
+  },
   "lajes-alveolares": {
     "kind": "cutout",
     "width": 1600,
@@ -31,6 +42,17 @@
       1000
     ],
     "mtime": "6fc51e000ed05f3c506c0a6171b9da334bffeeb1"
+  },
+  "pisos-drenantes": {
+    "kind": "cutout",
+    "width": 1000,
+    "height": 692,
+    "widths": [
+      400,
+      640,
+      1000
+    ],
+    "mtime": "911c30bf69f7910911ad65535e3313ea49308f8d"
   },
   "pisos-intertravados": {
     "kind": "cutout",
@@ -253,6 +275,17 @@
     ],
     "mtime": "9c36addfee416769ffbba327ae2a1301b45c0fb6"
   },
+  "obra-laje-ceramica": {
+    "kind": "photo",
+    "width": 1400,
+    "height": 1052,
+    "widths": [
+      640,
+      1280,
+      1400
+    ],
+    "mtime": "01ee8ba31b0e3d26f2a05715912953fa719da6c9"
+  },
   "obra-laje-vigotas-eps": {
     "kind": "photo",
     "width": 1280,
@@ -273,5 +306,16 @@
       2048
     ],
     "mtime": "c7fc654f7acbedf7dd93c61f5d3c16ea6d568f2d"
+  },
+  "obra-telhado-cinza": {
+    "kind": "photo",
+    "width": 1362,
+    "height": 778,
+    "widths": [
+      640,
+      1280,
+      1362
+    ],
+    "mtime": "2782fa39d348d8f697ff52057935956e8466dd0b"
   }
 }
