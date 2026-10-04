@@ -1,0 +1,167 @@
+{
+  "blocos": {
+    "kind": "cutout",
+    "width": 1000,
+    "height": 750,
+    "widths": [
+      400,
+      640,
+      1000
+    ],
+    "mtime": "e04d432b88da0c842463055203034764a49bff01"
+  },
+  "telha": {
+    "kind": "cutout",
+    "width": 750,
+    "height": 1000,
+    "widths": [
+      400,
+      640,
+      750
+    ],
+    "mtime": "667b009a5543e1ec569097c4ba3adbd847ad9b10"
+  },
+  "vigotas-protendidas": {
+    "kind": "cutout",
+    "width": 1000,
+    "height": 620,
+    "widths": [
+      400,
+      640,
+      1000
+    ],
+    "mtime": "5d21a89cee0bdd186378d965ff46651747b4bd20"
+  },
+  "acervo-outdoor-tatu": {
+    "kind": "photo",
+    "width": 1280,
+    "height": 960,
+    "widths": [
+      640,
+      1280
+    ],
+    "mtime": "6624babb05a1050a07fc132a3c403794260567b4"
+  },
+  "fabrica-aerea": {
+    "kind": "photo",
+    "width": 2200,
+    "height": 1652,
+    "widths": [
+      640,
+      1280,
+      2048
+    ],
+    "mtime": "fcd386fe46da0b66f6399cab02e18bfb2ee241b3"
+  },
+  "historia-1977-lajes-tatu": {
+    "kind": "photo",
+    "width": 945,
+    "height": 591,
+    "widths": [
+      640,
+      945
+    ],
+    "mtime": "850a028fb2130bd619ea5dea0312981b271c138c"
+  },
+  "historia-1980-prensa-blocos": {
+    "kind": "photo",
+    "width": 945,
+    "height": 1181,
+    "widths": [
+      640,
+      945
+    ],
+    "mtime": "3b14488bc8af68ae15518634f216bf233c9dcf10"
+  },
+  "historia-1993-vigotas": {
+    "kind": "photo",
+    "width": 1169,
+    "height": 761,
+    "widths": [
+      640,
+      1169
+    ],
+    "mtime": "bb59b545028537f27d5519568ab78227a70970b2"
+  },
+  "historia-2007-paletizacao": {
+    "kind": "photo",
+    "width": 1280,
+    "height": 853,
+    "widths": [
+      640,
+      1280
+    ],
+    "mtime": "eabe8ba4c32c594a639a922567f5c730a7b25069"
+  },
+  "historia-2020-energia-solar": {
+    "kind": "photo",
+    "width": 1280,
+    "height": 960,
+    "widths": [
+      640,
+      1280
+    ],
+    "mtime": "8bb9f7f15851c401f5b8db7fbe6ec3cc1fabb513"
+  },
+  "obra-arquibancada": {
+    "kind": "photo",
+    "width": 700,
+    "height": 526,
+    "widths": [
+      640,
+      700
+    ],
+    "mtime": "ebf0024f6fe2cc6159032ae468e5cca91326a93b"
+  },
+  "obra-blocos-edificio-2": {
+    "kind": "photo",
+    "width": 700,
+    "height": 500,
+    "widths": [
+      640,
+      700
+    ],
+    "mtime": "cd4fda0f9cd950098033fac32b6315b7c1686948"
+  },
+  "obra-blocos-edificio": {
+    "kind": "photo",
+    "width": 1200,
+    "height": 1600,
+    "widths": [
+      640,
+      1200
+    ],
+    "mtime": "f8426b4c97b3d7b477c72c19c65b262d459ee5a5"
+  },
+  "obra-conjunto-casas": {
+    "kind": "photo",
+    "width": 900,
+    "height": 1600,
+    "widths": [
+      640,
+      900
+    ],
+    "mtime": "9c36addfee416769ffbba327ae2a1301b45c0fb6"
+  },
+  "obra-laje-vigotas-eps": {
+    "kind": "photo",
+    "width": 1280,
+    "height": 1199,
+    "widths": [
+      640,
+      1280
+    ],
+    "mtime": "b4eda31888f6d3c3981977e7d506babb1faae503"
+  },
+  "obra-telhado-bege": {
+    "kind": "photo",
+    "width": 2048,
+    "height": 1536,
+    "widths": [
+      640,
+      1280,
+      2048
+    ],
+    "mtime": "c7fc654f7acbedf7dd93c61f5d3c16ea6d568f2d"
+  }
+}

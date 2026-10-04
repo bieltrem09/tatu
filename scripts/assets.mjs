@@ -10,6 +10,7 @@ import { readdir, mkdir, stat, writeFile, readFile } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
 import path from 'node:path'
 import sharp from 'sharp'
+import { createHash } from 'node:crypto'
 
 const ROOT = path.resolve(import.meta.dirname, '..')
 const OUT = path.join(ROOT, 'public/img/kit')
@@ -31,7 +32,8 @@ for (const src of SOURCES) {
     if (!EXT.test(file)) continue
     const name = file.replace(EXT, '')
     const input = path.join(dir, file)
-    const mtime = (await stat(input)).mtimeMs
+    // hash do conteúdo (não a data): um clone novo reaproveita as imagens já versionadas
+    const mtime = createHash('sha1').update(await readFile(input)).digest('hex')
     const meta = await sharp(input).metadata()
     const widths = [...new Set(src.widths.map((w) => Math.min(w, meta.width)))]
     const entry = {

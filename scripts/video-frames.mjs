@@ -3,6 +3,7 @@
 // Se o mp4 não existir, tenta baixar com yt-dlp (precisa de acesso a youtube.com). Sem vídeo, a
 // seção simplesmente não aparece (count: 0) e o build segue normalmente.
 import { execFileSync, spawnSync } from 'node:child_process'
+import { createHash } from 'node:crypto'
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
 
@@ -16,7 +17,7 @@ const SIZES = { d: 1600, m: 900 }
 
 const write = (m) => writeFileSync(MANIFEST, JSON.stringify(m, null, 2) + '\n')
 
-if (!existsSync(SRC) && cfg.youtube_id) {
+if (!existsSync(SRC) && cfg.youtube_id && !existsSync(path.join(OUT, 'd'))) {
   const has = spawnSync('yt-dlp', ['--version'], { stdio: 'ignore' }).status === 0
   if (has) {
     console.log('video: baixando', cfg.youtube_id)
@@ -30,10 +31,17 @@ if (!existsSync(SRC)) {
   process.exit(0)
 }
 
-const key = `${statSync(SRC).mtimeMs}|${JSON.stringify(cfg.trechos)}|${N}`
+const key = `${createHash('sha1').update(readFileSync(SRC)).digest('hex')}|${JSON.stringify(cfg.trechos)}|${N}`
 const prev = existsSync(MANIFEST) ? JSON.parse(readFileSync(MANIFEST, 'utf8')) : {}
 const done = (d) => existsSync(path.join(OUT, d)) && readdirSync(path.join(OUT, d)).length === N
 if (prev.key === key && Object.keys(SIZES).every(done)) process.exit(0)
+// ambientes sem ffmpeg (ex.: Vercel) usam os quadros já versionados
+if (spawnSync('ffprobe', ['-version'], { stdio: 'ignore' }).status !== 0) {
+  if (prev.count > 0 && Object.keys(SIZES).every(done)) process.exit(0)
+  write({ count: 0 })
+  console.log('video: ffmpeg ausente e sem quadros versionados — seção Produção desligada')
+  process.exit(0)
+}
 
 const probe = JSON.parse(execFileSync('ffprobe', ['-v', 'error', '-print_format', 'json', '-show_streams', '-show_format', SRC]).toString())
 const v = probe.streams.find((s) => s.codec_type === 'video')
