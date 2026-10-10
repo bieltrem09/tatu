@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel | Desenvolvedor Front-End</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Portfólio de Gabriel, desenvolvedor front-end. Interfaces responsivas, acessíveis e performáticas com HTML, CSS, JavaScript e React.">
+    <meta name="theme-color" content="#0d0d0d">
+
+    <!-- Open Graph (TROCAR: use URLs absolutas depois do deploy) -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="Gabriel | Desenvolvedor Front-End">
+    <meta property="og:description" content="Interfaces responsivas, acessíveis e performáticas. Veja meus projetos e experiência.">
+    <meta property="og:url" content="https://SEU-DOMINIO.com/">
+    <meta property="og:image" content="https://SEU-DOMINIO.com/img/sobre-mim.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon (SVG inline, sem requisição extra) -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d0d0d'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='800' font-size='40' fill='%23fff'%3EG%3C/text%3E%3C/svg%3E">
+
+    <!-- Fontes: uma única requisição (inclui Roboto 900 usada no "Sobre mim") -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;600&family=Roboto:wght@900&display=swap" rel="stylesheet">
+
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JS: defer = baixa em paralelo e executa depois do HTML -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- Atalho para quem navega por teclado -->
+    <a class="skip-link" href="#sobre">Pular para o conteúdo</a>
+
+    <div class="mouse-ball" aria-hidden="true"></div>
+
+    <!-- Efeito de brilho de fundo -->
+    <div class="bg-glow" aria-hidden="true"></div>
+
+    <!-- HEADER -->
+    <header class="site-header fade-in">
+
+        <a href="#inicio" class="logo">Gabriel</a>
+
+        <!-- Botão do menu (só aparece no celular/tablet) -->
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="site-nav" aria-label="Navegação principal">
+            <a href="#sobre">Sobre mim</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#skills">Skills</a>
+            <a href="#experiencia">Experiência</a>
+            <a href="#contato">Contato</a>
+
+            <div class="social-icons">
+                <a href="https://github.com/bieltrem09" target="_blank" rel="noopener noreferrer" aria-label="GitHub (abre em nova aba)">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+
+                <!-- TROCAR: seu usuário do LinkedIn -->
+                <a href="https://www.linkedin.com/in/SEU-USUARIO" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (abre em nova aba)">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- SECTION 1 - HERO -->
+        <section class="hero-section" id="inicio">
+
+            <div class="hero-main">
+                <!-- aria-label: leitor de tela lê o texto final, não cada letra digitada -->
+                <h1 class="hero-title slide-up" aria-label="Gabriel, Desenvolvedor Front-end">
+                    <span id="typing-text" aria-hidden="true"></span><span class="cursor" aria-hidden="true"></span>
+                </h1>
+            </div>
+
+            <footer class="hero-footer fade-in delay">
+
+                <div class="description">
+                    <p>Prazer! Sou Desenvolvedor Front-end. Minha missão é unir estética e funcionalidade através de código limpo e bem estruturado. Crio interfaces responsivas focadas em entregar a melhor experiência possível para o usuário, sem perder a performance. Vamos transformar ideias em produtos digitais juntos?</p>
+                </div>
+
+                <div class="stats-container">
+                    <!-- CARD 1 -->
+                    <div class="stat-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><line x1="12" y1="3" x2="12" y2="9"></line><line x1="12" y1="15" x2="12" y2="21"></line></svg>
+                        <span class="stat-number" data-target="1356">0</span>
+                        <span class="stat-label">Commits</span>
+                    </div>
+                    <!-- CARD 2 -->
+                    <div class="stat-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="18" r="3"></circle><circle cx="6" cy="6" r="3"></circle><path d="M13 6h3a2 2 0 0 1 2 2v7"></path><line x1="6" y1="9" x2="6" y2="21"></line></svg>
+                        <span class="stat-number" data-target="65">0</span>
+                        <span class="stat-label">Pull Requests</span>
+                    </div>
+                    <!-- CARD 3 -->
+                    <div class="stat-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                        <span class="stat-number" data-target="230">0</span>
+                        <span class="stat-label">Copos de café</span>
+                    </div>
+                </div>
+            </footer>
+
+        </section>
+
+        <!-- SECTION 2 - SOBRE MIM -->
+        <section id="sobre" class="about-section">
+
+            <div class="about-image">
+                <img src="img/sobre-mim.jpg" alt="Foto profissional de Gabriel" width="450" height="650" loading="lazy" decoding="async">
+            </div>
+
+            <div class="about-content">
+
+                <span class="section-tag">SOBRE MIM</span>
+
+                <h2>
+                    Um pouco sobre mim e minha trajetória na programação
+                </h2>
+
+                <p>
+                    Desenvolvo projetos para web há cerca de 4 anos, quando comecei a programar em HTML, CSS e JavaScript focado no front end. Desde então venho me aperfeiçoando estudando tecnologias modernas e atuais.
+                </p>
+
+                <p>
+                    Atualmente sou um desenvolvedor fullstack com vasta experiência na criação de apps completos, com backends seguros e escaláveis e interfaces modernas e intuitivas. Meu maior objetivo é criar projetos que impactem de forma positiva na vida das pessoas.
+                </p>
+
+                <a href="#projetos" class="about-button">
+                    Veja meus projetos
+                    <span aria-hidden="true">↓</span>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- SECTION 3 - PROJETOS -->
+        <section id="projetos" class="projects-section">
+
+            <div class="projects-sticky">
+
+                <h2 class="projects-title">
+                    Meus projetos
+                </h2>
+
+                <div class="projects-track">
+
+                    <article class="project-card">
+                        <span class="project-number" aria-hidden="true">01</span>
+                        <div class="project-image">
+                            <img src="img/projeto1.jpg" alt="Landing page do restaurante Foodman" width="600" height="400" loading="lazy" decoding="async">
+                            <button type="button" class="btn-ver-mais"
+                                aria-label="Ver mais sobre Landing Page Restaurante"
+                                data-title="Landing Page Restaurante"
+                                data-desc="Landing page moderna e responsiva para restaurante, com design elegante e foco em conversão. Interface limpa que destaca os pratos e facilita a navegação do usuário."
+                                data-tech="HTML5|CSS3|JavaScript|Design Responsivo"
+                                data-img="img/projeto1.jpg"
+                                data-link="https://restaurant-landing-page-five-xi.vercel.app"
+                                data-repo="https://github.com/bieltrem09/restaurant-landing-page">
+                                Ver Mais
+                            </button>
+                        </div>
+                        <h3>Landing Page Restaurante</h3>
+                    </article>
+
+                    <article class="project-card">
+                        <span class="project-number" aria-hidden="true">02</span>
+                        <div class="project-image">
+                            <img src="img/projeto2.jpg" alt="Landing page Fruit Soda com lata de refrigerante de morango" width="600" height="400" loading="lazy" decoding="async">
+                            <button type="button" class="btn-ver-mais"
+                                aria-label="Ver mais sobre Landing Page Fruit Soda"
+                                data-title="Landing Page Fruit Soda"
+                                data-desc="Landing page criativa com carrossel 3D animado inspirado em design coreano. Cada sabor da bebida tem sua própria cor e animação personalizada, criando uma experiência visual imersiva."
+                                data-tech="HTML5|CSS3|JavaScript|Animações CSS"
+                                data-img="img/projeto2.jpg"
+                                data-link="https://fruit-soda-landing-page.vercel.app"
+                                data-repo="https://github.com/bieltrem09/fruit-soda-landing-page">
+                                Ver Mais
+                            </button>
+                        </div>
+                        <h3>Landing Page Fruit Soda</h3>
+                    </article>
+
+                    <article class="project-card">
+                        <span class="project-number" aria-hidden="true">03</span>
+                        <div class="project-image">
+                            <img src="img/projeto3.jpg" alt="Site de aluguel de carros premium com SUV amarelo" width="600" height="400" loading="lazy" decoding="async">
+                            <button type="button" class="btn-ver-mais"
+                                aria-label="Ver mais sobre Site de Aluguel de Carros"
+                                data-title="Site de Aluguel de Carros"
+                                data-desc="Site premium de aluguel de carros com design minimalista e sofisticado. Sistema visual de busca com data e local, apresentação elegante dos veículos e experiência intuitiva."
+                                data-tech="HTML5|CSS3|JavaScript|UI/UX Design"
+                                data-img="img/projeto3.jpg"
+                                data-link="https://car-showcase-website-ruby.vercel.app"
+                                data-repo="https://github.com/bieltrem09/car-showcase-website">
+                                Ver Mais
+                            </button>
+                        </div>
+                        <h3>Site de Aluguel de Carros</h3>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SECTION 4 - SKILLS -->
+        <section id="skills" class="skills-section">
+
+            <div class="skills-container">
+
+                <!-- TELA 1: GRID DE ÍCONES -->
+                <div class="skills-grid" id="skills-grid">
+
+                    <h2 class="skills-main-title">Minhas Skills</h2>
+                    <p class="skills-main-desc">Clique em uma tecnologia para saber mais</p>
+
+                    <!-- <button> = funciona com Tab + Enter/Espaço -->
+                    <div class="skills-icons">
+
+                        <button type="button" class="skill-icon" data-skill="html">
+                            <span class="skill-icon-inner"><i class="fa-brands fa-html5" aria-hidden="true"></i></span>
+                            <span>HTML</span>
+                        </button>
+
+                        <button type="button" class="skill-icon" data-skill="css">
+                            <span class="skill-icon-inner"><i class="fa-brands fa-css3-alt" aria-hidden="true"></i></span>
+                            <span>CSS</span>
+                        </button>
+
+                        <button type="button" class="skill-icon" data-skill="js">
+                            <span class="skill-icon-inner"><i class="fa-brands fa-js" aria-hidden="true"></i></span>
+                            <span>JavaScript</span>
+                        </button>
+
+                        <button type="button" class="skill-icon" data-skill="react">
+                            <span class="skill-icon-inner"><i class="fa-brands fa-react" aria-hidden="true"></i></span>
+                            <span>React</span>
+                        </button>
+
+                        <button type="button" class="skill-icon" data-skill="node">
+                            <span class="skill-icon-inner"><i class="fa-brands fa-node-js" aria-hidden="true"></i></span>
+                            <span>Node.js</span>
+                        </button>
+
+                        <button type="button" class="skill-icon" data-skill="git">
+                            <span class="skill-icon-inner"><i class="fa-brands fa-git-alt" aria-hidden="true"></i></span>
+                            <span>Git</span>
+                        </button>
+
+                        <button type="button" class="skill-icon" data-skill="python">
+                            <span class="skill-icon-inner"><i class="fa-brands fa-python" aria-hidden="true"></i></span>
+                            <span>Python</span>
+                        </button>
+
+                        <button type="button" class="skill-icon" data-skill="figma">
+                            <span class="skill-icon-inner"><i class="fa-brands fa-figma" aria-hidden="true"></i></span>
+                            <span>Figma</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SECTION 5 - EXPERIÊNCIA -->
+        <section id="experiencia" class="experience-section">
+
+            <h2 class="experience-title">
+                Minha experiência
+            </h2>
+
+            <div class="experience-timeline">
+
+                <div class="timeline-line" aria-hidden="true">
+                    <span class="timeline-progress"></span>
+                </div>
+
+                <!-- EXPERIÊNCIA 1 -->
+                <article class="timeline-item">
+
+                    <div class="experience-role">
+                        <h3>Desenvolvedor Front End JR</h3>
+                        <p class="experience-company">
+                            Tucupy Tecnologia
+                        </p>
+                    </div>
+
+                    <div class="experience-date">
+                        NOV 2024 -<br>
+                        ATUALMENTE
+                    </div>
+
+                    <span class="timeline-dot" aria-hidden="true"></span>
+
+                    <div class="experience-description">
+                        <p>
+                            Atuo na área de
+                            <strong>desenvolvimento front-end</strong>,
+                            focado na implementação e melhoria de interfaces
+                            e funcionalidades em projetos internos. Meu trabalho
+                            envolve colaboração com a equipe e integração com
+                            serviços internos da empresa.
+                        </p>
+                    </div>
+
+                </article>
+
+                <!-- EXPERIÊNCIA 2 -->
+                <article class="timeline-item">
+
+                    <div class="experience-role">
+                        <h3>Estagiário de desenvolvimento fullstack</h3>
+                        <p class="experience-company">
+                            Agência Virtú Marketing Digital
+                        </p>
+                    </div>
+
+                    <div class="experience-date">
+                        MAI 2024 -<br>
+                        SET 2024
+                    </div>
+
+                    <span class="timeline-dot" aria-hidden="true"></span>
+
+                    <div class="experience-description">
+                        <p>
+                            Fui responsável por um sistema de notícias,
+                            utilizando <strong>React</strong> para consumir uma
+                            API desenvolvida em <strong>Node.js</strong>.
+                            O sistema possuía páginas de notícias e uma área
+                            administrativa para gerenciamento de conteúdo.
+                        </p>
+                    </div>
+
+                </article>
+
+                <!-- EXPERIÊNCIA 3 -->
+                <article class="timeline-item">
+
+                    <div class="experience-role">
+                        <h3>Desenvolvedor Freelancer</h3>
+                        <p class="experience-company">
+                            Projetos independentes
+                        </p>
+                    </div>
+
+                    <div class="experience-date">
+                        2023 -<br>
+                        2024
+                    </div>
+
+                    <span class="timeline-dot" aria-hidden="true"></span>
+
+                    <div class="experience-description">
+                        <p>
+                            Desenvolvimento de landing pages, portfólios e
+                            interfaces responsivas, sempre buscando unir
+                            <strong>design, performance</strong> e uma boa
+                            experiência para o usuário.
+                        </p>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- SECTION 6 - CONTATO -->
+        <section class="contact-section" id="contato">
+
+            <div class="contact-header">
+                <span class="contact-subtitle">ENTRE EM CONTATO</span>
+                <h2 class="contact-title">Contato</h2>
+                <p>
+                    Tem uma ideia ou um projeto? Vamos conversar e criar algo incrível juntos.
+                </p>
+            </div>
+
+            <div class="contact-container">
+
+                <div class="contact-info">
+
+                    <!-- TROCAR: seu e-mail -->
+                    <a class="contact-card" href="mailto:SEU-EMAIL@exemplo.com">
+                        <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>SEU-EMAIL@exemplo.com</p>
+                        </div>
+                    </a>
+
+                    <!-- TROCAR: seu usuário do LinkedIn -->
+                    <a class="contact-card" href="https://www.linkedin.com/in/SEU-USUARIO" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                        <div>
+                            <h3>LinkedIn</h3>
+                            <p>linkedin.com/in/SEU-USUARIO</p>
+                        </div>
+                    </a>
+
+                    <a class="contact-card" href="https://github.com/bieltrem09" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                        <div>
+                            <h3>GitHub</h3>
+                            <p>github.com/bieltrem09</p>
+                        </div>
+                    </a>
+
+                </div>
+
+                <!--
+                    data-email: destino do mailto (TROCAR).
+                    data-endpoint: opcional. Cole a URL do Formspree (https://formspree.io/f/SEU_ID)
+                    para enviar sem abrir o app de e-mail.
+                -->
+                <form class="contact-form" id="contact-form" data-email="SEU-EMAIL@exemplo.com" data-endpoint="">
+
+                    <label class="sr-only" for="contact-name">Seu nome</label>
+                    <input id="contact-name" name="nome" type="text" placeholder="Seu nome" autocomplete="name" required maxlength="80">
+
+                    <label class="sr-only" for="contact-email">Seu e-mail</label>
+                    <input id="contact-email" name="email" type="email" placeholder="Seu e-mail" autocomplete="email" required maxlength="120">
+
+                    <label class="sr-only" for="contact-message">Sua mensagem</label>
+                    <textarea id="contact-message" name="mensagem" placeholder="Escreva sua mensagem..." required minlength="10" maxlength="2000"></textarea>
+
+                    <button type="submit">
+                        Enviar Mensagem
+                    </button>
+
+                    <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="footer-brand">
+            <h2>Gabriel</h2>
+        </div>
+
+        <div class="footer-content">
+
+            <!-- COLUNA 1 - CONTATO -->
+            <div class="footer-column">
+
+                <div class="footer-item">
+                    <div class="footer-icon">
+                        <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <span class="footer-label">Email</span>
+                        <!-- TROCAR: seu e-mail -->
+                        <p><a href="mailto:SEU-EMAIL@exemplo.com">SEU-EMAIL@exemplo.com</a></p>
+                    </div>
+                </div>
+
+                <div class="footer-item">
+                    <div class="footer-icon">
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <span class="footer-label">Localização</span>
+                        <p>Brasil</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- COLUNA 2 - REDES -->
+            <div class="footer-column">
+
+                <span class="footer-label">Redes sociais</span>
+
+                <a href="https://github.com/bieltrem09" class="footer-link" target="_blank" rel="noopener noreferrer">
+                    GITHUB
+                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+
+                <!-- TROCAR: seu usuário do LinkedIn -->
+                <a href="https://www.linkedin.com/in/SEU-USUARIO" class="footer-link" target="_blank" rel="noopener noreferrer">
+                    LINKEDIN
+                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+
+                <!-- TROCAR: seu usuário do Instagram -->
+                <a href="https://www.instagram.com/SEU-USUARIO" class="footer-link" target="_blank" rel="noopener noreferrer">
+                    INSTAGRAM
+                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+
+            </div>
+
+            <!-- COLUNA 3 - CRÉDITOS -->
+            <div class="footer-column footer-credits">
+
+                <span class="footer-label">Criado e desenvolvido por</span>
+
+                <h3>Gabriel</h3>
+
+                <!-- Ano atualizado pelo JS -->
+                <p>© <span id="footer-year">2026</span></p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- MODAL DAS SKILLS (<dialog> nativo: ESC, foco e camada superior prontos) -->
+    <dialog class="modal skill-detail" id="skill-detail" aria-labelledby="skill-detail-title">
+
+        <div class="skill-detail-wrapper">
+
+            <!-- Botão fechar (X) -->
+            <button type="button" class="skill-close-btn" id="skill-close-btn" aria-label="Fechar">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+
+            <!-- Conteúdo principal -->
+            <div class="skill-detail-content">
+
+                <div class="skill-detail-icon-box" id="skill-detail-icon-box">
+                    <i class="skill-detail-icon" id="skill-detail-icon" aria-hidden="true"></i>
+                </div>
+
+                <div class="skill-detail-text">
+                    <span class="skill-detail-tag" id="skill-detail-tag">TECNOLOGIA</span>
+                    <h2 id="skill-detail-title" tabindex="-1">Título</h2>
+                    <p id="skill-detail-desc">Descrição</p>
+                </div>
+
+            </div>
+
+            <!-- Sidebar com outras linguagens -->
+            <div class="skill-sidebar">
+                <p class="skill-sidebar-title">Outras Skills</p>
+                <div class="skill-sidebar-list" id="skill-sidebar-list">
+                    <!-- Preenchido pelo JS -->
+                </div>
+            </div>
+
+        </div>
+
+    </dialog>
+
+    <!-- MODAL DOS PROJETOS -->
+    <dialog class="modal modal-projeto" id="modalProjeto" aria-labelledby="modalTitulo">
+        <div class="modal-conteudo">
+            <button type="button" class="modal-fechar" id="modalFechar" aria-label="Fechar">&times;</button>
+
+            <div class="modal-imagem">
+                <img id="modalImg" alt="" width="600" height="400">
+            </div>
+
+            <div class="modal-info">
+                <h2 id="modalTitulo"></h2>
+                <p id="modalDescricao"></p>
+
+                <div class="modal-tech">
+                    <h3>Tecnologias utilizadas:</h3>
+                    <ul id="modalTech"></ul>
+                </div>
+
+                <div class="modal-botoes">
+                    <a id="modalLink" href="#" target="_blank" rel="noopener noreferrer" class="btn-modal btn-primario">Acessar Projeto</a>
+                    <a id="modalRepo" href="#" target="_blank" rel="noopener noreferrer" class="btn-modal btn-secundario">Ver Repositório</a>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+</body>
+</html>
