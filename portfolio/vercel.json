@@ -3,5 +3,10 @@
   "framework": null,
   "installCommand": "echo 'site estático, nada para instalar'",
   "buildCommand": "echo 'site estático, sem build'",
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "headers": [
+    { "source": "/fonts/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
+    { "source": "/vendor/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
+    { "source": "/img/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }] }
+  ]
 }

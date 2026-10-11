@@ -4,28 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabriel | Desenvolvedor Front-End Freelancer em Limeira/SP</title>
-
-    <!-- SEO -->
-    <meta name="description" content="Desenvolvedor front-end freelancer em Limeira/SP. Crio sites institucionais e landing pages rápidos, responsivos e prontos para o Google. Peça seu orçamento.">
+    <meta name="description" content="Desenvolvedor front-end freelancer em Limeira/SP. Sites institucionais e landing pages sob medida, rápidos, animados e prontos para o Google. Peça seu orçamento.">
     <meta name="author" content="Gabriel">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://portfolio-nv-alpha.vercel.app/">
-    <meta name="theme-color" content="#0d0d0d">
+    <meta name="theme-color" content="#0b0b0a">
 
-    <!-- Open Graph (TROCAR o domínio se usar um domínio próprio) -->
+    <!-- Open Graph / redes sociais -->
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
     <meta property="og:site_name" content="Gabriel – Desenvolvedor Front-End">
-    <meta property="og:title" content="Gabriel | Desenvolvedor Front-End Freelancer">
-    <meta property="og:description" content="Sites institucionais e landing pages rápidos, responsivos e otimizados para o Google. Veja os projetos e peça seu orçamento.">
+    <meta property="og:title" content="Gabriel | Sites que fazem sua empresa parecer tão boa quanto ela é">
+    <meta property="og:description" content="Sites institucionais e landing pages sob medida, rápidos, animados e prontos para o Google. Limeira/SP, atendimento em todo o Brasil.">
     <meta property="og:url" content="https://portfolio-nv-alpha.vercel.app/">
     <meta property="og:image" content="https://portfolio-nv-alpha.vercel.app/img/og.jpg">
-    <meta property="og:image:alt" content="Gabriel, desenvolvedor front-end freelancer">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Gabriel, desenvolvedor front-end freelancer em Limeira/SP">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Gabriel | Desenvolvedor Front-End Freelancer">
-    <meta name="twitter:description" content="Sites institucionais e landing pages rápidos, responsivos e otimizados para o Google.">
+    <meta name="twitter:description" content="Sites institucionais e landing pages sob medida, rápidos, animados e prontos para o Google.">
+    <meta name="twitter:image" content="https://portfolio-nv-alpha.vercel.app/img/og.jpg">
 
-    <!-- Dados estruturados: ajudam o Google a entender quem é você e o que você faz -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b0b0a'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='800' font-size='38' fill='%23c8f03c'%3EG%3C/text%3E%3C/svg%3E">
+
+    <!-- Fontes hospedadas no próprio site: sem depender do Google Fonts -->
+    <link rel="preload" href="fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="img/gabriel.webp" as="image" type="image/webp">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Marca a página como "com JS" antes de pintar, para as animações começarem do estado certo -->
+    <script>document.documentElement.classList.add('js');</script>
+
+    <script src="vendor/gsap.min.js" defer></script>
+    <script src="vendor/ScrollTrigger.min.js" defer></script>
+    <script src="vendor/SplitText.min.js" defer></script>
+    <script src="vendor/lenis.min.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+    <!-- Dados estruturados: quem é você, o que faz, onde atende e as perguntas frequentes -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -36,14 +55,25 @@
                 "name": "Gabriel",
                 "jobTitle": "Desenvolvedor Front-End Freelancer",
                 "url": "https://portfolio-nv-alpha.vercel.app/",
-                "image": "https://portfolio-nv-alpha.vercel.app/img/sobre-mim.webp",
-                "description": "Desenvolvedor front-end freelancer que cria sites institucionais e landing pages rápidos, responsivos e otimizados para SEO.",
+                "image": "https://portfolio-nv-alpha.vercel.app/img/gabriel.webp",
                 "email": "mailto:bielj009s@gmail.com",
                 "telephone": "+55-19-99969-1376",
                 "address": { "@type": "PostalAddress", "addressLocality": "Limeira", "addressRegion": "SP", "addressCountry": "BR" },
-                "areaServed": ["Limeira", "São Paulo", "Brasil"],
-                "knowsAbout": ["Desenvolvimento front-end", "Criação de sites", "Landing pages", "SEO técnico", "Performance web", "Acessibilidade", "HTML", "CSS", "JavaScript", "TypeScript", "React", "GSAP"],
+                "knowsAbout": ["Desenvolvimento front-end", "Criação de sites", "Landing pages", "SEO técnico", "Performance web", "Animações web", "HTML", "CSS", "JavaScript", "TypeScript", "React", "GSAP"],
                 "sameAs": ["https://github.com/bieltrem09"]
+            },
+            {
+                "@type": "ProfessionalService",
+                "@id": "https://portfolio-nv-alpha.vercel.app/#servico",
+                "name": "Gabriel – Criação de Sites e Landing Pages",
+                "url": "https://portfolio-nv-alpha.vercel.app/",
+                "image": "https://portfolio-nv-alpha.vercel.app/img/og.jpg",
+                "telephone": "+55-19-99969-1376",
+                "email": "bielj009s@gmail.com",
+                "address": { "@type": "PostalAddress", "addressLocality": "Limeira", "addressRegion": "SP", "addressCountry": "BR" },
+                "areaServed": [{ "@type": "City", "name": "Limeira" }, { "@type": "State", "name": "São Paulo" }, { "@type": "Country", "name": "Brasil" }],
+                "founder": { "@id": "https://portfolio-nv-alpha.vercel.app/#gabriel" },
+                "serviceType": ["Criação de sites institucionais", "Landing pages", "Redesign de sites", "SEO técnico"]
             },
             {
                 "@type": "WebSite",
@@ -52,692 +82,604 @@
                 "name": "Gabriel – Desenvolvedor Front-End Freelancer",
                 "inLanguage": "pt-BR",
                 "publisher": { "@id": "https://portfolio-nv-alpha.vercel.app/#gabriel" }
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "Quanto custa um site?", "acceptedAnswer": { "@type": "Answer", "text": "Depende do tamanho e do que o site precisa fazer. Depois de uma conversa rápida, envio uma proposta com valor fechado, sem custo e sem compromisso." } },
+                    { "@type": "Question", "name": "Quanto tempo leva para o site ficar pronto?", "acceptedAnswer": { "@type": "Answer", "text": "O prazo depende do escopo e vai escrito na proposta. Uma landing page costuma ser mais rápida que um site institucional com várias páginas." } },
+                    { "@type": "Question", "name": "Preciso ter domínio e hospedagem?", "acceptedAnswer": { "@type": "Answer", "text": "Não precisa se preocupar. Eu te oriento a registrar o domínio e cuido da publicação. Se você já tiver, uso o seu." } },
+                    { "@type": "Question", "name": "Meu site vai aparecer no Google?", "acceptedAnswer": { "@type": "Answer", "text": "O site sai com SEO técnico pronto: títulos, descrições, sitemap, dados estruturados e carregamento rápido. A posição também depende de conteúdo e concorrência, mas a base fica certa desde o primeiro dia." } },
+                    { "@type": "Question", "name": "Você atende fora de Limeira?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Atendo empresas de todo o Brasil de forma remota, por WhatsApp, e-mail e chamada de vídeo." } },
+                    { "@type": "Question", "name": "E depois que o site estiver no ar?", "acceptedAnswer": { "@type": "Answer", "text": "Você pode me chamar para ajustes, novas páginas ou manutenção. Combinamos o formato que fizer mais sentido para o seu negócio." } }
+                ]
             }
         ]
     }
     </script>
-
-    <!-- Favicon (SVG inline, sem requisição extra) -->
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d0d0d'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='800' font-size='40' fill='%23fff'%3EG%3C/text%3E%3C/svg%3E">
-
-    <!-- Fontes: uma única requisição (inclui Roboto 900 usada no "Sobre mim") -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;600&family=Roboto:wght@900&display=swap" rel="stylesheet">
-
-    <!-- Ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- JS: defer = baixa em paralelo e executa depois do HTML -->
-    <script src="script.js" defer></script>
 </head>
 
 <body>
-    <!-- Atalho para quem navega por teclado -->
-    <a class="skip-link" href="#sobre">Pular para o conteúdo</a>
+    <!-- Ícones (sprite SVG reutilizado com <use>) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="i-arrow-ur" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+        <symbol id="i-arrow-r" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+        <symbol id="i-arrow-d" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+        <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+        <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+        <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+        <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+        <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+        <symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></symbol>
+        <symbol id="i-zap" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></symbol>
+        <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></symbol>
+        <symbol id="i-file" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></symbol>
+        <symbol id="i-wa" viewBox="0 0 24 24"><path stroke="none" fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol>
+    </svg>
 
-    <div class="mouse-ball" aria-hidden="true"></div>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-    <!-- Efeito de brilho de fundo -->
-    <div class="bg-glow" aria-hidden="true"></div>
+    <!-- PRELOADER (só na primeira visita da sessão) -->
+    <div class="preloader" aria-hidden="true">
+        <div class="preloader__inner">
+            <span class="preloader__name">Gabriel</span>
+            <span class="preloader__words"><span>Design</span><span>Código</span><span>Resultado</span></span>
+        </div>
+        <span class="preloader__count mono"><span class="preloader__num">0</span>%</span>
+    </div>
+
+    <!-- Barra de progresso de leitura -->
+    <div class="progress" aria-hidden="true"><span></span></div>
+
+    <!-- Cursor personalizado (só em mouse) -->
+    <div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
 
     <!-- HEADER -->
-    <header class="site-header fade-in">
+    <header class="header">
+        <a href="#inicio" class="brand" aria-label="Gabriel, voltar ao início">
+            <span class="brand__name">Gabriel</span>
+            <span class="brand__role mono">Front-end · Limeira/SP</span>
+        </a>
 
-        <a href="#inicio" class="logo">Gabriel</a>
-
-        <!-- Botão do menu (só aparece no celular/tablet) -->
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <nav id="site-nav" aria-label="Navegação principal">
-            <a href="#sobre">Sobre</a>
-            <a href="#servicos">Serviços</a>
-            <a href="#projetos">Projetos</a>
-            <a href="#skills">Skills</a>
-            <a href="#experiencia">Trajetória</a>
-            <a href="#contato">Contato</a>
-
-            <div class="social-icons">
-                <a href="https://github.com/bieltrem09" target="_blank" rel="noopener noreferrer" aria-label="GitHub (abre em nova aba)">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                </a>
-
-                <a href="https://wa.me/5519999691376" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp (abre em nova aba)">
-                    <i class="fa-brands fa-whatsapp" aria-hidden="true" style="font-size:20px"></i>
-                </a>
-            </div>
+        <nav class="nav" aria-label="Navegação principal">
+            <a href="#trabalhos" class="nav__link"><span data-text="Trabalhos">Trabalhos</span></a>
+            <a href="#servicos" class="nav__link"><span data-text="Serviços">Serviços</span></a>
+            <a href="#processo" class="nav__link"><span data-text="Processo">Processo</span></a>
+            <a href="#sobre" class="nav__link"><span data-text="Sobre">Sobre</span></a>
+            <a href="#faq" class="nav__link"><span data-text="Dúvidas">Dúvidas</span></a>
         </nav>
+
+        <a class="btn btn--lime btn--sm header__cta magnetic" href="https://wa.me/5519999691376?text=Ol%C3%A1%20Gabriel%2C%20vim%20pelo%20seu%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer">
+            <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>
+            <span>Pedir orçamento</span>
+        </a>
+
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+            <span></span><span></span>
+        </button>
     </header>
 
-    <main>
-
-        <!-- SECTION 1 - HERO -->
-        <section class="hero-section" id="inicio">
-
-            <div class="hero-main">
-                <!-- aria-label: leitor de tela lê o texto final, não cada letra digitada -->
-                <h1 class="hero-title slide-up">
-                    <span class="sr-only">Gabriel, desenvolvedor front-end freelancer</span>
-                    <span id="typing-text" aria-hidden="true"></span><span class="cursor" aria-hidden="true"></span>
-                </h1>
-            </div>
-
-            <footer class="hero-footer fade-in delay">
-
-                <div class="description">
-                    <p>Crio sites e landing pages que carregam rápido, funcionam bem no celular e são construídos para aparecer no Google. Do layout ao site no ar, você fala direto comigo, sem intermediários.</p>
-                </div>
-
-                <div class="stats-container">
-                    <!-- CARD 1 -->
-                    <div class="stat-item">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><line x1="12" y1="3" x2="12" y2="9"></line><line x1="12" y1="15" x2="12" y2="21"></line></svg>
-                        <span class="stat-number" data-target="2">0</span>
-                        <span class="stat-label">Anos de experiência</span>
-                    </div>
-                    <!-- CARD 2 -->
-                    <div class="stat-item">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="18" r="3"></circle><circle cx="6" cy="6" r="3"></circle><path d="M13 6h3a2 2 0 0 1 2 2v7"></path><line x1="6" y1="9" x2="6" y2="21"></line></svg>
-                        <span class="stat-number" data-target="7">0</span>
-                        <span class="stat-label">Projetos no portfólio</span>
-                    </div>
-                    <!-- CARD 3 -->
-                    <div class="stat-item">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
-                        <span class="stat-number" data-target="230">0</span>
-                        <span class="stat-label">Copos de café</span>
-                    </div>
-                </div>
-            </footer>
-
-        </section>
-
-        <!-- SECTION 2 - SOBRE MIM -->
-        <section id="sobre" class="about-section">
-
-            <div class="about-image">
-                <img src="img/sobre-mim.webp" alt="Gabriel, desenvolvedor front-end freelancer" width="450" height="650" loading="lazy" decoding="async">
-            </div>
-
-            <div class="about-content">
-
-                <span class="section-tag">SOBRE MIM</span>
-
-                <h2>
-                    Do primeiro HTML a sites para empresas de verdade
-                </h2>
-
-                <p>
-                    Comecei a estudar desenvolvimento front-end em 2024, com HTML, CSS e JavaScript. Os estudos viraram prática rápido: recriei layouts, construí landing pages e fui incorporando React, TypeScript e animações até dominar o ciclo completo de um site, do design à publicação.
-                </p>
-
-                <p>
-                    Hoje trabalho como freelancer, atendendo cada cliente diretamente. Já fui responsável por projetos grandes, como o site institucional da Tatu Pré-Moldados, indústria de concreto com quase 50 anos de mercado. Em todo projeto cuido de três coisas: velocidade, experiência no celular e SEO, porque um site bonito que ninguém encontra não traz cliente.
-                </p>
-
-                <a href="#projetos" class="about-button">
-                    Veja meus projetos
-                    <span aria-hidden="true">↓</span>
-                </a>
-
-            </div>
-        </section>
-
-        <!-- SECTION 3 - SERVIÇOS -->
-        <section id="servicos" class="services-section">
-
-            <div class="services-header">
-                <span class="section-tag">SERVIÇOS</span>
-                <h2 class="services-title">Como posso ajudar o seu negócio</h2>
-                <p>Sites feitos sob medida para empresas de Limeira/SP e de todo o Brasil, com código próprio, sem templates genéricos.</p>
-            </div>
-
-            <div class="services-grid">
-
-                <article class="service-card">
-                    <span class="service-icon"><i class="fa-solid fa-building" aria-hidden="true"></i></span>
-                    <h3>Sites institucionais</h3>
-                    <p>Um site profissional que apresenta sua empresa, seus produtos e seus diferenciais, e passa confiança para quem pesquisa você no Google.</p>
-                </article>
-
-                <article class="service-card">
-                    <span class="service-icon"><i class="fa-solid fa-bullseye" aria-hidden="true"></i></span>
-                    <h3>Landing pages</h3>
-                    <p>Páginas com um único objetivo: transformar o visitante em contato, venda ou cadastro. Ideais para campanhas e lançamentos.</p>
-                </article>
-
-                <article class="service-card">
-                    <span class="service-icon"><i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i></span>
-                    <h3>SEO e performance</h3>
-                    <p>Código limpo, carregamento rápido e estrutura que o Google entende, para o seu site aparecer quando o cliente procura pelo que você vende.</p>
-                </article>
-
-                <article class="service-card">
-                    <span class="service-icon"><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i></span>
-                    <h3>Ajustes e manutenção</h3>
-                    <p>Site atual lento ou quebrando no celular? Eu corrijo, atualizo o conteúdo e deixo tudo funcionando em qualquer tela.</p>
-                </article>
-
-            </div>
-
-            <a href="#contato" class="services-cta">
-                Pedir orçamento
-                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+    <!-- MENU MOBILE -->
+    <div class="menu" id="menu" hidden>
+        <nav class="menu__nav" aria-label="Menu">
+            <a href="#trabalhos">Trabalhos</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#processo">Processo</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#faq">Dúvidas</a>
+            <a href="#contato">Contato</a>
+        </nav>
+        <div class="menu__foot">
+            <a class="btn btn--lime" href="https://wa.me/5519999691376" target="_blank" rel="noopener noreferrer">
+                <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg> WhatsApp
             </a>
+            <a class="menu__mail mono" href="mailto:bielj009s@gmail.com">bielj009s@gmail.com</a>
+        </div>
+    </div>
 
-        </section>
+    <main id="conteudo">
 
-        <!-- SECTION 4 - PROJETOS -->
-        <section id="projetos" class="projects-section">
+        <!-- ================= HERO ================= -->
+        <section class="hero" id="inicio" data-theme="ink">
+            <div class="hero__grid">
+                <div class="hero__copy">
+                    <p class="status mono">
+                        <span class="status__dot" aria-hidden="true"></span>
+                        Agenda aberta para novos projetos
+                    </p>
 
-            <div class="projects-sticky">
+                    <h1 class="hero__title">
+                        <span class="line">Sites que fazem</span>
+                        <span class="line">sua empresa <em class="serif accent">parecer</em></span>
+                        <span class="line">tão boa quanto ela é.</span>
+                    </h1>
 
-                <h2 class="projects-title">
-                    Projetos em destaque
-                </h2>
+                    <p class="hero__lead">
+                        Sou <strong>Gabriel</strong>, desenvolvedor front-end em Limeira/SP. Crio sites institucionais e landing pages sob medida, rápidos, animados e prontos para o Google, e você fala direto comigo do briefing à entrega.
+                    </p>
 
-                <div class="projects-track">
-
-                    <article class="project-card">
-                        <span class="project-number" aria-hidden="true">01</span>
-                        <div class="project-image">
-                            <img src="img/projeto-tatu.webp" alt="Site institucional da Tatu Pré-Moldados com blocos de concreto em destaque" width="600" height="400" loading="lazy" decoding="async">
-                            <button type="button" class="btn-ver-mais"
-                                aria-label="Ver mais sobre Tatu Pré-Moldados"
-                                data-title="Tatu Pré-Moldados"
-                                data-desc="Site institucional da Tatu Pré-Moldados, fábrica de blocos, lajes, pisos, telhas e guias de concreto em Limeira/SP desde 1977. Apresenta a história da empresa, o catálogo de produtos e o pedido de orçamento, com animações guiadas pelo scroll e HTML pré-renderizado para carregar rápido e ser bem indexado pelo Google."
-                                data-tech="React|TypeScript|GSAP|Lenis|Vite"
-                                data-img="img/projeto-tatu.webp"
-                                data-link="https://tatu-premoldados.vercel.app"
-                                data-repo="https://github.com/bieltrem09/tatu">
-                                Ver Mais
-                            </button>
-                        </div>
-                        <h3>Tatu Pré-Moldados</h3>
-                    </article>
-
-                    <article class="project-card">
-                        <span class="project-number" aria-hidden="true">02</span>
-                        <div class="project-image">
-                            <img src="img/projeto-vetor.webp" alt="Site da transportadora Vetor Logística com contêiner laranja suspenso por guindaste" width="600" height="400" loading="lazy" decoding="async">
-                            <button type="button" class="btn-ver-mais"
-                                aria-label="Ver mais sobre Vetor Logística"
-                                data-title="Vetor Logística"
-                                data-desc="Site institucional para transportadora com operação rodoviária, marítima e aérea. Direção de arte em brutalismo editorial, contêiner 3D que responde à rolagem, jornada animada mar, terra e ar, rastreamento de carga e cotação de frete pelo WhatsApp."
-                                data-tech="HTML5|CSS3|JavaScript|GSAP|Three.js"
-                                data-img="img/projeto-vetor.webp"
-                                data-link="https://vetor-logistica.vercel.app"
-                                data-repo="https://github.com/bieltrem09/logistica">
-                                Ver Mais
-                            </button>
-                        </div>
-                        <h3>Vetor Logística</h3>
-                    </article>
-
-                    <article class="project-card">
-                        <span class="project-number" aria-hidden="true">03</span>
-                        <div class="project-image">
-                            <img src="img/projeto-sushi.webp" alt="Landing page do restaurante japonês Sushi com sashimi de salmão sobre sol vermelho" width="600" height="400" loading="lazy" decoding="async">
-                            <button type="button" class="btn-ver-mais"
-                                aria-label="Ver mais sobre Sushi Japanese Restaurant"
-                                data-title="Sushi Japanese Restaurant"
-                                data-desc="Landing page premium para restaurante japonês, com cardápio completo e versão em PDF para download, seções de chef, ambiente e omakase, e reserva de mesa. Luz dramática, vermelho e dourado e animações suaves que valorizam cada prato."
-                                data-tech="HTML5|CSS3|JavaScript|GSAP|Lenis"
-                                data-img="img/projeto-sushi.webp"
-                                data-link="https://project-6c9bl.vercel.app"
-                                data-repo="https://github.com/bieltrem09/restaurant-landing-page/tree/claude/new-session-pfpmxa">
-                                Ver Mais
-                            </button>
-                        </div>
-                        <h3>Sushi Japanese Restaurant</h3>
-                    </article>
-
-                    <article class="project-card">
-                        <span class="project-number" aria-hidden="true">04</span>
-                        <div class="project-image">
-                            <img src="img/projeto-auroria.webp" alt="Site do estúdio criativo Aurora com tipografia elegante sobre escada em arco" width="600" height="400" loading="lazy" decoding="async">
-                            <button type="button" class="btn-ver-mais"
-                                aria-label="Ver mais sobre Aurora Estúdio Criativo"
-                                data-title="Aurora Estúdio Criativo"
-                                data-desc="Site para estúdio criativo e de direção de arte, com estética editorial e minimalista. Preloader, cursor personalizado, vitrine de trabalhos e transições suaves que transmitem elegância a cada rolagem."
-                                data-tech="React|TypeScript|Tailwind CSS|Framer Motion|Lenis"
-                                data-img="img/projeto-auroria.webp"
-                                data-link="https://auroria-ten.vercel.app"
-                                data-repo="https://github.com/bieltrem09/AURORIA">
-                                Ver Mais
-                            </button>
-                        </div>
-                        <h3>Aurora Estúdio Criativo</h3>
-                    </article>
-
-                    <article class="project-card">
-                        <span class="project-number" aria-hidden="true">05</span>
-                        <div class="project-image">
-                            <img src="img/projeto1.webp" alt="Landing page do restaurante Foodman com pratos em destaque" width="600" height="400" loading="lazy" decoding="async">
-                            <button type="button" class="btn-ver-mais"
-                                aria-label="Ver mais sobre Landing Page Restaurante"
-                                data-title="Landing Page Restaurante"
-                                data-desc="Landing page para restaurante pensada para abrir o apetite e levar o visitante à reserva. Os pratos ganham destaque, a navegação é direta e o layout se adapta a qualquer tela."
-                                data-tech="HTML5|CSS3|JavaScript|Design Responsivo"
-                                data-img="img/projeto1.webp"
-                                data-link="https://restaurant-landing-page-five-xi.vercel.app"
-                                data-repo="https://github.com/bieltrem09/restaurant-landing-page">
-                                Ver Mais
-                            </button>
-                        </div>
-                        <h3>Landing Page Restaurante</h3>
-                    </article>
-
-                    <article class="project-card">
-                        <span class="project-number" aria-hidden="true">06</span>
-                        <div class="project-image">
-                            <img src="img/projeto2.webp" alt="Landing page Fruit Soda com lata de refrigerante de morango" width="600" height="400" loading="lazy" decoding="async">
-                            <button type="button" class="btn-ver-mais"
-                                aria-label="Ver mais sobre Landing Page Fruit Soda"
-                                data-title="Landing Page Fruit Soda"
-                                data-desc="Landing page de bebida com carrossel 3D animado. Cada sabor tem cor e animação próprias, uma vitrine interativa que prende a atenção e reforça a identidade da marca."
-                                data-tech="HTML5|CSS3|JavaScript|Animações CSS"
-                                data-img="img/projeto2.webp"
-                                data-link="https://fruit-soda-landing-page.vercel.app"
-                                data-repo="https://github.com/bieltrem09/fruit-soda-landing-page">
-                                Ver Mais
-                            </button>
-                        </div>
-                        <h3>Landing Page Fruit Soda</h3>
-                    </article>
-
-                    <article class="project-card">
-                        <span class="project-number" aria-hidden="true">07</span>
-                        <div class="project-image">
-                            <img src="img/projeto3.webp" alt="Site de aluguel de carros premium com SUV amarelo" width="600" height="400" loading="lazy" decoding="async">
-                            <button type="button" class="btn-ver-mais"
-                                aria-label="Ver mais sobre Site de Aluguel de Carros"
-                                data-title="Site de Aluguel de Carros"
-                                data-desc="Site de aluguel de carros premium com visual minimalista. Busca por data e local, apresentação elegante da frota e um caminho curto até a reserva."
-                                data-tech="HTML5|CSS3|JavaScript|UI/UX Design"
-                                data-img="img/projeto3.webp"
-                                data-link="https://car-showcase-website-ruby.vercel.app"
-                                data-repo="https://github.com/bieltrem09/car-showcase-website">
-                                Ver Mais
-                            </button>
-                        </div>
-                        <h3>Site de Aluguel de Carros</h3>
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- SECTION 5 - SKILLS -->
-        <section id="skills" class="skills-section">
-
-            <div class="skills-container">
-
-                <!-- TELA 1: GRID DE ÍCONES -->
-                <div class="skills-grid" id="skills-grid">
-
-                    <h2 class="skills-main-title">Minhas Skills</h2>
-                    <p class="skills-main-desc">As ferramentas que uso no dia a dia. Clique em uma para saber mais.</p>
-
-                    <!-- <button> = funciona com Tab + Enter/Espaço -->
-                    <div class="skills-icons">
-
-                        <button type="button" class="skill-icon" data-skill="html">
-                            <span class="skill-icon-inner"><i class="fa-brands fa-html5" aria-hidden="true"></i></span>
-                            <span>HTML</span>
-                        </button>
-
-                        <button type="button" class="skill-icon" data-skill="css">
-                            <span class="skill-icon-inner"><i class="fa-brands fa-css3-alt" aria-hidden="true"></i></span>
-                            <span>CSS</span>
-                        </button>
-
-                        <button type="button" class="skill-icon" data-skill="js">
-                            <span class="skill-icon-inner"><i class="fa-brands fa-js" aria-hidden="true"></i></span>
-                            <span>JavaScript</span>
-                        </button>
-
-                        <button type="button" class="skill-icon" data-skill="ts">
-                            <span class="skill-icon-inner"><i class="fa-solid fa-code" aria-hidden="true"></i></span>
-                            <span>TypeScript</span>
-                        </button>
-
-                        <button type="button" class="skill-icon" data-skill="react">
-                            <span class="skill-icon-inner"><i class="fa-brands fa-react" aria-hidden="true"></i></span>
-                            <span>React</span>
-                        </button>
-
-                        <button type="button" class="skill-icon" data-skill="gsap">
-                            <span class="skill-icon-inner"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></span>
-                            <span>GSAP</span>
-                        </button>
-
-                        <button type="button" class="skill-icon" data-skill="git">
-                            <span class="skill-icon-inner"><i class="fa-brands fa-git-alt" aria-hidden="true"></i></span>
-                            <span>Git</span>
-                        </button>
-
-                        <button type="button" class="skill-icon" data-skill="figma">
-                            <span class="skill-icon-inner"><i class="fa-brands fa-figma" aria-hidden="true"></i></span>
-                            <span>Figma</span>
-                        </button>
-
+                    <div class="hero__actions">
+                        <a class="btn btn--lime btn--lg magnetic" href="https://wa.me/5519999691376?text=Ol%C3%A1%20Gabriel%2C%20vim%20pelo%20seu%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer">
+                            <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>
+                            <span>Pedir orçamento no WhatsApp</span>
+                        </a>
+                        <a class="btn btn--ghost btn--lg magnetic" href="#trabalhos">
+                            <span>Ver trabalhos</span>
+                            <svg class="ico" aria-hidden="true"><use href="#i-arrow-d"/></svg>
+                        </a>
                     </div>
-
                 </div>
 
+                <figure class="hero__photo">
+                    <div class="hero__photo-frame">
+                        <img src="img/gabriel.webp" alt="Gabriel, desenvolvedor front-end freelancer em Limeira/SP" width="736" height="1104" fetchpriority="high">
+                    </div>
+                    <span class="chip chip--float chip--a mono"><b>07</b> sites no ar</span>
+                    <span class="chip chip--float chip--b mono">Atendimento direto</span>
+                    <span class="chip chip--float chip--c mono">SEO incluso</span>
+                </figure>
             </div>
 
+            <div class="hero__foot mono">
+                <span>Desenvolvedor front-end freelancer</span>
+                <span class="hero__scroll">Role para ver <svg class="ico" aria-hidden="true"><use href="#i-arrow-d"/></svg></span>
+                <span>Limeira, SP · <time class="js-clock">--:--</time></span>
+            </div>
         </section>
 
-        <!-- SECTION 6 - TRAJETÓRIA -->
-        <section id="experiencia" class="experience-section">
+        <!-- ================= MARQUEE ================= -->
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee__track">
+                <span>Sites institucionais</span><i>✦</i><span>Landing pages</span><i>✦</i><span>SEO técnico</span><i>✦</i><span>Animações</span><i>✦</i><span>Performance</span><i>✦</i><span>Feito no celular primeiro</span><i>✦</i>
+                <span>Sites institucionais</span><i>✦</i><span>Landing pages</span><i>✦</i><span>SEO técnico</span><i>✦</i><span>Animações</span><i>✦</i><span>Performance</span><i>✦</i><span>Feito no celular primeiro</span><i>✦</i>
+            </div>
+        </div>
 
-            <h2 class="experience-title">
-                Minha trajetória
+        <!-- ================= MANIFESTO + NÚMEROS ================= -->
+        <section class="statement" data-theme="paper" aria-labelledby="statement-title">
+            <p class="eyebrow mono"><span>(01)</span> Por que um bom site importa</p>
+            <h2 class="statement__text" id="statement-title">
+                Seu site é o primeiro vendedor da sua empresa. Ele trabalha 24 horas, conversa com quem você nunca conheceu e decide, em poucos segundos, se o cliente <em class="serif">fica</em> ou vai embora. Eu construo esse vendedor.
             </h2>
 
-            <div class="experience-timeline">
-
-                <div class="timeline-line" aria-hidden="true">
-                    <span class="timeline-progress"></span>
-                </div>
-
-                <!-- ETAPA 1 (mais recente) -->
-                <article class="timeline-item">
-
-                    <div class="experience-role">
-                        <h3>Desenvolvedor Front-End Freelancer</h3>
-                        <p class="experience-company">
-                            Projetos para clientes diretos
-                        </p>
-                    </div>
-
-                    <div class="experience-date">
-                        2025 -<br>
-                        HOJE
-                    </div>
-
-                    <span class="timeline-dot" aria-hidden="true"></span>
-
-                    <div class="experience-description">
-                        <p>
-                            Desenvolvo sites institucionais e landing pages do zero
-                            para empresas e profissionais, cuidando do layout, do código,
-                            do <strong>SEO</strong> e da publicação. Entre os projetos está
-                            o site da <strong>Tatu Pré-Moldados</strong>, feito com React,
-                            TypeScript e animações guiadas pelo scroll.
-                        </p>
-                    </div>
-
-                </article>
-
-                <!-- ETAPA 2 -->
-                <article class="timeline-item">
-
-                    <div class="experience-role">
-                        <h3>Aperfeiçoamento e primeiros projetos</h3>
-                        <p class="experience-company">
-                            Projetos práticos e estudos avançados
-                        </p>
-                    </div>
-
-                    <div class="experience-date">
-                        2024
-                    </div>
-
-                    <span class="timeline-dot" aria-hidden="true"></span>
-
-                    <div class="experience-description">
-                        <p>
-                            Aprofundei em <strong>JavaScript</strong> e
-                            <strong>React</strong>, responsividade e animações,
-                            colocando tudo em prática em projetos completos, como as
-                            landing pages Foodman e Fruit Soda e o site de aluguel de carros.
-                        </p>
-                    </div>
-
-                </article>
-
-                <!-- ETAPA 3 -->
-                <article class="timeline-item">
-
-                    <div class="experience-role">
-                        <h3>Início no front-end</h3>
-                        <p class="experience-company">
-                            Estudos por conta própria
-                        </p>
-                    </div>
-
-                    <div class="experience-date">
-                        2024
-                    </div>
-
-                    <span class="timeline-dot" aria-hidden="true"></span>
-
-                    <div class="experience-description">
-                        <p>
-                            Comecei pela base: <strong>HTML, CSS e JavaScript</strong>,
-                            HTML semântico, layouts com Flexbox e Grid e boas práticas
-                            de acessibilidade, a fundação de todo site bem feito.
-                        </p>
-                    </div>
-
-                </article>
-
-            </div>
-
+            <ul class="stats" role="list">
+                <li class="stat">
+                    <span class="stat__num"><span class="js-count" data-to="7" data-pad="2">07</span></span>
+                    <span class="stat__label">sites publicados e no ar</span>
+                </li>
+                <li class="stat">
+                    <span class="stat__num"><span class="js-count" data-to="2" data-pad="2">02</span></span>
+                    <span class="stat__label">anos criando para a web</span>
+                </li>
+                <li class="stat">
+                    <span class="stat__num"><span class="js-count" data-to="100">100</span><small>%</small></span>
+                    <span class="stat__label">código próprio, sem template</span>
+                </li>
+                <li class="stat">
+                    <span class="stat__num"><span class="js-count" data-to="1" data-pad="2">01</span></span>
+                    <span class="stat__label">pessoa do briefing à entrega</span>
+                </li>
+            </ul>
         </section>
 
-        <!-- SECTION 7 - CONTATO -->
-        <section class="contact-section" id="contato">
-
-            <div class="contact-header">
-                <span class="contact-subtitle">VAMOS CONVERSAR</span>
-                <h2 class="contact-title">Peça seu orçamento</h2>
-                <p>
-                    Conte o que você precisa: um site novo, uma landing page ou melhorar o que já existe. Eu respondo pessoalmente, com os próximos passos e um orçamento sem compromisso.
-                </p>
+        <!-- ================= TRABALHOS ================= -->
+        <section class="work" id="trabalhos" data-theme="ink" aria-labelledby="work-title">
+            <div class="section-head">
+                <p class="eyebrow mono"><span>(02)</span> Trabalhos selecionados</p>
+                <h2 class="section-title" id="work-title">Projetos que <em class="serif accent">já estão</em> no ar</h2>
+                <p class="section-lead">Cada site foi desenhado para o negócio dele, não adaptado de um modelo pronto. Clique em um projeto para ver o estudo de caso completo.</p>
             </div>
 
-            <div class="contact-container">
+            <div class="work__list">
 
-                <div class="contact-info">
-
-                    <a class="contact-card" href="https://wa.me/5519999691376?text=Ol%C3%A1%20Gabriel%2C%20vim%20pelo%20seu%20portf%C3%B3lio%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-                        <div>
-                            <h3>WhatsApp</h3>
-                            <p>(19) 99969-1376</p>
+                <article class="case" data-case="tatu">
+                    <div class="case__card">
+                        <div class="case__info">
+                            <span class="case__index mono">01 / 04</span>
+                            <h3 class="case__name">Tatu Pré-Moldados</h3>
+                            <p class="case__meta mono">Site institucional · Indústria · 2026</p>
+                            <p class="case__desc">Site institucional para uma fábrica de pré-moldados de concreto com quase 50 anos de história em Limeira/SP. Catálogo completo, história da empresa e pedido de orçamento, com animações guiadas pelo scroll.</p>
+                            <ul class="tags" role="list"><li>React</li><li>TypeScript</li><li>GSAP</li><li>Lenis</li></ul>
+                            <div class="case__actions">
+                                <button class="btn btn--lime js-open-case" type="button" data-case="tatu">Ver estudo de caso <svg class="ico" aria-hidden="true"><use href="#i-arrow-r"/></svg></button>
+                                <a class="link-arrow" href="https://tatu-premoldados.vercel.app" target="_blank" rel="noopener noreferrer">Site ao vivo <svg class="ico" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+                            </div>
                         </div>
-                    </a>
-
-                    <a class="contact-card" href="mailto:bielj009s@gmail.com">
-                        <i class="fa-regular fa-envelope" aria-hidden="true"></i>
-                        <div>
-                            <h3>E-mail</h3>
-                            <p>bielj009s@gmail.com</p>
+                        <div class="case__media js-open-case" data-case="tatu" data-cursor="Abrir">
+                            <img class="case__img" src="img/work/tatu-capa.webp" alt="Página inicial do site da Tatu Pré-Moldados com blocos de concreto" width="1200" height="750" loading="lazy" decoding="async">
+                            <img class="case__phone" src="img/work/tatu-mobile.webp" alt="" width="390" height="780" loading="lazy" decoding="async">
                         </div>
-                    </a>
+                    </div>
+                </article>
 
-                    <a class="contact-card" href="https://github.com/bieltrem09" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-github" aria-hidden="true"></i>
-                        <div>
-                            <h3>GitHub</h3>
-                            <p>github.com/bieltrem09</p>
+                <article class="case" data-case="vetor">
+                    <div class="case__card">
+                        <div class="case__info">
+                            <span class="case__index mono">02 / 04</span>
+                            <h3 class="case__name">Vetor Logística</h3>
+                            <p class="case__meta mono">Site institucional · Logística · 2026</p>
+                            <p class="case__desc">Transportadora com operação rodoviária, marítima e aérea. Direção de arte brutalista, contêiner 3D que reage à rolagem e uma jornada animada mar, terra e ar que leva direto à cotação.</p>
+                            <ul class="tags" role="list"><li>JavaScript</li><li>GSAP</li><li>Three.js</li><li>CSS</li></ul>
+                            <div class="case__actions">
+                                <button class="btn btn--lime js-open-case" type="button" data-case="vetor">Ver estudo de caso <svg class="ico" aria-hidden="true"><use href="#i-arrow-r"/></svg></button>
+                                <a class="link-arrow" href="https://vetor-logistica.vercel.app" target="_blank" rel="noopener noreferrer">Site ao vivo <svg class="ico" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+                            </div>
                         </div>
-                    </a>
+                        <div class="case__media js-open-case" data-case="vetor" data-cursor="Abrir">
+                            <img class="case__img" src="img/work/vetor-capa.webp" alt="Página inicial da Vetor Logística com contêiner laranja suspenso" width="1200" height="750" loading="lazy" decoding="async">
+                            <img class="case__phone" src="img/work/vetor-mobile.webp" alt="" width="390" height="780" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                </article>
 
+                <article class="case" data-case="sushi">
+                    <div class="case__card">
+                        <div class="case__info">
+                            <span class="case__index mono">03 / 04</span>
+                            <h3 class="case__name">Sushi Japanese Restaurant</h3>
+                            <p class="case__meta mono">Landing page · Restaurante · 2026</p>
+                            <p class="case__desc">Landing page premium para restaurante japonês. Luz dramática, vermelho e dourado, cardápio completo com PDF para download e a reserva de mesa sempre a um toque de distância.</p>
+                            <ul class="tags" role="list"><li>JavaScript</li><li>GSAP</li><li>Lenis</li><li>CSS</li></ul>
+                            <div class="case__actions">
+                                <button class="btn btn--lime js-open-case" type="button" data-case="sushi">Ver estudo de caso <svg class="ico" aria-hidden="true"><use href="#i-arrow-r"/></svg></button>
+                                <a class="link-arrow" href="https://project-6c9bl.vercel.app" target="_blank" rel="noopener noreferrer">Site ao vivo <svg class="ico" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+                            </div>
+                        </div>
+                        <div class="case__media js-open-case" data-case="sushi" data-cursor="Abrir">
+                            <img class="case__img" src="img/work/sushi-capa.webp" alt="Página inicial do restaurante Sushi com sashimi de salmão sobre sol vermelho" width="1200" height="750" loading="lazy" decoding="async">
+                            <img class="case__phone" src="img/work/sushi-mobile.webp" alt="" width="390" height="780" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                </article>
+
+                <article class="case" data-case="aurora">
+                    <div class="case__card">
+                        <div class="case__info">
+                            <span class="case__index mono">04 / 04</span>
+                            <h3 class="case__name">Aurora Estúdio Criativo</h3>
+                            <p class="case__meta mono">Site institucional · Estúdio criativo · 2026</p>
+                            <p class="case__desc">Site para estúdio de direção de arte, com estética editorial e minimalista. Preloader, cursor personalizado e transições suaves que provam sensibilidade estética logo nos primeiros segundos.</p>
+                            <ul class="tags" role="list"><li>React</li><li>TypeScript</li><li>Tailwind</li><li>Framer Motion</li></ul>
+                            <div class="case__actions">
+                                <button class="btn btn--lime js-open-case" type="button" data-case="aurora">Ver estudo de caso <svg class="ico" aria-hidden="true"><use href="#i-arrow-r"/></svg></button>
+                                <a class="link-arrow" href="https://auroria-ten.vercel.app" target="_blank" rel="noopener noreferrer">Site ao vivo <svg class="ico" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+                            </div>
+                        </div>
+                        <div class="case__media js-open-case" data-case="aurora" data-cursor="Abrir">
+                            <img class="case__img" src="img/work/auroria-capa.webp" alt="Página inicial do estúdio Aurora com tipografia elegante sobre escada em arco" width="1200" height="750" loading="lazy" decoding="async">
+                            <img class="case__phone" src="img/work/auroria-mobile.webp" alt="" width="390" height="780" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Outros projetos -->
+            <div class="more">
+                <p class="eyebrow mono">Mais projetos</p>
+                <ul class="more__list" role="list">
+                    <li>
+                        <a class="more__item" href="https://restaurant-landing-page-five-xi.vercel.app" target="_blank" rel="noopener noreferrer" data-img="img/work/foodman.webp">
+                            <span class="more__name">Foodman</span>
+                            <span class="more__type mono">Landing page · Restaurante</span>
+                            <svg class="ico" aria-hidden="true"><use href="#i-arrow-ur"/></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="more__item" href="https://fruit-soda-landing-page.vercel.app" target="_blank" rel="noopener noreferrer" data-img="img/work/fruit-soda.webp">
+                            <span class="more__name">Fruit Soda</span>
+                            <span class="more__type mono">Landing page · Bebidas</span>
+                            <svg class="ico" aria-hidden="true"><use href="#i-arrow-ur"/></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="more__item" href="https://car-showcase-website-ruby.vercel.app" target="_blank" rel="noopener noreferrer" data-img="img/work/aluguel-carros.webp">
+                            <span class="more__name">Rental</span>
+                            <span class="more__type mono">Site · Aluguel de carros</span>
+                            <svg class="ico" aria-hidden="true"><use href="#i-arrow-ur"/></svg>
+                        </a>
+                    </li>
+                </ul>
+                <div class="more__preview" aria-hidden="true"><img alt=""></div>
+            </div>
+        </section>
+
+        <!-- ================= SERVIÇOS ================= -->
+        <section class="services" id="servicos" data-theme="paper" aria-labelledby="services-title">
+            <div class="section-head">
+                <p class="eyebrow mono"><span>(03)</span> Serviços</p>
+                <h2 class="section-title" id="services-title">O que eu faço <em class="serif">pelo seu negócio</em></h2>
+                <p class="section-lead">Sites feitos sob medida para empresas de Limeira/SP e de todo o Brasil. Todos os projetos já saem responsivos, otimizados e com SEO técnico.</p>
+            </div>
+
+            <ol class="svc" role="list">
+                <li class="svc__row">
+                    <span class="svc__num mono">01</span>
+                    <h3 class="svc__title">Site institucional</h3>
+                    <p class="svc__desc">Para empresas que precisam ser encontradas no Google e passar confiança logo no primeiro acesso.</p>
+                    <ul class="svc__inc" role="list"><li>Design exclusivo</li><li>Várias páginas</li><li>WhatsApp integrado</li><li>SEO técnico</li></ul>
+                </li>
+                <li class="svc__row">
+                    <span class="svc__num mono">02</span>
+                    <h3 class="svc__title">Landing page</h3>
+                    <p class="svc__desc">Uma página, um objetivo: transformar o visitante em contato, venda ou cadastro. Ideal para campanhas.</p>
+                    <ul class="svc__inc" role="list"><li>Texto que converte</li><li>Animações</li><li>Carregamento rápido</li><li>Formulário ou WhatsApp</li></ul>
+                </li>
+                <li class="svc__row">
+                    <span class="svc__num mono">03</span>
+                    <h3 class="svc__title">Redesign</h3>
+                    <p class="svc__desc">Seu site está antigo, lento ou quebra no celular? Refaço com cara nova e uma base técnica sólida.</p>
+                    <ul class="svc__inc" role="list"><li>Análise do site atual</li><li>Novo layout</li><li>Migração do conteúdo</li><li>Mais velocidade</li></ul>
+                </li>
+                <li class="svc__row">
+                    <span class="svc__num mono">04</span>
+                    <h3 class="svc__title">SEO e performance</h3>
+                    <p class="svc__desc">Ajustes técnicos para o seu site carregar rápido e o Google entender exatamente o que você vende.</p>
+                    <ul class="svc__inc" role="list"><li>Títulos e descrições</li><li>Dados estruturados</li><li>Sitemap</li><li>Imagens otimizadas</li></ul>
+                </li>
+            </ol>
+        </section>
+
+        <!-- ================= PROCESSO ================= -->
+        <section class="process" id="processo" data-theme="ink" aria-labelledby="process-title">
+            <div class="process__pin">
+                <div class="section-head process__head">
+                    <p class="eyebrow mono"><span>(04)</span> Como trabalhamos juntos</p>
+                    <h2 class="section-title" id="process-title">Do primeiro “oi” ao <em class="serif accent">site no ar</em></h2>
                 </div>
 
-                <!--
-                    data-email: destino do mailto.
-                    data-endpoint: opcional. Cole a URL do Formspree (https://formspree.io/f/SEU_ID)
-                    para enviar sem abrir o app de e-mail.
-                -->
-                <form class="contact-form" id="contact-form" data-email="bielj009s@gmail.com" data-endpoint="">
+                <div class="process__track">
+                    <article class="step">
+                        <span class="step__num">01</span>
+                        <h3 class="step__title">Conversa</h3>
+                        <p>Você me conta sobre o negócio, o público e o objetivo do site. Pode ser pelo WhatsApp ou por chamada de vídeo.</p>
+                    </article>
+                    <article class="step">
+                        <span class="step__num">02</span>
+                        <h3 class="step__title">Proposta</h3>
+                        <p>Envio escopo, prazo e valor por escrito. Você sabe exatamente o que vai receber, sem surpresa no meio do caminho.</p>
+                    </article>
+                    <article class="step">
+                        <span class="step__num">03</span>
+                        <h3 class="step__title">Design</h3>
+                        <p>Desenho a estrutura e o visual do site. Você aprova o caminho antes de eu começar a programar.</p>
+                    </article>
+                    <article class="step">
+                        <span class="step__num">04</span>
+                        <h3 class="step__title">Desenvolvimento</h3>
+                        <p>Construo o site com código próprio, animações e SEO. Você acompanha tudo por um link de prévia.</p>
+                    </article>
+                    <article class="step">
+                        <span class="step__num">05</span>
+                        <h3 class="step__title">Entrega</h3>
+                        <p>Publico no seu domínio, deixo tudo pronto para o Google e te entrego o site funcionando em qualquer tela.</p>
+                    </article>
+                </div>
 
-                    <label class="sr-only" for="contact-name">Seu nome</label>
-                    <input id="contact-name" name="nome" type="text" placeholder="Seu nome" autocomplete="name" required maxlength="80">
+                <div class="process__bar" aria-hidden="true"><span></span></div>
+            </div>
+        </section>
 
-                    <label class="sr-only" for="contact-email">Seu e-mail</label>
-                    <input id="contact-email" name="email" type="email" placeholder="Seu e-mail" autocomplete="email" required maxlength="120">
-
-                    <label class="sr-only" for="contact-message">Sua mensagem</label>
-                    <textarea id="contact-message" name="mensagem" placeholder="Conte sobre o seu projeto: tipo de site, prazo, referências..." required minlength="10" maxlength="2000"></textarea>
-
-                    <button type="submit">
-                        Pedir orçamento
-                    </button>
-
-                    <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-
-                </form>
-
+        <!-- ================= DIFERENCIAIS ================= -->
+        <section class="trust" data-theme="paper" aria-labelledby="trust-title">
+            <div class="section-head">
+                <p class="eyebrow mono"><span>(05)</span> Por que trabalhar comigo</p>
+                <h2 class="section-title" id="trust-title">O que você ganha <em class="serif">fechando comigo</em></h2>
             </div>
 
+            <ul class="trust__grid" role="list">
+                <li class="tcard">
+                    <svg class="tcard__ico" aria-hidden="true"><use href="#i-chat"/></svg>
+                    <h3>Atendimento direto</h3>
+                    <p>Sem intermediário e sem telefone sem fio: quem conversa com você é quem desenvolve o seu site.</p>
+                </li>
+                <li class="tcard">
+                    <svg class="tcard__ico" aria-hidden="true"><use href="#i-code"/></svg>
+                    <h3>Código próprio</h3>
+                    <p>Nada de template pronto. Seu site é único e não fica preso a construtor de sites com mensalidade.</p>
+                </li>
+                <li class="tcard">
+                    <svg class="tcard__ico" aria-hidden="true"><use href="#i-zap"/></svg>
+                    <h3>Rápido de verdade</h3>
+                    <p>Imagens otimizadas e código enxuto. O cliente não desiste esperando a página carregar.</p>
+                </li>
+                <li class="tcard">
+                    <svg class="tcard__ico" aria-hidden="true"><use href="#i-search"/></svg>
+                    <h3>Pronto para o Google</h3>
+                    <p>SEO técnico desde o primeiro dia: títulos, descrições, sitemap e dados estruturados.</p>
+                </li>
+                <li class="tcard">
+                    <svg class="tcard__ico" aria-hidden="true"><use href="#i-phone"/></svg>
+                    <h3>Perfeito no celular</h3>
+                    <p>Pensado primeiro para a tela onde a maioria dos seus clientes está: a do celular.</p>
+                </li>
+                <li class="tcard">
+                    <svg class="tcard__ico" aria-hidden="true"><use href="#i-file"/></svg>
+                    <h3>Tudo por escrito</h3>
+                    <p>Escopo, prazo e valor combinados na proposta antes de começar. Transparência do início ao fim.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- ================= SOBRE ================= -->
+        <section class="about" id="sobre" data-theme="ink" aria-labelledby="about-title">
+            <div class="about__grid">
+                <figure class="about__photo">
+                    <img src="img/gabriel.webp" alt="Retrato de Gabriel, desenvolvedor front-end" width="736" height="1104" loading="lazy" decoding="async">
+                    <figcaption class="mono">Gabriel · Limeira, SP</figcaption>
+                </figure>
+
+                <div class="about__copy">
+                    <p class="eyebrow mono"><span>(06)</span> Sobre mim</p>
+                    <h2 class="section-title" id="about-title">Prazer, eu sou o <em class="serif accent">Gabriel</em>.</h2>
+
+                    <div class="about__text">
+                        <p>Comecei a estudar desenvolvimento front-end em 2024, com HTML, CSS e JavaScript. Os estudos viraram prática rápido: recriei layouts, construí landing pages e fui somando React, TypeScript e animações até dominar o ciclo completo de um site, do design à publicação.</p>
+                        <p>Desde 2025 trabalho como freelancer, atendendo cada cliente diretamente. Já fui responsável por projetos grandes, como o site institucional da Tatu Pré-Moldados. Em todo projeto cuido de três coisas: velocidade, experiência no celular e SEO, porque um site bonito que ninguém encontra não traz cliente.</p>
+                    </div>
+
+                    <ol class="timeline" role="list">
+                        <li><span class="mono">2024</span><p>Início nos estudos de front-end: HTML, CSS e JavaScript.</p></li>
+                        <li><span class="mono">2024</span><p>React, TypeScript, animações e os primeiros projetos completos.</p></li>
+                        <li><span class="mono">2025 – hoje</span><p>Freelancer, criando sites para empresas como a Tatu Pré-Moldados.</p></li>
+                    </ol>
+
+                    <div class="stack">
+                        <p class="eyebrow mono">Ferramentas do dia a dia</p>
+                        <ul class="tags tags--lg" role="list">
+                            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>TypeScript</li><li>React</li><li>GSAP</li><li>Git</li><li>Figma</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= FAQ ================= -->
+        <section class="faq" id="faq" data-theme="paper" aria-labelledby="faq-title">
+            <div class="faq__grid">
+                <div class="section-head faq__head">
+                    <p class="eyebrow mono"><span>(07)</span> Dúvidas frequentes</p>
+                    <h2 class="section-title" id="faq-title">Antes de você <em class="serif">perguntar</em></h2>
+                    <p class="section-lead">Não achou sua dúvida aqui? Me chama no WhatsApp que eu respondo pessoalmente.</p>
+                    <a class="btn btn--ink magnetic" href="https://wa.me/5519999691376" target="_blank" rel="noopener noreferrer">
+                        <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg> <span>Tirar uma dúvida</span>
+                    </a>
+                </div>
+
+                <div class="acc">
+                    <div class="acc__item">
+                        <h3><button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-1" id="faq-1-btn">Quanto custa um site?<svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></button></h3>
+                        <div class="acc__panel" id="faq-1" role="region" aria-labelledby="faq-1-btn" hidden><p>Depende do tamanho e do que o site precisa fazer. Depois de uma conversa rápida, envio uma proposta com valor fechado, sem custo e sem compromisso.</p></div>
+                    </div>
+                    <div class="acc__item">
+                        <h3><button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-2" id="faq-2-btn">Quanto tempo leva para o site ficar pronto?<svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></button></h3>
+                        <div class="acc__panel" id="faq-2" role="region" aria-labelledby="faq-2-btn" hidden><p>O prazo depende do escopo e vai escrito na proposta. Uma landing page costuma ser mais rápida que um site institucional com várias páginas.</p></div>
+                    </div>
+                    <div class="acc__item">
+                        <h3><button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-3" id="faq-3-btn">Preciso ter domínio e hospedagem?<svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></button></h3>
+                        <div class="acc__panel" id="faq-3" role="region" aria-labelledby="faq-3-btn" hidden><p>Não precisa se preocupar. Eu te oriento a registrar o domínio e cuido da publicação. Se você já tiver, uso o seu.</p></div>
+                    </div>
+                    <div class="acc__item">
+                        <h3><button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-4" id="faq-4-btn">Meu site vai aparecer no Google?<svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></button></h3>
+                        <div class="acc__panel" id="faq-4" role="region" aria-labelledby="faq-4-btn" hidden><p>O site sai com SEO técnico pronto: títulos, descrições, sitemap, dados estruturados e carregamento rápido. A posição também depende de conteúdo e concorrência, mas a base fica certa desde o primeiro dia.</p></div>
+                    </div>
+                    <div class="acc__item">
+                        <h3><button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-5" id="faq-5-btn">Você atende fora de Limeira?<svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></button></h3>
+                        <div class="acc__panel" id="faq-5" role="region" aria-labelledby="faq-5-btn" hidden><p>Sim. Atendo empresas de todo o Brasil de forma remota, por WhatsApp, e-mail e chamada de vídeo.</p></div>
+                    </div>
+                    <div class="acc__item">
+                        <h3><button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-6" id="faq-6-btn">E depois que o site estiver no ar?<svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></button></h3>
+                        <div class="acc__panel" id="faq-6" role="region" aria-labelledby="faq-6-btn" hidden><p>Você pode me chamar para ajustes, novas páginas ou manutenção. Combinamos o formato que fizer mais sentido para o seu negócio.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CTA FINAL ================= -->
+        <section class="cta" id="contato" data-theme="lime" aria-labelledby="cta-title">
+            <p class="eyebrow mono"><span>(08)</span> Vamos conversar</p>
+            <h2 class="cta__title" id="cta-title">
+                <span class="line">Bora tirar o seu</span>
+                <span class="line">site do <em class="serif">papel?</em></span>
+            </h2>
+            <p class="cta__lead">Me conte sobre o seu negócio. Eu respondo pessoalmente com os próximos passos e uma proposta sem compromisso.</p>
+
+            <div class="cta__actions">
+                <a class="btn btn--ink btn--xl magnetic" href="https://wa.me/5519999691376?text=Ol%C3%A1%20Gabriel%2C%20vim%20pelo%20seu%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer">
+                    <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>
+                    <span>Chamar no WhatsApp</span>
+                </a>
+                <button class="copy js-copy" type="button" data-copy="bielj009s@gmail.com">
+                    <svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>
+                    <span class="copy__text">bielj009s@gmail.com</span>
+                    <span class="copy__hint mono">Copiar</span>
+                </button>
+            </div>
+            <p class="cta__phone mono">ou ligue: <a href="tel:+5519999691376">(19) 99969-1376</a></p>
         </section>
 
     </main>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-
-        <div class="footer-brand">
-            <h2>Gabriel</h2>
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer" data-theme="ink">
+        <div class="footer__top">
+            <div class="footer__col">
+                <p class="eyebrow mono">Navegação</p>
+                <a href="#trabalhos">Trabalhos</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#processo">Processo</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#faq">Dúvidas</a>
+            </div>
+            <div class="footer__col">
+                <p class="eyebrow mono">Contato</p>
+                <a href="https://wa.me/5519999691376" target="_blank" rel="noopener noreferrer">WhatsApp · (19) 99969-1376</a>
+                <a href="mailto:bielj009s@gmail.com">bielj009s@gmail.com</a>
+                <a href="https://github.com/bieltrem09" target="_blank" rel="noopener noreferrer">GitHub · bieltrem09</a>
+            </div>
+            <div class="footer__col">
+                <p class="eyebrow mono">Base</p>
+                <p>Limeira, São Paulo</p>
+                <p>Atendo todo o Brasil</p>
+                <p class="mono"><time class="js-clock">--:--</time> no horário de Brasília</p>
+            </div>
+            <a class="footer__top-btn magnetic" href="#inicio" aria-label="Voltar ao topo">
+                <svg class="ico" aria-hidden="true"><use href="#i-arrow-ur"/></svg>
+            </a>
         </div>
 
-        <div class="footer-content">
+        <p class="footer__big" aria-hidden="true">Gabriel</p>
 
-            <!-- COLUNA 1 - CONTATO -->
-            <div class="footer-column">
-
-                <div class="footer-item">
-                    <div class="footer-icon">
-                        <i class="fa-regular fa-envelope" aria-hidden="true"></i>
-                    </div>
-                    <div>
-                        <span class="footer-label">E-mail</span>
-                        <p><a href="mailto:bielj009s@gmail.com">bielj009s@gmail.com</a></p>
-                    </div>
-                </div>
-
-                <div class="footer-item">
-                    <div class="footer-icon">
-                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                    </div>
-                    <div>
-                        <span class="footer-label">Localização</span>
-                        <p>Limeira, SP · Atendo todo o Brasil</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- COLUNA 2 - REDES -->
-            <div class="footer-column">
-
-                <span class="footer-label">Onde me encontrar</span>
-
-                <a href="https://github.com/bieltrem09" class="footer-link" target="_blank" rel="noopener noreferrer">
-                    GITHUB
-                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-                </a>
-
-                <a href="https://wa.me/5519999691376" class="footer-link" target="_blank" rel="noopener noreferrer">
-                    WHATSAPP
-                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-                </a>
-
-            </div>
-
-            <!-- COLUNA 3 - CRÉDITOS -->
-            <div class="footer-column footer-credits">
-
-                <span class="footer-label">Criado e desenvolvido por</span>
-
-                <h3>Gabriel</h3>
-
-                <!-- Ano atualizado pelo JS -->
-                <p>© <span id="footer-year">2026</span></p>
-
-            </div>
-
+        <div class="footer__bottom mono">
+            <span>© <span class="js-year">2026</span> Gabriel. Feito à mão, sem template.</span>
+            <span>Desenvolvedor front-end em Limeira/SP</span>
         </div>
-
     </footer>
 
-    <!-- MODAL DAS SKILLS (<dialog> nativo: ESC, foco e camada superior prontos) -->
-    <dialog class="modal skill-detail" id="skill-detail" aria-labelledby="skill-detail-title">
+    <!-- Botão flutuante de WhatsApp (aparece depois do topo) -->
+    <a class="fab" href="https://wa.me/5519999691376?text=Ol%C3%A1%20Gabriel%2C%20vim%20pelo%20seu%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" aria-label="Conversar no WhatsApp">
+        <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>
+    </a>
 
-        <div class="skill-detail-wrapper">
-
-            <!-- Botão fechar (X) -->
-            <button type="button" class="skill-close-btn" id="skill-close-btn" aria-label="Fechar">
-                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+    <!-- ESTUDO DE CASO (preenchido pelo JS a partir dos dados de cada projeto) -->
+    <dialog class="study" id="study" aria-labelledby="study-title">
+        <div class="study__scroll">
+            <button class="study__close magnetic" type="button" aria-label="Fechar estudo de caso">
+                <svg class="ico" aria-hidden="true"><use href="#i-x"/></svg>
             </button>
 
-            <!-- Conteúdo principal -->
-            <div class="skill-detail-content">
+            <header class="study__head">
+                <p class="eyebrow mono study__kicker"></p>
+                <h2 class="study__title" id="study-title"></h2>
+                <dl class="study__facts"></dl>
+            </header>
 
-                <div class="skill-detail-icon-box" id="skill-detail-icon-box">
-                    <i class="skill-detail-icon" id="skill-detail-icon" aria-hidden="true"></i>
+            <figure class="study__hero"><img alt="" width="1200" height="750"></figure>
+
+            <div class="study__body">
+                <div class="study__block">
+                    <p class="eyebrow mono">O desafio</p>
+                    <p class="study__challenge"></p>
                 </div>
-
-                <div class="skill-detail-text">
-                    <span class="skill-detail-tag" id="skill-detail-tag">TECNOLOGIA</span>
-                    <h2 id="skill-detail-title" tabindex="-1">Título</h2>
-                    <p id="skill-detail-desc">Descrição</p>
+                <div class="study__block">
+                    <p class="eyebrow mono">A solução</p>
+                    <p class="study__solution"></p>
                 </div>
-
-            </div>
-
-            <!-- Sidebar com outras linguagens -->
-            <div class="skill-sidebar">
-                <p class="skill-sidebar-title">Outras Skills</p>
-                <div class="skill-sidebar-list" id="skill-sidebar-list">
-                    <!-- Preenchido pelo JS -->
-                </div>
-            </div>
-
-        </div>
-
-    </dialog>
-
-    <!-- MODAL DOS PROJETOS -->
-    <dialog class="modal modal-projeto" id="modalProjeto" aria-labelledby="modalTitulo">
-        <div class="modal-conteudo">
-            <button type="button" class="modal-fechar" id="modalFechar" aria-label="Fechar">&times;</button>
-
-            <div class="modal-imagem">
-                <img id="modalImg" alt="" width="600" height="400">
-            </div>
-
-            <div class="modal-info">
-                <h2 id="modalTitulo"></h2>
-                <p id="modalDescricao"></p>
-
-                <div class="modal-tech">
-                    <h3>Tecnologias utilizadas:</h3>
-                    <ul id="modalTech"></ul>
-                </div>
-
-                <div class="modal-botoes">
-                    <a id="modalLink" href="#" target="_blank" rel="noopener noreferrer" class="btn-modal btn-primario">Acessar Projeto</a>
-                    <a id="modalRepo" href="#" target="_blank" rel="noopener noreferrer" class="btn-modal btn-secundario">Ver Repositório</a>
+                <div class="study__block">
+                    <p class="eyebrow mono">O que foi entregue</p>
+                    <ul class="study__list" role="list"></ul>
                 </div>
             </div>
+
+            <div class="study__gallery"></div>
+
+            <footer class="study__foot">
+                <a class="btn btn--lime btn--lg study__live" href="#" target="_blank" rel="noopener noreferrer">Ver o site ao vivo <svg class="ico" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+                <a class="btn btn--ghost btn--lg" href="https://wa.me/5519999691376?text=Ol%C3%A1%20Gabriel%2C%20vi%20seus%20projetos%20e%20quero%20um%20site%20assim." target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg> Quero um site assim</a>
+            </footer>
         </div>
     </dialog>
-
 </body>
 </html>
