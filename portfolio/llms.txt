@@ -1,6 +1,6 @@
-# Gabriel – Criação de Sites em Limeira/SP
+# Gabriel Jesus Santos – Criação de Sites em Limeira/SP
 
-> Gabriel é desenvolvedor front-end freelancer em Limeira, São Paulo (Brasil). Cria sites institucionais, landing pages, redesign de sites e SEO técnico para empresas de Limeira, região (Americana, Piracicaba, Rio Claro, Campinas, Araras) e de todo o Brasil. Atende diretamente, do briefing à entrega, com código próprio (sem templates).
+> Gabriel Jesus Santos é desenvolvedor front-end freelancer em Limeira, São Paulo (Brasil). Cria sites institucionais, landing pages, redesign de sites e SEO técnico para empresas de Limeira, região (Americana, Piracicaba, Rio Claro, Campinas, Araras) e de todo o Brasil. Atende diretamente, do briefing à entrega, com código próprio (sem templates).
 
 Site: https://portfolio-nv-alpha.vercel.app/
 Contato: WhatsApp +55 19 99969-1376 (https://wa.me/5519999691376) · E-mail: bielj009s@gmail.com
