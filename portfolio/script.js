@@ -579,56 +579,56 @@ function initSkills() {
             color: "#e34c26",
             tag: "MARKUP",
             title: "HTML5",
-            desc: "Estruturação semântica de páginas web modernas, com foco em acessibilidade, SEO e boas práticas de marcação."
+            desc: "HTML semântico é a base de tudo: deixa o site acessível, fácil de manter e bem compreendido pelo Google."
         },
         css: {
             icon: "fa-brands fa-css3-alt",
             color: "#1572b6",
             tag: "ESTILIZAÇÃO",
             title: "CSS3",
-            desc: "Estilização avançada com Flexbox, Grid, animações, responsividade e efeitos visuais modernos."
+            desc: "Layouts responsivos com Flexbox e Grid, animações suaves e acabamento visual fiel ao design, em qualquer tamanho de tela."
         },
         js: {
             icon: "fa-brands fa-js",
             color: "#f7df1e",
             tag: "LINGUAGEM",
             title: "JavaScript",
-            desc: "Desenvolvimento de aplicações interativas, manipulação do DOM, consumo de APIs e boas práticas com ES6+."
+            desc: "Interatividade, consumo de APIs e manipulação do DOM com JavaScript moderno (ES6+), sem pesar no carregamento."
         },
         react: {
             icon: "fa-brands fa-react",
             color: "#61dafb",
             tag: "FRAMEWORK",
             title: "React",
-            desc: "Criação de interfaces modernas com componentização, hooks, estado e integração com APIs."
+            desc: "Interfaces componentizadas, com hooks e estado bem organizados. Foi a base de projetos maiores, como o site da Tatu Pré-Moldados."
         },
         node: {
             icon: "fa-brands fa-node-js",
             color: "#6cc24a",
             tag: "BACKEND",
             title: "Node.js",
-            desc: "Desenvolvimento backend com APIs REST, autenticação, integração com bancos de dados e Express."
+            desc: "Uso Node.js para ferramentas de build, scripts de automação e APIs simples que dão suporte ao front-end."
         },
         git: {
             icon: "fa-brands fa-git-alt",
             color: "#f05032",
             tag: "VERSIONAMENTO",
             title: "Git",
-            desc: "Controle de versão profissional com Git e GitHub, branches, pull requests e trabalho em equipe."
+            desc: "Versionamento de todo projeto com Git e GitHub: histórico organizado, branches e publicação segura."
         },
         python: {
             icon: "fa-brands fa-python",
             color: "#3776ab",
             tag: "LINGUAGEM",
             title: "Python",
-            desc: "Linguagem versátil usada em automação, scripts, análise de dados e desenvolvimento back-end."
+            desc: "Scripts para automatizar tarefas repetitivas e tratar dados que alimentam os sites."
         },
         figma: {
             icon: "fa-brands fa-figma",
             color: "#a259ff",
             tag: "DESIGN",
             title: "Figma",
-            desc: "Design de interfaces, prototipagem interativa e criação de sistemas visuais consistentes."
+            desc: "Leitura e criação de layouts no Figma, para transformar o design em código com fidelidade."
         }
     };
 

@@ -561,6 +561,7 @@ nav a:hover {
 ========================= */
 
 .about-section,
+.services-section,
 .projects-section,
 .skills-section,
 .experience-section,
@@ -571,11 +572,12 @@ nav a:hover {
 }
 
 .about-section      { z-index: 2; }
-.projects-section   { z-index: 3; }
-.skills-section     { z-index: 4; }
-.experience-section { z-index: 5; }
-.contact-section    { z-index: 6; }
-.site-footer        { z-index: 7; }
+.services-section   { z-index: 3; }
+.projects-section   { z-index: 4; }
+.skills-section     { z-index: 5; }
+.experience-section { z-index: 6; }
+.contact-section    { z-index: 7; }
+.site-footer        { z-index: 8; }
 
 /* =========================
    SECTION 2 - SOBRE MIM
@@ -716,7 +718,128 @@ nav a:hover {
 }
 
 /* =========================
-   SECTION 3 - PROJETOS
+   SECTION 3 - SERVIÇOS
+========================= */
+
+.services-section {
+    padding: 120px var(--gutter);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.services-header {
+    max-width: 760px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.services-title {
+    margin: 20px 0 18px;
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+}
+
+.services-header p {
+    color: var(--muted);
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+
+.services-grid {
+    width: 100%;
+    max-width: 1300px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 35px 28px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.service-icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    color: var(--accent);
+    font-size: 1.4rem;
+}
+
+.service-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.service-card p {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.services-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 55px;
+    padding: 16px 36px;
+    border-radius: 50px;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.services-cta:hover {
+    background: #fff;
+    color: var(--accent);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 1100px) {
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .services-section {
+        padding: 80px var(--gutter);
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .service-card {
+        padding: 28px 22px;
+    }
+}
+
+/* =========================
+   SECTION 4 - PROJETOS
    Desktop: scroll horizontal (altura calculada pelo JS)
    Celular: lista vertical
 ========================= */
@@ -1109,7 +1232,7 @@ nav a:hover {
 }
 
 /* =========================
-   SECTION 4 - SKILLS
+   SECTION 5 - SKILLS
 ========================= */
 
 .skills-section {
@@ -1585,7 +1708,7 @@ nav a:hover {
 }
 
 /* =========================
-   SECTION 5 - EXPERIÊNCIA
+   SECTION 6 - TRAJETÓRIA
 ========================= */
 
 .experience-section {
@@ -1840,7 +1963,7 @@ nav a:hover {
 }
 
 /* ==============================
-   SECTION 6 - CONTATO
+   SECTION 7 - CONTATO
 ============================== */
 
 .contact-section {
