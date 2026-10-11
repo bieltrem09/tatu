@@ -1378,9 +1378,9 @@ nav a:hover {
 .skill-icon[data-skill="css"] .skill-icon-inner i      { color: #1572b6; }
 .skill-icon[data-skill="js"] .skill-icon-inner i       { color: #f7df1e; }
 .skill-icon[data-skill="react"] .skill-icon-inner i    { color: #61dafb; }
-.skill-icon[data-skill="node"] .skill-icon-inner i     { color: #6cc24a; }
+.skill-icon[data-skill="ts"] .skill-icon-inner i       { color: #3178c6; }
+.skill-icon[data-skill="gsap"] .skill-icon-inner i     { color: #88ce02; }
 .skill-icon[data-skill="git"] .skill-icon-inner i      { color: #f05032; }
-.skill-icon[data-skill="python"] .skill-icon-inner i   { color: #3776ab; }
 .skill-icon[data-skill="figma"] .skill-icon-inner i    { color: #a259ff; }
 
 /* Sombra colorida no hover */
@@ -1388,9 +1388,9 @@ nav a:hover {
 .skill-icon[data-skill="css"]:hover      { box-shadow: 0 25px 50px rgba(21, 114, 182, .2); }
 .skill-icon[data-skill="js"]:hover       { box-shadow: 0 25px 50px rgba(247, 223, 30, .15); }
 .skill-icon[data-skill="react"]:hover    { box-shadow: 0 25px 50px rgba(97, 218, 251, .2); }
-.skill-icon[data-skill="node"]:hover     { box-shadow: 0 25px 50px rgba(108, 194, 74, .2); }
+.skill-icon[data-skill="ts"]:hover       { box-shadow: 0 25px 50px rgba(49, 120, 198, .2); }
+.skill-icon[data-skill="gsap"]:hover     { box-shadow: 0 25px 50px rgba(136, 206, 2, .2); }
 .skill-icon[data-skill="git"]:hover      { box-shadow: 0 25px 50px rgba(240, 80, 50, .2); }
-.skill-icon[data-skill="python"]:hover   { box-shadow: 0 25px 50px rgba(55, 118, 171, .2); }
 .skill-icon[data-skill="figma"]:hover    { box-shadow: 0 25px 50px rgba(162, 89, 255, .2); }
 
 /* =========================

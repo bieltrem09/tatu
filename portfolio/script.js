@@ -595,6 +595,13 @@ function initSkills() {
             title: "JavaScript",
             desc: "Interatividade, consumo de APIs e manipulação do DOM com JavaScript moderno (ES6+), sem pesar no carregamento."
         },
+        ts: {
+            icon: "fa-solid fa-code",
+            color: "#3178c6",
+            tag: "LINGUAGEM",
+            title: "TypeScript",
+            desc: "JavaScript com tipagem: menos erros em produção e código mais fácil de manter em projetos grandes, como o da Tatu Pré-Moldados."
+        },
         react: {
             icon: "fa-brands fa-react",
             color: "#61dafb",
@@ -602,12 +609,12 @@ function initSkills() {
             title: "React",
             desc: "Interfaces componentizadas, com hooks e estado bem organizados. Foi a base de projetos maiores, como o site da Tatu Pré-Moldados."
         },
-        node: {
-            icon: "fa-brands fa-node-js",
-            color: "#6cc24a",
-            tag: "BACKEND",
-            title: "Node.js",
-            desc: "Uso Node.js para ferramentas de build, scripts de automação e APIs simples que dão suporte ao front-end."
+        gsap: {
+            icon: "fa-solid fa-wand-magic-sparkles",
+            color: "#88ce02",
+            tag: "ANIMAÇÃO",
+            title: "GSAP",
+            desc: "Animações guiadas pelo scroll, textos que se revelam e transições fluidas, como nos sites da Tatu Pré-Moldados e da Vetor Logística."
         },
         git: {
             icon: "fa-brands fa-git-alt",
@@ -615,13 +622,6 @@ function initSkills() {
             tag: "VERSIONAMENTO",
             title: "Git",
             desc: "Versionamento de todo projeto com Git e GitHub: histórico organizado, branches e publicação segura."
-        },
-        python: {
-            icon: "fa-brands fa-python",
-            color: "#3776ab",
-            tag: "LINGUAGEM",
-            title: "Python",
-            desc: "Scripts para automatizar tarefas repetitivas e tratar dados que alimentam os sites."
         },
         figma: {
             icon: "fa-brands fa-figma",
