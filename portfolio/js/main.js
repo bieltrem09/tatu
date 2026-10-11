@@ -78,22 +78,22 @@
         $$(".js-year").forEach((el) => { el.textContent = new Date().getFullYear(); });
     }
 
-    function initCopy() {
-        $$(".js-copy").forEach((btn) => {
-            const hint = $(".copy__hint", btn);
-            btn.addEventListener("click", async () => {
-                const value = btn.dataset.copy;
-                try {
-                    await navigator.clipboard.writeText(value);
-                    hint.textContent = "Copiado!";
-                } catch {
-                    window.location.href = `mailto:${value}`;
-                    return;
-                }
-                setTimeout(() => { hint.textContent = "Copiar"; }, 2200);
-            });
+    /* E-mail: no computador abre o Gmail já com a mensagem; no celular usa o app de e-mail padrão */
+    const MAIL_TO = "bielj009s@gmail.com";
+    const MAIL_SUBJECT = "Pedido de orçamento de site";
+    const MAIL_BODY = "Olá, Gabriel!\n\nVi seu portfólio e quero um orçamento.\n\nMeu nome: \nEmpresa/negócio: \nTipo de site (institucional, landing page ou redesign): \nO que o site precisa ter: \nPrazo desejado: \nTelefone/WhatsApp: \n\nObrigado!";
+    function initMail() {
+        const touch = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+        if (!touch) return;
+        const href = `mailto:${MAIL_TO}?subject=${encodeURIComponent(MAIL_SUBJECT)}&body=${encodeURIComponent(MAIL_BODY)}`;
+        $$(".js-mail").forEach((a) => {
+            a.href = href;
+            a.removeAttribute("target");
         });
     }
+
+    /* WhatsApp do estudo de caso: mensagem citando o projeto visto */
+    const waLink = (text) => `https://wa.me/5519999691376?text=${encodeURIComponent(text)}`;
 
     /* Acordeão do FAQ (altura animada quando há GSAP) */
     function initAccordion() {
@@ -244,6 +244,7 @@
             return img;
         }));
         $(".study__live", study).href = c.link;
+        $(".study__wa", study).href = waLink(`Olá, Gabriel! Vi o projeto ${c.title} no seu portfólio e quero um site assim para o meu negócio.\n\n• Meu nome: \n• Empresa/negócio: \n• Prazo que preciso: `);
         return true;
     }
     function openStudy(key) {
@@ -538,7 +539,7 @@
        ---------------------------------------------------------------------- */
     function boot() {
         initClock();
-        initCopy();
+        initMail();
         initAccordion();
         initHeader();
         initMenu();
