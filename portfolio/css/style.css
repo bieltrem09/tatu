@@ -292,7 +292,7 @@ strong { font-weight: 600; color: inherit; }
     color: var(--lime);
     text-align: center;
 }
-.preloader__words span { position: absolute; inset: 0; transform: translateY(110%); }
+.preloader__words span { position: absolute; inset: 0; opacity: 0; } /* posição controlada só pelo GSAP */
 .preloader__count {
     position: absolute;
     right: var(--pad);

@@ -335,30 +335,38 @@
        ---------------------------------------------------------------------- */
     function runPreloader(done) {
         const pre = $(".preloader");
-        let seen = false;
-        try { seen = sessionStorage.getItem("gb-preloader") === "1"; } catch { /* sem storage */ }
-        if (!animate || seen) {
+        // Sem animação (movimento reduzido ou sem GSAP): pula direto para o site
+        if (!animate) {
             document.documentElement.classList.add("no-preloader");
             done(0);
             return;
         }
-        try { sessionStorage.setItem("gb-preloader", "1"); } catch { /* sem storage */ }
 
         stopScroll();
         const num = $(".preloader__num", pre);
         const words = $$(".preloader__words span", pre);
         const counter = { v: 0 };
+
+        // Uma palavra por vez: entra, fica, sai, e só então a próxima entra (sem sobrepor)
+        const SLOT = 0.75;   // tempo total de cada palavra
+        const START = 0.2;
+        gsap.set(words, { y: 0, yPercent: 110, autoAlpha: 0 });
+
         const tl = gsap.timeline({
             onComplete: () => { pre.remove(); startScroll(); },
         });
-        tl.from($(".preloader__name", pre), { yPercent: 100, opacity: 0, duration: 0.9, ease: "expo.out" })
-            .to(counter, { v: 100, duration: 1.6, ease: "power2.inOut", onUpdate: () => { num.textContent = Math.round(counter.v); } }, 0);
+        tl.from($(".preloader__name", pre), { yPercent: 100, opacity: 0, duration: 0.9, ease: "expo.out" }, 0);
         words.forEach((w, i) => {
-            tl.to(w, { yPercent: 0, duration: 0.45, ease: "expo.out" }, 0.15 + i * 0.5);
-            if (i < words.length - 1) tl.to(w, { yPercent: -110, duration: 0.45, ease: "expo.in" }, 0.15 + i * 0.5 + 0.3);
+            const at = START + i * SLOT;
+            tl.to(w, { yPercent: 0, autoAlpha: 1, duration: 0.35, ease: "expo.out" }, at);
+            if (i < words.length - 1) {
+                tl.to(w, { yPercent: -110, autoAlpha: 0, duration: 0.28, ease: "power3.in" }, at + SLOT - 0.3);
+            }
         });
-        tl.to(pre, { clipPath: "inset(0 0 100% 0)", duration: 1, ease: "expo.inOut" }, "+=0.15");
-        tl.call(() => done(0.2), null, "-=0.55");
+        const total = START + words.length * SLOT;
+        tl.to(counter, { v: 100, duration: total, ease: "power2.inOut", onUpdate: () => { num.textContent = Math.round(counter.v); } }, 0);
+        tl.to(pre, { clipPath: "inset(0 0 100% 0)", duration: 1, ease: "expo.inOut" }, total + 0.1);
+        tl.call(() => done(0.2), null, total + 0.55);
     }
 
     const markReady = () => document.documentElement.classList.add("is-ready");
