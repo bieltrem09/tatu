@@ -1,0 +1,13 @@
+/* TEAM */
+Desenvolvedor: Gabriel
+Função: Desenvolvedor front-end freelancer · criação de sites
+Contato: bielj009s@gmail.com · WhatsApp +55 19 99969-1376
+Local: Limeira, SP, Brasil
+GitHub: https://github.com/bieltrem09
+
+/* SITE */
+Última atualização: 2026-10-11
+Idioma: Português (pt-BR)
+Padrões: HTML5, CSS3, JavaScript (ES2020)
+Bibliotecas: GSAP, ScrollTrigger, SplitText, Lenis
+Fontes: Bricolage Grotesque, Inter, Instrument Serif, JetBrains Mono

@@ -1,0 +1,52 @@
+# Gabriel – Criação de Sites em Limeira/SP
+
+> Gabriel é desenvolvedor front-end freelancer em Limeira, São Paulo (Brasil). Cria sites institucionais, landing pages, redesign de sites e SEO técnico para empresas de Limeira, região (Americana, Piracicaba, Rio Claro, Campinas, Araras) e de todo o Brasil. Atende diretamente, do briefing à entrega, com código próprio (sem templates).
+
+Site: https://portfolio-nv-alpha.vercel.app/
+Contato: WhatsApp +55 19 99969-1376 (https://wa.me/5519999691376) · E-mail: bielj009s@gmail.com
+Localização: Limeira, SP, Brasil · Atendimento remoto em todo o Brasil
+Idioma: português (pt-BR)
+
+## Serviços
+
+- **Criação de site institucional**: site profissional sob medida para empresas, com várias páginas, design exclusivo, integração com WhatsApp e SEO técnico.
+- **Criação de landing page**: página única focada em conversão, para campanhas, lançamentos e geração de contatos.
+- **Redesign de site**: reformulação de sites antigos, lentos ou que não funcionam bem no celular.
+- **SEO técnico e performance**: títulos, descrições, dados estruturados, sitemap, imagens otimizadas e carregamento rápido.
+
+Todos os projetos são responsivos (feitos primeiro para o celular), otimizados para o Google e com animações suaves.
+
+## Como funciona
+
+1. Conversa: entender o negócio, o público e o objetivo do site (WhatsApp ou chamada de vídeo).
+2. Proposta: escopo, prazo e valor por escrito.
+3. Design: estrutura e visual aprovados antes da programação.
+4. Desenvolvimento: código próprio, animações e SEO, com link de prévia.
+5. Entrega: publicação no domínio do cliente, pronto para o Google.
+
+## Projetos
+
+- [Tatu Pré-Moldados](https://tatu-premoldados.vercel.app): site institucional para fábrica de pré-moldados de concreto em Limeira/SP, fundada em 1977. React, TypeScript, GSAP, Lenis.
+- [Vetor Logística](https://vetor-logistica.vercel.app): site institucional para transportadora rodoviária, marítima e aérea, com contêiner 3D interativo. JavaScript, GSAP, Three.js.
+- [Sushi Japanese Restaurant](https://project-6c9bl.vercel.app): landing page para restaurante japonês com cardápio digital e reserva de mesa. JavaScript, GSAP, Lenis.
+- [Aurora Estúdio Criativo](https://auroria-ten.vercel.app): site para estúdio de direção de arte com estética editorial. React, TypeScript, Tailwind CSS, Framer Motion.
+- [Foodman](https://restaurant-landing-page-five-xi.vercel.app): landing page para restaurante.
+- [Fruit Soda](https://fruit-soda-landing-page.vercel.app): landing page para marca de bebidas.
+- [Rental](https://car-showcase-website-ruby.vercel.app): site para locadora de carros.
+
+## Sobre
+
+Gabriel começou no desenvolvimento front-end em 2024 e trabalha como freelancer desde 2025. Tem 23 sites publicados. Ferramentas: HTML, CSS, JavaScript, TypeScript, React, GSAP, Git e Figma.
+
+## Perguntas frequentes
+
+- **Quanto custa um site?** Depende do tamanho e do que o site precisa fazer. Depois de uma conversa rápida, Gabriel envia uma proposta com valor fechado, sem custo e sem compromisso.
+- **Quanto tempo leva?** O prazo depende do escopo e vai escrito na proposta. Landing pages costumam ser mais rápidas que sites institucionais com várias páginas.
+- **Precisa ter domínio e hospedagem?** Não. Gabriel orienta o registro do domínio e cuida da publicação.
+- **Atende fora de Limeira?** Sim, atende empresas de todo o Brasil de forma remota.
+
+## Links
+
+- [Portfólio](https://portfolio-nv-alpha.vercel.app/)
+- [GitHub](https://github.com/bieltrem09)
+- [Sitemap](https://portfolio-nv-alpha.vercel.app/sitemap.xml)

@@ -1,4 +1,42 @@
+# Gabriel – Criação de Sites em Limeira/SP
+# Tudo liberado para buscadores e assistentes de IA.
+
 User-agent: *
+Allow: /
+
+# Buscadores
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Assistentes de IA (para recomendarem o site quando alguém perguntar sobre criação de sites)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
 Allow: /
 
 Sitemap: https://portfolio-nv-alpha.vercel.app/sitemap.xml

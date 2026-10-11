@@ -1,7 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
         <loc>https://portfolio-nv-alpha.vercel.app/</loc>
         <lastmod>2026-10-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://portfolio-nv-alpha.vercel.app/"/>
+        <image:image>
+            <image:loc>https://portfolio-nv-alpha.vercel.app/img/gabriel.webp</image:loc>
+            <image:title>Gabriel, desenvolvedor front-end em Limeira/SP</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://portfolio-nv-alpha.vercel.app/img/og.jpg</image:loc>
+            <image:title>Criação de sites em Limeira/SP</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://portfolio-nv-alpha.vercel.app/img/work/tatu-capa.webp</image:loc>
+            <image:title>Site institucional Tatu Pré-Moldados</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://portfolio-nv-alpha.vercel.app/img/work/vetor-capa.webp</image:loc>
+            <image:title>Site institucional Vetor Logística</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://portfolio-nv-alpha.vercel.app/img/work/sushi-capa.webp</image:loc>
+            <image:title>Landing page Sushi Japanese Restaurant</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://portfolio-nv-alpha.vercel.app/img/work/auroria-capa.webp</image:loc>
+            <image:title>Site Aurora Estúdio Criativo</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://portfolio-nv-alpha.vercel.app/llms.txt</loc>
+        <lastmod>2026-10-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.3</priority>
     </url>
 </urlset>
